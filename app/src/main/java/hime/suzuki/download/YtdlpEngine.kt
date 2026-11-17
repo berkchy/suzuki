@@ -2,6 +2,8 @@ package hime.suzuki.download
 
 import android.content.Context
 import android.util.Log
+import hime.suzuki.R
+import hime.suzuki.core.AppLocale
 import hime.suzuki.data.AppSettings
 import hime.suzuki.data.SettingsRepository
 import hime.suzuki.core.Fmt
@@ -81,7 +83,7 @@ object YtdlpEngine {
     }
 
     suspend fun update(context: Context, nightly: Boolean = true): String? = withContext(Dispatchers.IO) {
-        check(initialized) { "yt-dlp hazır değil" }
+        check(initialized) { AppLocale.wrap(context).getString(R.string.error_engine_not_ready) }
         _state.update { it.copy(updating = true, lastError = null) }
         try {
             val channel = if (nightly) {
@@ -110,8 +112,9 @@ object YtdlpEngine {
         }
     }
 
-    suspend fun extract(url: String): PlaylistInfo = withContext(Dispatchers.IO) {
-        check(initialized) { "yt-dlp hazır değil" }
+    suspend fun extract(context: Context, url: String): PlaylistInfo = withContext(Dispatchers.IO) {
+        val ctx = AppLocale.wrap(context)
+        check(initialized) { ctx.getString(R.string.error_engine_not_ready) }
         val request = YoutubeDLRequest(url)
         request.addOption("--flat-playlist")
         request.addOption("--skip-download")
@@ -122,15 +125,20 @@ object YtdlpEngine {
         val response = YoutubeDL.getInstance().execute(request, null, false)
         val raw = response.out.trim()
         if (raw.isBlank()) {
-            throw IllegalStateException(Fmt.errorMessage(Throwable(response.err.ifBlank { "Bağlantı okunamadı" })))
+            throw IllegalStateException(
+                Fmt.errorMessage(
+                    Throwable(response.err.ifBlank { ctx.getString(R.string.error_link_unreadable) })
+                )
+            )
         }
 
         val json = JSONObject(raw)
         val entriesJson = json.optJSONArray("entries")
         if (entriesJson == null) {
-            val entry = parseEntry(json) ?: throw IllegalStateException("Video bilgisi alınamadı")
+            val entry = parseEntry(json, ctx.getString(R.string.unknown_track))
+                ?: throw IllegalStateException(ctx.getString(R.string.error_video_info))
             PlaylistInfo(
-                title = stringOf(json, "title") ?: "Tek parça",
+                title = stringOf(json, "title") ?: ctx.getString(R.string.single_default),
                 entries = listOf(entry),
                 isPlaylist = false,
             )
@@ -138,11 +146,13 @@ object YtdlpEngine {
             val entries = ArrayList<ExtractedEntry>(entriesJson.length())
             for (i in 0 until entriesJson.length()) {
                 val item = entriesJson.optJSONObject(i) ?: continue
-                parseEntry(item)?.let { entries.add(it) }
+                parseEntry(item, ctx.getString(R.string.unknown_track))?.let { entries.add(it) }
             }
-            if (entries.isEmpty()) throw IllegalStateException("Çalma listesinde indirilebilir parça bulunamadı")
+            if (entries.isEmpty()) {
+                throw IllegalStateException(ctx.getString(R.string.error_no_tracks))
+            }
             PlaylistInfo(
-                title = stringOf(json, "title") ?: "Çalma listesi",
+                title = stringOf(json, "title") ?: ctx.getString(R.string.playlist_default),
                 entries = entries,
                 isPlaylist = true,
             )
@@ -157,7 +167,9 @@ object YtdlpEngine {
         dir: File,
         onProgress: (Float, Long) -> Unit,
     ): DownloadResult = withContext(Dispatchers.IO) {
-        check(initialized) { "yt-dlp hazır değil" }
+        check(initialized) {
+            AppLocale.wrap(context).getString(R.string.error_engine_not_ready)
+        }
 
         val ytdlp = YoutubeDLRequest(request.url)
         ytdlp.addOption("--no-playlist")
@@ -230,7 +242,7 @@ object YtdlpEngine {
             ?.absolutePath
     }
 
-    private fun parseEntry(json: JSONObject): ExtractedEntry? {
+    private fun parseEntry(json: JSONObject, unknownTrack: String): ExtractedEntry? {
         val id = stringOf(json, "id")
         val rawUrl = stringOf(json, "url")
         val url = when {
@@ -242,7 +254,7 @@ object YtdlpEngine {
         return ExtractedEntry(
             videoId = id.orEmpty(),
             url = url,
-            title = stringOf(json, "title") ?: "Bilinmeyen parça",
+            title = stringOf(json, "title") ?: unknownTrack,
             uploader = stringOf(json, "uploader")
                 ?: stringOf(json, "channel")
                 ?: stringOf(json, "artists"),

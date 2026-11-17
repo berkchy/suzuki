@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">בית</string>
+    <string name="nav_downloads">הורדות</string>
+    <string name="nav_settings">הגדרות</string>
+
+    <string name="common_cancel">ביטול</string>
+    <string name="common_close">סגירה</string>
+    <string name="common_save">שמירה</string>
+    <string name="common_delete">מחיקה</string>
+    <string name="common_update">עדכון</string>
+    <string name="common_default">ברירת מחדל</string>
+    <string name="common_all">הכול</string>
+    <string name="common_retry">ניסיון חוזר</string>
+    <string name="common_clear">ניקוי</string>
+    <string name="common_change">שינוי</string>
+    <string name="common_open">פתיחה</string>
+    <string name="common_share">שיתוף</string>
+    <string name="common_unknown">לא ידוע</string>
+
+    <string name="home_subtitle">הורידו את הפלייליסט והאזינו ללא חיבור</string>
+    <string name="home_storage_banner">נדרשת הרשאת אחסון כדי לשמור מוזיקה בתיקייה שנבחרה.</string>
+    <string name="home_grant">אישור</string>
+    <string name="home_paste_title">הדביקו קישור</string>
+    <string name="home_link_hint">קישור לסרטון או לפלייליסט ב-YouTube / YouTube Music</string>
+    <string name="home_paste">הדבקה</string>
+    <string name="home_list">הצגה</string>
+    <string name="home_preparing">מתכונן…</string>
+    <string name="home_recent">הורד לאחרונה</string>
+    <string name="home_no_downloads">אין הורדות עדיין</string>
+    <string name="home_add_first">הוסיפו את השיר הראשון בשדה הקישור למעלה.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • מעדכן…</string>
+    <string name="home_ytdlp_loading">מתכונן</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">פלייליסט</string>
+    <string name="home_chip_cover">עטיפה</string>
+    <string name="home_chip_tags">תגיות</string>
+    <string name="home_chip_folder">התיקייה שלכם</string>
+
+    <string name="downloads_title">הורדות</string>
+    <string name="downloads_sub_running">%1$d מורדים • %2$d בתור</string>
+    <string name="downloads_sub_done">%1$d שירים הושלמו</string>
+    <string name="downloads_sub_default">תור והיסטוריית הורדות</string>
+    <string name="downloads_pause">השהיה</string>
+    <string name="downloads_resume">המשך</string>
+    <string name="downloads_tab_active">פעילות (%1$d)</string>
+    <string name="downloads_tab_history">היסטוריה (%1$d)</string>
+    <string name="downloads_queue_empty">התור ריק</string>
+    <string name="downloads_history_empty">ההיסטוריה ריקה</string>
+    <string name="downloads_queue_hint">הוסיפו פלייליסט או שיר מהמסך הראשי.</string>
+    <string name="downloads_history_hint">הורדות שהושלמו יופיעו כאן.</string>
+    <string name="downloads_retry_failed">ניסיון חוזר לנכשלות</string>
+    <string name="downloads_cancel_cd">ביטול</string>
+    <string name="downloads_retry_cd">ניסיון חוזר</string>
+    <string name="downloads_delete_cd">מחיקה</string>
+    <string name="downloads_status_queued">בתור</string>
+    <string name="downloads_status_downloading">מוריד</string>
+    <string name="downloads_status_queued_fmt">בתור • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">נכשל • %1$s</string>
+    <string name="downloads_status_canceled">בוטל</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">לא ניתן לפתוח את הקובץ</string>
+    <string name="toast_share_music">שיתוף מוזיקה</string>
+    <string name="toast_share_failed">לא ניתן לפתוח את השיתוף</string>
+
+    <string name="settings_title">הגדרות</string>
+    <string name="settings_subtitle">אחסון, פורמט ומנוע</string>
+    <string name="settings_storage">אחסון</string>
+    <string name="settings_download_folder">תיקיית הורדות</string>
+    <string name="settings_choose_folder">בחירת תיקייה</string>
+    <string name="settings_storage_warning">לא ניתנה גישה לכל הקבצים. ההורדות נשמרות בתיקייה של האפליקציה.</string>
+    <string name="settings_download">הורדה</string>
+    <string name="settings_default_format">פורמט ברירת מחדל</string>
+    <string name="settings_bitrate">קצב סיביות</string>
+    <string name="settings_bitrate_not_applicable">הפורמט שנבחר ללא אובדן או מקורי; קצב סיביות לא חל.</string>
+    <string name="settings_embed_cover">הטמעת עטיפה</string>
+    <string name="settings_embed_cover_sub">מוסיף את עטיפת השיר לקובץ ההורדה</string>
+    <string name="settings_embed_tags">הטמעת תגיות</string>
+    <string name="settings_embed_tags_sub">כותב מטא-נתונים של כותרת ואמן</string>
+    <string name="settings_performance">ביצועים</string>
+    <string name="settings_concurrency">הורדות במקביל</string>
+    <string name="settings_concurrency_sub">מספר הרצועות המעובדות בו-זמנית</string>
+    <string name="settings_auto_update">עדכון yt-dlp אוטומטי</string>
+    <string name="settings_auto_update_sub">נבדק פעם ביום</string>
+    <string name="settings_ytdlp_version">גרסת yt-dlp</string>
+    <string name="settings_advanced">מתקדם</string>
+    <string name="settings_filename_template">תבנית שם קובץ</string>
+    <string name="settings_simplify">פישוט שמות קבצים</string>
+    <string name="settings_simplify_sub">ממיר תווים שאינם ASCII ל-ASCII</string>
+    <string name="settings_proxy">פרוקסי (אופציונלי)</string>
+    <string name="settings_clear_history">ניקוי היסטוריית הורדות</string>
+    <string name="settings_about">אודות</string>
+    <string name="settings_version">גרסה</string>
+    <string name="settings_github">מאגר GitHub</string>
+    <string name="settings_about_text">האפליקציה נוצרה לארכיון אישי. כבדו את הזכויות ואת תנאי הפלטפורמות של התוכן שאתם מורידים.</string>
+    <string name="settings_format_dialog">פורמט ברירת מחדל</string>
+    <string name="settings_clear_dialog_title">ניקוי היסטוריה</string>
+    <string name="settings_clear_dialog_body">רשומות שהושלמו, נכשלו או בוטלו יוסרו מהרשימה. קבצים שהורדו לא יימחקו מהמכשיר.</string>
+    <string name="settings_language">שפה</string>
+    <string name="settings_language_sub">שפת התצוגה של האפליקציה</string>
+    <string name="language_system">שפת המערכת</string>
+
+    <string name="format_original">מקורי</string>
+    <string name="format_original_desc">מקורי — ללא קידוד מחדש</string>
+    <string name="format_mp3_desc">MP3 — תאימות אוניברסלית</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — יעיל</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — ללא אובדן</string>
+    <string name="format_wav_desc">WAV — לא דחוס</string>
+
+    <string name="sheet_playlist">פלייליסט</string>
+    <string name="sheet_single_track">רצועה בודדת</string>
+    <string name="sheet_single_song">שיר בודד</string>
+    <string name="sheet_tracks">%1$d רצועות • %2$s</string>
+    <string name="sheet_range">טווח רצועות</string>
+    <string name="sheet_range_hint">ריק = הכול, למשל 1-10 או 2,5,8</string>
+    <string name="sheet_audio_format">פורמט שמע</string>
+    <string name="sheet_original_note">זרם השמע המקורי יורד ללא קידוד מחדש.</string>
+    <string name="sheet_lossless_note">הפורמט הזה ללא אובדן, לכן קצב הסיביות לא חל.</string>
+    <string name="sheet_cover_title">הוספת עטיפה</string>
+    <string name="sheet_cover_sub">הטמעת עטיפת השיר בקובץ</string>
+    <string name="sheet_tags_title">הוספת תגיות</string>
+    <string name="sheet_tags_sub">כותרת, אמן ואלבום</string>
+    <string name="sheet_add_queue">הוספה לתור (%1$d)</string>
+
+    <string name="folder_title">בחירת תיקיית הורדות</string>
+    <string name="folder_parent">תיקיית האב</string>
+    <string name="folder_choose_this">בחירת התיקייה הזו</string>
+
+    <string name="boot_failed">האתחול נכשל: %1$s</string>
+    <string name="loading_title">קורא קישור</string>
+    <string name="loading_body">מביא מידע על הפלייליסט…</string>
+
+    <string name="error_empty_link">הקישור לא יכול להיות ריק</string>
+    <string name="error_invalid_link">הזינו קישור תקין (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp לא מוכן</string>
+    <string name="error_folder_not_writable">לא ניתן לכתוב בתיקיית ההורדות</string>
+    <string name="error_link_unreadable">לא ניתן לקרוא את הקישור</string>
+    <string name="error_video_info">לא ניתן לקבל מידע על הסרטון</string>
+    <string name="error_no_tracks">לא נמצאו רצועות להורדה בפלייליסט</string>
+    <string name="playlist_default">פלייליסט</string>
+    <string name="single_default">רצועה בודדת</string>
+    <string name="unknown_track">רצועה לא ידועה</string>
+
+    <string name="notif_channel_downloads">הורדות</string>
+    <string name="notif_channel_downloads_desc">הורדות מוזיקה פעילות</string>
+    <string name="notif_channel_events">התראות</string>
+    <string name="notif_channel_events_desc">הורדות שהושלמו והתראות</string>
+    <string name="notif_paused">מושהה • %1$d בתור</string>
+    <string name="notif_running_queue">%1$d מורדים • %2$d בתור</string>
+    <string name="notif_running">%1$d שירים מורדים</string>
+    <string name="notif_queued">%1$d שירים בתור</string>
+    <string name="notif_pause">השהיה</string>
+    <string name="notif_resume">המשך</string>
+    <string name="notif_cancel">ביטול</string>
+    <string name="notif_batch_done">%1$d הושלמו</string>
+    <string name="notif_batch_failed">%1$d נכשלו</string>
+    <string name="notif_batch_canceled">%1$d בוטלו</string>
+    <string name="notif_batch_finished">%1$d פעולות הסתיימו</string>
+    <string name="notif_complete_title">ההורדה הושלמה</string>
+    <string name="notif_finished_title">הסתיים</string>
+
+    <string name="duration_min_sec">%1$d דק׳ %2$d שנ׳</string>
+    <string name="duration_sec">%1$d שנ׳</string>
+</resources>

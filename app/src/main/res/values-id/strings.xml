@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Beranda</string>
+    <string name="nav_downloads">Unduhan</string>
+    <string name="nav_settings">Pengaturan</string>
+
+    <string name="common_cancel">Batal</string>
+    <string name="common_close">Tutup</string>
+    <string name="common_save">Simpan</string>
+    <string name="common_delete">Hapus</string>
+    <string name="common_update">Perbarui</string>
+    <string name="common_default">Bawaan</string>
+    <string name="common_all">Semua</string>
+    <string name="common_retry">Coba lagi</string>
+    <string name="common_clear">Bersihkan</string>
+    <string name="common_change">Ubah</string>
+    <string name="common_open">Buka</string>
+    <string name="common_share">Bagikan</string>
+    <string name="common_unknown">Tidak diketahui</string>
+
+    <string name="home_subtitle">Unduh playlist Anda, dengarkan offline</string>
+    <string name="home_storage_banner">Izin penyimpanan diperlukan untuk menyimpan musik ke folder yang dipilih.</string>
+    <string name="home_grant">Izinkan</string>
+    <string name="home_paste_title">Tempel tautan</string>
+    <string name="home_link_hint">Tautan video atau playlist YouTube / YouTube Music</string>
+    <string name="home_paste">Tempel</string>
+    <string name="home_list">Tampilkan</string>
+    <string name="home_preparing">Menyiapkan…</string>
+    <string name="home_recent">Baru diunduh</string>
+    <string name="home_no_downloads">Belum ada unduhan</string>
+    <string name="home_add_first">Tambahkan lagu pertama lewat kolom tautan di atas.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • memperbarui…</string>
+    <string name="home_ytdlp_loading">menyiapkan</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Playlist</string>
+    <string name="home_chip_cover">Sampul</string>
+    <string name="home_chip_tags">Tag</string>
+    <string name="home_chip_folder">Folder Anda</string>
+
+    <string name="downloads_title">Unduhan</string>
+    <string name="downloads_sub_running">%1$d mengunduh • %2$d dalam antrean</string>
+    <string name="downloads_sub_done">%1$d lagu selesai</string>
+    <string name="downloads_sub_default">Antrean dan riwayat unduhan</string>
+    <string name="downloads_pause">Jeda</string>
+    <string name="downloads_resume">Lanjutkan</string>
+    <string name="downloads_tab_active">Aktif (%1$d)</string>
+    <string name="downloads_tab_history">Riwayat (%1$d)</string>
+    <string name="downloads_queue_empty">Antrean kosong</string>
+    <string name="downloads_history_empty">Riwayat kosong</string>
+    <string name="downloads_queue_hint">Tambahkan playlist atau lagu dari beranda.</string>
+    <string name="downloads_history_hint">Unduhan yang selesai akan muncul di sini.</string>
+    <string name="downloads_retry_failed">Coba lagi yang gagal</string>
+    <string name="downloads_cancel_cd">Batal</string>
+    <string name="downloads_retry_cd">Coba lagi</string>
+    <string name="downloads_delete_cd">Hapus</string>
+    <string name="downloads_status_queued">Dalam antrean</string>
+    <string name="downloads_status_downloading">Mengunduh</string>
+    <string name="downloads_status_queued_fmt">Dalam antrean • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Gagal • %1$s</string>
+    <string name="downloads_status_canceled">Dibatalkan</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Tidak dapat membuka file</string>
+    <string name="toast_share_music">Bagikan musik</string>
+    <string name="toast_share_failed">Tidak dapat membuka berbagi</string>
+
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_subtitle">Penyimpanan, format, dan mesin</string>
+    <string name="settings_storage">Penyimpanan</string>
+    <string name="settings_download_folder">Folder unduhan</string>
+    <string name="settings_choose_folder">Pilih folder</string>
+    <string name="settings_storage_warning">Akses ke semua file tidak diberikan. Unduhan disimpan di folder aplikasi.</string>
+    <string name="settings_download">Unduhan</string>
+    <string name="settings_default_format">Format bawaan</string>
+    <string name="settings_bitrate">Bitrate</string>
+    <string name="settings_bitrate_not_applicable">Format yang dipilih lossless atau asli; bitrate tidak berlaku.</string>
+    <string name="settings_embed_cover">Sematkan sampul</string>
+    <string name="settings_embed_cover_sub">Menambahkan sampul lagu ke file yang diunduh</string>
+    <string name="settings_embed_tags">Sematkan tag</string>
+    <string name="settings_embed_tags_sub">Menulis metadata judul dan artis</string>
+    <string name="settings_performance">Performa</string>
+    <string name="settings_concurrency">Unduhan bersamaan</string>
+    <string name="settings_concurrency_sub">Jumlah trek yang diproses sekaligus</string>
+    <string name="settings_auto_update">Perbarui yt-dlp otomatis</string>
+    <string name="settings_auto_update_sub">Diperiksa sekali sehari</string>
+    <string name="settings_ytdlp_version">Versi yt-dlp</string>
+    <string name="settings_advanced">Lanjutan</string>
+    <string name="settings_filename_template">Templat nama file</string>
+    <string name="settings_simplify">Sederhanakan nama file</string>
+    <string name="settings_simplify_sub">Mengubah karakter non-ASCII menjadi ASCII</string>
+    <string name="settings_proxy">Proxy (opsional)</string>
+    <string name="settings_clear_history">Hapus riwayat unduhan</string>
+    <string name="settings_about">Tentang</string>
+    <string name="settings_version">Versi</string>
+    <string name="settings_github">Repositori GitHub</string>
+    <string name="settings_about_text">Aplikasi ini dibuat untuk pengarsipan pribadi. Hormati hak dan ketentuan platform atas konten yang Anda unduh.</string>
+    <string name="settings_format_dialog">Format bawaan</string>
+    <string name="settings_clear_dialog_title">Hapus riwayat</string>
+    <string name="settings_clear_dialog_body">Catatan selesai, gagal, dan dibatalkan dihapus dari daftar. File yang diunduh tidak dihapus dari perangkat.</string>
+    <string name="settings_language">Bahasa</string>
+    <string name="settings_language_sub">Bahasa tampilan aplikasi</string>
+    <string name="language_system">Bahasa sistem</string>
+
+    <string name="format_original">Asli</string>
+    <string name="format_original_desc">Asli — tanpa pengodean ulang</string>
+    <string name="format_mp3_desc">MP3 — kompatibilitas universal</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — efisien</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — lossless</string>
+    <string name="format_wav_desc">WAV — tidak dikompresi</string>
+
+    <string name="sheet_playlist">PLAYLIST</string>
+    <string name="sheet_single_track">TREK TUNGGAL</string>
+    <string name="sheet_single_song">Trek tunggal</string>
+    <string name="sheet_tracks">%1$d trek • %2$s</string>
+    <string name="sheet_range">Rentang trek</string>
+    <string name="sheet_range_hint">Kosong = semua, mis. 1-10 atau 2,5,8</string>
+    <string name="sheet_audio_format">Format audio</string>
+    <string name="sheet_original_note">Aliran audio asli diunduh tanpa pengodean ulang.</string>
+    <string name="sheet_lossless_note">Format ini lossless, jadi bitrate tidak berlaku.</string>
+    <string name="sheet_cover_title">Tambahkan sampul</string>
+    <string name="sheet_cover_sub">Sematkan sampul lagu ke file</string>
+    <string name="sheet_tags_title">Tambahkan tag</string>
+    <string name="sheet_tags_sub">Judul, artis, dan album</string>
+    <string name="sheet_add_queue">Tambahkan ke antrean (%1$d)</string>
+
+    <string name="folder_title">Pilih folder unduhan</string>
+    <string name="folder_parent">Folder induk</string>
+    <string name="folder_choose_this">Pilih folder ini</string>
+
+    <string name="boot_failed">Inisialisasi gagal: %1$s</string>
+    <string name="loading_title">Membaca tautan</string>
+    <string name="loading_body">Mengambil informasi playlist…</string>
+
+    <string name="error_empty_link">Tautan tidak boleh kosong</string>
+    <string name="error_invalid_link">Masukkan tautan yang valid (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp belum siap</string>
+    <string name="error_folder_not_writable">Tidak dapat menulis ke folder unduhan</string>
+    <string name="error_link_unreadable">Tidak dapat membaca tautan</string>
+    <string name="error_video_info">Tidak dapat memperoleh informasi video</string>
+    <string name="error_no_tracks">Tidak ada trek yang dapat diunduh di playlist</string>
+    <string name="playlist_default">Playlist</string>
+    <string name="single_default">Trek tunggal</string>
+    <string name="unknown_track">Trek tidak dikenal</string>
+
+    <string name="notif_channel_downloads">Unduhan</string>
+    <string name="notif_channel_downloads_desc">Unduhan musik yang sedang berjalan</string>
+    <string name="notif_channel_events">Notifikasi</string>
+    <string name="notif_channel_events_desc">Unduhan selesai dan peringatan</string>
+    <string name="notif_paused">Dijeda • %1$d dalam antrean</string>
+    <string name="notif_running_queue">%1$d mengunduh • %2$d dalam antrean</string>
+    <string name="notif_running">%1$d lagu sedang diunduh</string>
+    <string name="notif_queued">%1$d lagu dalam antrean</string>
+    <string name="notif_pause">Jeda</string>
+    <string name="notif_resume">Lanjutkan</string>
+    <string name="notif_cancel">Batal</string>
+    <string name="notif_batch_done">%1$d selesai</string>
+    <string name="notif_batch_failed">%1$d gagal</string>
+    <string name="notif_batch_canceled">%1$d dibatalkan</string>
+    <string name="notif_batch_finished">%1$d operasi selesai</string>
+    <string name="notif_complete_title">Unduhan selesai</string>
+    <string name="notif_finished_title">Selesai</string>
+
+    <string name="duration_min_sec">%1$d mnt %2$d dtk</string>
+    <string name="duration_sec">%1$d dtk</string>
+</resources>

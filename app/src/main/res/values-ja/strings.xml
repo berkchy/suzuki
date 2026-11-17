@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">ホーム</string>
+    <string name="nav_downloads">ダウンロード</string>
+    <string name="nav_settings">設定</string>
+
+    <string name="common_cancel">キャンセル</string>
+    <string name="common_close">閉じる</string>
+    <string name="common_save">保存</string>
+    <string name="common_delete">削除</string>
+    <string name="common_update">更新</string>
+    <string name="common_default">デフォルト</string>
+    <string name="common_all">すべて</string>
+    <string name="common_retry">再試行</string>
+    <string name="common_clear">クリア</string>
+    <string name="common_change">変更</string>
+    <string name="common_open">開く</string>
+    <string name="common_share">共有</string>
+    <string name="common_unknown">不明</string>
+
+    <string name="home_subtitle">プレイリストをダウンロードしてオフラインで再生</string>
+    <string name="home_storage_banner">選択したフォルダに音楽を保存するにはストレージ権限が必要です。</string>
+    <string name="home_grant">許可</string>
+    <string name="home_paste_title">リンクを貼り付け</string>
+    <string name="home_link_hint">YouTube / YouTube Music の動画またはプレイリストのリンク</string>
+    <string name="home_paste">貼り付け</string>
+    <string name="home_list">一覧表示</string>
+    <string name="home_preparing">準備中…</string>
+    <string name="home_recent">最近のダウンロード</string>
+    <string name="home_no_downloads">ダウンロードはまだありません</string>
+    <string name="home_add_first">上のリンク欄から最初の曲を追加してください。</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • 更新中…</string>
+    <string name="home_ytdlp_loading">準備中</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">プレイリスト</string>
+    <string name="home_chip_cover">カバー</string>
+    <string name="home_chip_tags">タグ</string>
+    <string name="home_chip_folder">保存先フォルダ</string>
+
+    <string name="downloads_title">ダウンロード</string>
+    <string name="downloads_sub_running">%1$d 件ダウンロード中 • %2$d 件待機中</string>
+    <string name="downloads_sub_done">%1$d 曲完了</string>
+    <string name="downloads_sub_default">キューとダウンロード履歴</string>
+    <string name="downloads_pause">一時停止</string>
+    <string name="downloads_resume">再開</string>
+    <string name="downloads_tab_active">アクティブ (%1$d)</string>
+    <string name="downloads_tab_history">履歴 (%1$d)</string>
+    <string name="downloads_queue_empty">キューは空です</string>
+    <string name="downloads_history_empty">履歴は空です</string>
+    <string name="downloads_queue_hint">ホーム画面からプレイリストまたは曲を追加してください。</string>
+    <string name="downloads_history_hint">完了したダウンロードがここに表示されます。</string>
+    <string name="downloads_retry_failed">失敗を再試行</string>
+    <string name="downloads_cancel_cd">キャンセル</string>
+    <string name="downloads_retry_cd">再試行</string>
+    <string name="downloads_delete_cd">削除</string>
+    <string name="downloads_status_queued">待機中</string>
+    <string name="downloads_status_downloading">ダウンロード中</string>
+    <string name="downloads_status_queued_fmt">待機中 • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">失敗 • %1$s</string>
+    <string name="downloads_status_canceled">キャンセル済み</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">ファイルを開けませんでした</string>
+    <string name="toast_share_music">音楽を共有</string>
+    <string name="toast_share_failed">共有を開けませんでした</string>
+
+    <string name="settings_title">設定</string>
+    <string name="settings_subtitle">ストレージ、形式、エンジン</string>
+    <string name="settings_storage">ストレージ</string>
+    <string name="settings_download_folder">ダウンロード先フォルダ</string>
+    <string name="settings_choose_folder">フォルダを選択</string>
+    <string name="settings_storage_warning">すべてのファイルへのアクセスが許可されていません。ダウンロードはアプリ専用フォルダに保存されます。</string>
+    <string name="settings_download">ダウンロード</string>
+    <string name="settings_default_format">デフォルト形式</string>
+    <string name="settings_bitrate">ビットレート</string>
+    <string name="settings_bitrate_not_applicable">選択した形式は可逆またはオリジナルのため、ビットレートは適用されません。</string>
+    <string name="settings_embed_cover">カバーを埋め込む</string>
+    <string name="settings_embed_cover_sub">ダウンロードしたファイルに曲のカバーを追加します</string>
+    <string name="settings_embed_tags">タグを埋め込む</string>
+    <string name="settings_embed_tags_sub">タイトルとアーティストのメタデータを書き込みます</string>
+    <string name="settings_performance">パフォーマンス</string>
+    <string name="settings_concurrency">同時ダウンロード数</string>
+    <string name="settings_concurrency_sub">同時に処理するトラック数</string>
+    <string name="settings_auto_update">yt-dlp を自動更新</string>
+    <string name="settings_auto_update_sub">1日1回確認します</string>
+    <string name="settings_ytdlp_version">yt-dlp のバージョン</string>
+    <string name="settings_advanced">詳細設定</string>
+    <string name="settings_filename_template">ファイル名テンプレート</string>
+    <string name="settings_simplify">ファイル名を簡素化</string>
+    <string name="settings_simplify_sub">非 ASCII 文字を ASCII に変換します</string>
+    <string name="settings_proxy">プロキシ（任意）</string>
+    <string name="settings_clear_history">ダウンロード履歴をクリア</string>
+    <string name="settings_about">アプリについて</string>
+    <string name="settings_version">バージョン</string>
+    <string name="settings_github">GitHub リポジトリ</string>
+    <string name="settings_about_text">このアプリは個人用アーカイブのために作られました。ダウンロードするコンテンツの権利とプラットフォームの規約を尊重してください。</string>
+    <string name="settings_format_dialog">デフォルト形式</string>
+    <string name="settings_clear_dialog_title">履歴をクリア</string>
+    <string name="settings_clear_dialog_body">完了・失敗・キャンセルされた記録が一覧から削除されます。ダウンロード済みのファイルは端末から削除されません。</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_language_sub">アプリの表示言語</string>
+    <string name="language_system">システムの言語</string>
+
+    <string name="format_original">オリジナル</string>
+    <string name="format_original_desc">オリジナル — 再エンコードなし</string>
+    <string name="format_mp3_desc">MP3 — 幅広い互換性</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — 高効率</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — 可逆圧縮</string>
+    <string name="format_wav_desc">WAV — 非圧縮</string>
+
+    <string name="sheet_playlist">プレイリスト</string>
+    <string name="sheet_single_track">単一トラック</string>
+    <string name="sheet_single_song">単一トラック</string>
+    <string name="sheet_tracks">%1$d トラック • %2$s</string>
+    <string name="sheet_range">トラック範囲</string>
+    <string name="sheet_range_hint">空 = すべて、例: 1-10 または 2,5,8</string>
+    <string name="sheet_audio_format">音声形式</string>
+    <string name="sheet_original_note">元の音声ストリームを再エンコードせずにダウンロードします。</string>
+    <string name="sheet_lossless_note">この形式は可逆のため、ビットレートは適用されません。</string>
+    <string name="sheet_cover_title">カバーを追加</string>
+    <string name="sheet_cover_sub">曲のカバーをファイルに埋め込む</string>
+    <string name="sheet_tags_title">タグを追加</string>
+    <string name="sheet_tags_sub">タイトル、アーティスト、アルバム</string>
+    <string name="sheet_add_queue">キューに追加 (%1$d)</string>
+
+    <string name="folder_title">ダウンロード先フォルダを選択</string>
+    <string name="folder_parent">親フォルダ</string>
+    <string name="folder_choose_this">このフォルダを選択</string>
+
+    <string name="boot_failed">初期化に失敗しました: %1$s</string>
+    <string name="loading_title">リンクを読み取り中</string>
+    <string name="loading_body">プレイリスト情報を取得中…</string>
+
+    <string name="error_empty_link">リンクを空にできません</string>
+    <string name="error_invalid_link">有効なリンクを入力してください (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp の準備ができていません</string>
+    <string name="error_folder_not_writable">ダウンロード先フォルダに書き込めません</string>
+    <string name="error_link_unreadable">リンクを読み取れませんでした</string>
+    <string name="error_video_info">動画情報を取得できませんでした</string>
+    <string name="error_no_tracks">プレイリストにダウンロード可能なトラックがありません</string>
+    <string name="playlist_default">プレイリスト</string>
+    <string name="single_default">単一トラック</string>
+    <string name="unknown_track">不明なトラック</string>
+
+    <string name="notif_channel_downloads">ダウンロード</string>
+    <string name="notif_channel_downloads_desc">進行中の音楽ダウンロード</string>
+    <string name="notif_channel_events">通知</string>
+    <string name="notif_channel_events_desc">完了したダウンロードと通知</string>
+    <string name="notif_paused">一時停止中 • %1$d 件待機</string>
+    <string name="notif_running_queue">%1$d 件ダウンロード中 • %2$d 件待機</string>
+    <string name="notif_running">%1$d 曲ダウンロード中</string>
+    <string name="notif_queued">%1$d 曲待機中</string>
+    <string name="notif_pause">一時停止</string>
+    <string name="notif_resume">再開</string>
+    <string name="notif_cancel">キャンセル</string>
+    <string name="notif_batch_done">%1$d 件完了</string>
+    <string name="notif_batch_failed">%1$d 件失敗</string>
+    <string name="notif_batch_canceled">%1$d 件キャンセル</string>
+    <string name="notif_batch_finished">%1$d 件の処理が終了</string>
+    <string name="notif_complete_title">ダウンロード完了</string>
+    <string name="notif_finished_title">完了</string>
+
+    <string name="duration_min_sec">%1$d 分 %2$d 秒</string>
+    <string name="duration_sec">%1$d 秒</string>
+</resources>

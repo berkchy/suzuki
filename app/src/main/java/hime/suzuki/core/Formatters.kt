@@ -1,5 +1,7 @@
 package hime.suzuki.core
 
+import android.content.Context
+import hime.suzuki.R
 import java.util.Locale
 
 object Fmt {
@@ -9,11 +11,15 @@ object Fmt {
         return "$value%"
     }
 
-    fun eta(seconds: Long): String {
+    fun eta(context: Context, seconds: Long): String {
         if (seconds <= 0L) return ""
         val minutes = seconds / 60
         val secs = seconds % 60
-        return if (minutes > 0L) "$minutes dk $secs sn" else "$secs sn"
+        return if (minutes > 0L) {
+            context.getString(R.string.duration_min_sec, minutes, secs)
+        } else {
+            context.getString(R.string.duration_sec, secs)
+        }
     }
 
     fun humanSize(bytes: Long): String = Storage.humanSize(bytes)
@@ -31,8 +37,8 @@ object Fmt {
         }
     }
 
-    fun formatName(format: String): String = when (format) {
-        "original" -> "Orijinal"
+    fun formatName(context: Context, format: String): String = when (format) {
+        "original" -> context.getString(R.string.format_original)
         "mp3" -> "MP3"
         "m4a" -> "M4A"
         "opus" -> "OPUS"
@@ -44,7 +50,7 @@ object Fmt {
 
     fun date(timestamp: Long): String {
         if (timestamp <= 0L) return "-"
-        val fmt = java.text.SimpleDateFormat("dd MMM HH:mm", Locale("tr"))
+        val fmt = java.text.SimpleDateFormat("dd MMM HH:mm", Locale.getDefault())
         return fmt.format(java.util.Date(timestamp))
     }
 
@@ -54,7 +60,7 @@ object Fmt {
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .lastOrNull()
-            ?: "Bilinmeyen hata"
+            ?: "Unknown error"
         return line.replace("ERROR:", "").trim().take(300)
     }
 }

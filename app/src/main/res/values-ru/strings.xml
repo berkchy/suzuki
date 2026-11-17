@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Главная</string>
+    <string name="nav_downloads">Загрузки</string>
+    <string name="nav_settings">Настройки</string>
+
+    <string name="common_cancel">Отмена</string>
+    <string name="common_close">Закрыть</string>
+    <string name="common_save">Сохранить</string>
+    <string name="common_delete">Удалить</string>
+    <string name="common_update">Обновить</string>
+    <string name="common_default">По умолчанию</string>
+    <string name="common_all">Все</string>
+    <string name="common_retry">Повторить</string>
+    <string name="common_clear">Очистить</string>
+    <string name="common_change">Изменить</string>
+    <string name="common_open">Открыть</string>
+    <string name="common_share">Поделиться</string>
+    <string name="common_unknown">Неизвестно</string>
+
+    <string name="home_subtitle">Скачивайте плейлист и слушайте офлайн</string>
+    <string name="home_storage_banner">Для сохранения музыки в выбранную папку нужно разрешение на доступ к хранилищу.</string>
+    <string name="home_grant">Разрешить</string>
+    <string name="home_paste_title">Вставьте ссылку</string>
+    <string name="home_link_hint">Ссылка на видео или плейлист YouTube / YouTube Music</string>
+    <string name="home_paste">Вставить</string>
+    <string name="home_list">Показать</string>
+    <string name="home_preparing">Подготовка…</string>
+    <string name="home_recent">Недавно скачано</string>
+    <string name="home_no_downloads">Загрузок пока нет</string>
+    <string name="home_add_first">Добавьте первую песню через поле ссылки выше.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • обновление…</string>
+    <string name="home_ytdlp_loading">подготовка</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Плейлист</string>
+    <string name="home_chip_cover">Обложка</string>
+    <string name="home_chip_tags">Теги</string>
+    <string name="home_chip_folder">Ваша папка</string>
+
+    <string name="downloads_title">Загрузки</string>
+    <string name="downloads_sub_running">%1$d скачивается • %2$d в очереди</string>
+    <string name="downloads_sub_done">%1$d песен завершено</string>
+    <string name="downloads_sub_default">Очередь и история загрузок</string>
+    <string name="downloads_pause">Пауза</string>
+    <string name="downloads_resume">Продолжить</string>
+    <string name="downloads_tab_active">Активные (%1$d)</string>
+    <string name="downloads_tab_history">История (%1$d)</string>
+    <string name="downloads_queue_empty">Очередь пуста</string>
+    <string name="downloads_history_empty">История пуста</string>
+    <string name="downloads_queue_hint">Добавьте плейлист или песню на главном экране.</string>
+    <string name="downloads_history_hint">Завершённые загрузки появятся здесь.</string>
+    <string name="downloads_retry_failed">Повторить неудачные</string>
+    <string name="downloads_cancel_cd">Отменить</string>
+    <string name="downloads_retry_cd">Повторить</string>
+    <string name="downloads_delete_cd">Удалить</string>
+    <string name="downloads_status_queued">В очереди</string>
+    <string name="downloads_status_downloading">Скачивание</string>
+    <string name="downloads_status_queued_fmt">В очереди • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Ошибка • %1$s</string>
+    <string name="downloads_status_canceled">Отменено</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Не удалось открыть файл</string>
+    <string name="toast_share_music">Поделиться музыкой</string>
+    <string name="toast_share_failed">Не удалось открыть меню «Поделиться»</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_subtitle">Хранилище, формат и движок</string>
+    <string name="settings_storage">Хранилище</string>
+    <string name="settings_download_folder">Папка загрузок</string>
+    <string name="settings_choose_folder">Выбрать папку</string>
+    <string name="settings_storage_warning">Доступ ко всем файлам не предоставлен. Загрузки сохраняются в папку приложения.</string>
+    <string name="settings_download">Загрузка</string>
+    <string name="settings_default_format">Формат по умолчанию</string>
+    <string name="settings_bitrate">Битрейт</string>
+    <string name="settings_bitrate_not_applicable">Выбранный формат без потерь или оригинальный; битрейт не применяется.</string>
+    <string name="settings_embed_cover">Встраивать обложку</string>
+    <string name="settings_embed_cover_sub">Добавляет обложку песни в скачанный файл</string>
+    <string name="settings_embed_tags">Встраивать теги</string>
+    <string name="settings_embed_tags_sub">Записывает метаданные названия и исполнителя</string>
+    <string name="settings_performance">Производительность</string>
+    <string name="settings_concurrency">Одновременные загрузки</string>
+    <string name="settings_concurrency_sub">Сколько треков обрабатывается одновременно</string>
+    <string name="settings_auto_update">Обновлять yt-dlp автоматически</string>
+    <string name="settings_auto_update_sub">Проверка раз в день</string>
+    <string name="settings_ytdlp_version">Версия yt-dlp</string>
+    <string name="settings_advanced">Дополнительно</string>
+    <string name="settings_filename_template">Шаблон имени файла</string>
+    <string name="settings_simplify">Упрощать имена файлов</string>
+    <string name="settings_simplify_sub">Преобразует не-ASCII символы в ASCII</string>
+    <string name="settings_proxy">Прокси (необязательно)</string>
+    <string name="settings_clear_history">Очистить историю загрузок</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_version">Версия</string>
+    <string name="settings_github">Репозиторий GitHub</string>
+    <string name="settings_about_text">Приложение создано для личного архивирования. Уважайте права и условия платформ на скачиваемый контент.</string>
+    <string name="settings_format_dialog">Формат по умолчанию</string>
+    <string name="settings_clear_dialog_title">Очистить историю</string>
+    <string name="settings_clear_dialog_body">Завершённые, неудачные и отменённые записи удаляются из списка. Скачанные файлы не удаляются с устройства.</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_sub">Язык интерфейса приложения</string>
+    <string name="language_system">Системный язык</string>
+
+    <string name="format_original">Оригинал</string>
+    <string name="format_original_desc">Оригинал — без перекодирования</string>
+    <string name="format_mp3_desc">MP3 — универсальная совместимость</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — эффективный</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — без потерь</string>
+    <string name="format_wav_desc">WAV — без сжатия</string>
+
+    <string name="sheet_playlist">ПЛЕЙЛИСТ</string>
+    <string name="sheet_single_track">ОДИН ТРЕК</string>
+    <string name="sheet_single_song">Один трек</string>
+    <string name="sheet_tracks">%1$d треков • %2$s</string>
+    <string name="sheet_range">Диапазон треков</string>
+    <string name="sheet_range_hint">Пусто = все, напр. 1-10 или 2,5,8</string>
+    <string name="sheet_audio_format">Аудиоформат</string>
+    <string name="sheet_original_note">Оригинальный аудиопоток скачивается без перекодирования.</string>
+    <string name="sheet_lossless_note">Этот формат без потерь, поэтому битрейт не применяется.</string>
+    <string name="sheet_cover_title">Добавить обложку</string>
+    <string name="sheet_cover_sub">Встроить обложку песни в файл</string>
+    <string name="sheet_tags_title">Добавить теги</string>
+    <string name="sheet_tags_sub">Название, исполнитель и альбом</string>
+    <string name="sheet_add_queue">Добавить в очередь (%1$d)</string>
+
+    <string name="folder_title">Выбор папки загрузок</string>
+    <string name="folder_parent">Родительская папка</string>
+    <string name="folder_choose_this">Выбрать эту папку</string>
+
+    <string name="boot_failed">Ошибка инициализации: %1$s</string>
+    <string name="loading_title">Чтение ссылки</string>
+    <string name="loading_body">Получение информации о плейлисте…</string>
+
+    <string name="error_empty_link">Ссылка не может быть пустой</string>
+    <string name="error_invalid_link">Введите корректную ссылку (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp не готов</string>
+    <string name="error_folder_not_writable">Нет доступа для записи в папку загрузок</string>
+    <string name="error_link_unreadable">Не удалось прочитать ссылку</string>
+    <string name="error_video_info">Не удалось получить информацию о видео</string>
+    <string name="error_no_tracks">В плейлисте не найдено треков для загрузки</string>
+    <string name="playlist_default">Плейлист</string>
+    <string name="single_default">Один трек</string>
+    <string name="unknown_track">Неизвестный трек</string>
+
+    <string name="notif_channel_downloads">Загрузки</string>
+    <string name="notif_channel_downloads_desc">Текущие загрузки музыки</string>
+    <string name="notif_channel_events">Уведомления</string>
+    <string name="notif_channel_events_desc">Завершённые загрузки и оповещения</string>
+    <string name="notif_paused">Пауза • %1$d в очереди</string>
+    <string name="notif_running_queue">%1$d скачивается • %2$d в очереди</string>
+    <string name="notif_running">%1$d песен скачивается</string>
+    <string name="notif_queued">%1$d песен в очереди</string>
+    <string name="notif_pause">Пауза</string>
+    <string name="notif_resume">Продолжить</string>
+    <string name="notif_cancel">Отмена</string>
+    <string name="notif_batch_done">%1$d завершено</string>
+    <string name="notif_batch_failed">%1$d с ошибкой</string>
+    <string name="notif_batch_canceled">%1$d отменено</string>
+    <string name="notif_batch_finished">%1$d операций завершено</string>
+    <string name="notif_complete_title">Загрузка завершена</string>
+    <string name="notif_finished_title">Завершено</string>
+
+    <string name="duration_min_sec">%1$d мин %2$d с</string>
+    <string name="duration_sec">%1$d с</string>
+</resources>

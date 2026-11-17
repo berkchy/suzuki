@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Головна</string>
+    <string name="nav_downloads">Завантаження</string>
+    <string name="nav_settings">Налаштування</string>
+
+    <string name="common_cancel">Скасувати</string>
+    <string name="common_close">Закрити</string>
+    <string name="common_save">Зберегти</string>
+    <string name="common_delete">Видалити</string>
+    <string name="common_update">Оновити</string>
+    <string name="common_default">За замовчуванням</string>
+    <string name="common_all">Усі</string>
+    <string name="common_retry">Повторити</string>
+    <string name="common_clear">Очистити</string>
+    <string name="common_change">Змінити</string>
+    <string name="common_open">Відкрити</string>
+    <string name="common_share">Поділитися</string>
+    <string name="common_unknown">Невідомо</string>
+
+    <string name="home_subtitle">Завантажуйте плейлист і слухайте офлайн</string>
+    <string name="home_storage_banner">Щоб зберігати музику у вибраній папці, потрібен дозвіл на доступ до сховища.</string>
+    <string name="home_grant">Дозволити</string>
+    <string name="home_paste_title">Вставте посилання</string>
+    <string name="home_link_hint">Посилання на відео або плейлист YouTube / YouTube Music</string>
+    <string name="home_paste">Вставити</string>
+    <string name="home_list">Показати</string>
+    <string name="home_preparing">Підготовка…</string>
+    <string name="home_recent">Нещодавно завантажено</string>
+    <string name="home_no_downloads">Завантажень ще немає</string>
+    <string name="home_add_first">Додайте першу пісню через поле посилання вище.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • оновлення…</string>
+    <string name="home_ytdlp_loading">підготовка</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Плейлист</string>
+    <string name="home_chip_cover">Обкладинка</string>
+    <string name="home_chip_tags">Теги</string>
+    <string name="home_chip_folder">Ваша папка</string>
+
+    <string name="downloads_title">Завантаження</string>
+    <string name="downloads_sub_running">%1$d завантажується • %2$d у черзі</string>
+    <string name="downloads_sub_done">%1$d пісень завершено</string>
+    <string name="downloads_sub_default">Черга та історія завантажень</string>
+    <string name="downloads_pause">Пауза</string>
+    <string name="downloads_resume">Продовжити</string>
+    <string name="downloads_tab_active">Активні (%1$d)</string>
+    <string name="downloads_tab_history">Історія (%1$d)</string>
+    <string name="downloads_queue_empty">Черга порожня</string>
+    <string name="downloads_history_empty">Історія порожня</string>
+    <string name="downloads_queue_hint">Додайте плейлист або пісню на головному екрані.</string>
+    <string name="downloads_history_hint">Завершені завантаження з\'являться тут.</string>
+    <string name="downloads_retry_failed">Повторити невдалі</string>
+    <string name="downloads_cancel_cd">Скасувати</string>
+    <string name="downloads_retry_cd">Повторити</string>
+    <string name="downloads_delete_cd">Видалити</string>
+    <string name="downloads_status_queued">У черзі</string>
+    <string name="downloads_status_downloading">Завантаження</string>
+    <string name="downloads_status_queued_fmt">У черзі • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Помилка • %1$s</string>
+    <string name="downloads_status_canceled">Скасовано</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Не вдалося відкрити файл</string>
+    <string name="toast_share_music">Поділитися музикою</string>
+    <string name="toast_share_failed">Не вдалося відкрити меню поширення</string>
+
+    <string name="settings_title">Налаштування</string>
+    <string name="settings_subtitle">Сховище, формат і рушій</string>
+    <string name="settings_storage">Сховище</string>
+    <string name="settings_download_folder">Папка завантажень</string>
+    <string name="settings_choose_folder">Вибрати папку</string>
+    <string name="settings_storage_warning">Доступ до всіх файлів не надано. Завантаження зберігаються в папці застосунку.</string>
+    <string name="settings_download">Завантаження</string>
+    <string name="settings_default_format">Формат за замовчуванням</string>
+    <string name="settings_bitrate">Бітрейт</string>
+    <string name="settings_bitrate_not_applicable">Вибраний формат без втрат або оригінальний; бітрейт не застосовується.</string>
+    <string name="settings_embed_cover">Вбудовувати обкладинку</string>
+    <string name="settings_embed_cover_sub">Додає обкладинку пісні до завантаженого файлу</string>
+    <string name="settings_embed_tags">Вбудовувати теги</string>
+    <string name="settings_embed_tags_sub">Записує метадані назви та виконавця</string>
+    <string name="settings_performance">Продуктивність</string>
+    <string name="settings_concurrency">Одночасні завантаження</string>
+    <string name="settings_concurrency_sub">Скільки треків обробляється одночасно</string>
+    <string name="settings_auto_update">Оновлювати yt-dlp автоматично</string>
+    <string name="settings_auto_update_sub">Перевірка раз на день</string>
+    <string name="settings_ytdlp_version">Версія yt-dlp</string>
+    <string name="settings_advanced">Додатково</string>
+    <string name="settings_filename_template">Шаблон імені файлу</string>
+    <string name="settings_simplify">Спрощувати імена файлів</string>
+    <string name="settings_simplify_sub">Перетворює не-ASCII символи на ASCII</string>
+    <string name="settings_proxy">Проксі (необов\'язково)</string>
+    <string name="settings_clear_history">Очистити історію завантажень</string>
+    <string name="settings_about">Про застосунок</string>
+    <string name="settings_version">Версія</string>
+    <string name="settings_github">Репозиторій GitHub</string>
+    <string name="settings_about_text">Застосунок створено для особистого архівування. Поважайте права та умови платформ щодо завантаженого вмісту.</string>
+    <string name="settings_format_dialog">Формат за замовчуванням</string>
+    <string name="settings_clear_dialog_title">Очистити історію</string>
+    <string name="settings_clear_dialog_body">Завершені, невдалі та скасовані записи видаляються зі списку. Завантажені файли не видаляються з пристрою.</string>
+    <string name="settings_language">Мова</string>
+    <string name="settings_language_sub">Мова інтерфейсу застосунку</string>
+    <string name="language_system">Системна мова</string>
+
+    <string name="format_original">Оригінал</string>
+    <string name="format_original_desc">Оригінал — без перекодування</string>
+    <string name="format_mp3_desc">MP3 — універсальна сумісність</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — ефективний</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — без втрат</string>
+    <string name="format_wav_desc">WAV — без стиснення</string>
+
+    <string name="sheet_playlist">ПЛЕЙЛИСТ</string>
+    <string name="sheet_single_track">ОДИН ТРЕК</string>
+    <string name="sheet_single_song">Один трек</string>
+    <string name="sheet_tracks">%1$d треків • %2$s</string>
+    <string name="sheet_range">Діапазон треків</string>
+    <string name="sheet_range_hint">Порожньо = усі, напр. 1-10 або 2,5,8</string>
+    <string name="sheet_audio_format">Аудіоформат</string>
+    <string name="sheet_original_note">Оригінальний аудіопотік завантажується без перекодування.</string>
+    <string name="sheet_lossless_note">Цей формат без втрат, тому бітрейт не застосовується.</string>
+    <string name="sheet_cover_title">Додати обкладинку</string>
+    <string name="sheet_cover_sub">Вбудувати обкладинку пісні у файл</string>
+    <string name="sheet_tags_title">Додати теги</string>
+    <string name="sheet_tags_sub">Назва, виконавець і альбом</string>
+    <string name="sheet_add_queue">Додати до черги (%1$d)</string>
+
+    <string name="folder_title">Вибір папки завантажень</string>
+    <string name="folder_parent">Батьківська папка</string>
+    <string name="folder_choose_this">Вибрати цю папку</string>
+
+    <string name="boot_failed">Помилка ініціалізації: %1$s</string>
+    <string name="loading_title">Читання посилання</string>
+    <string name="loading_body">Отримання інформації про плейлист…</string>
+
+    <string name="error_empty_link">Посилання не може бути порожнім</string>
+    <string name="error_invalid_link">Введіть дійсне посилання (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp не готовий</string>
+    <string name="error_folder_not_writable">Немає доступу для запису в папку завантажень</string>
+    <string name="error_link_unreadable">Не вдалося прочитати посилання</string>
+    <string name="error_video_info">Не вдалося отримати інформацію про відео</string>
+    <string name="error_no_tracks">У плейлисті не знайдено треків для завантаження</string>
+    <string name="playlist_default">Плейлист</string>
+    <string name="single_default">Один трек</string>
+    <string name="unknown_track">Невідомий трек</string>
+
+    <string name="notif_channel_downloads">Завантаження</string>
+    <string name="notif_channel_downloads_desc">Поточні завантаження музики</string>
+    <string name="notif_channel_events">Сповіщення</string>
+    <string name="notif_channel_events_desc">Завершені завантаження та оповіщення</string>
+    <string name="notif_paused">Пауза • %1$d у черзі</string>
+    <string name="notif_running_queue">%1$d завантажується • %2$d у черзі</string>
+    <string name="notif_running">%1$d пісень завантажується</string>
+    <string name="notif_queued">%1$d пісень у черзі</string>
+    <string name="notif_pause">Пауза</string>
+    <string name="notif_resume">Продовжити</string>
+    <string name="notif_cancel">Скасувати</string>
+    <string name="notif_batch_done">%1$d завершено</string>
+    <string name="notif_batch_failed">%1$d з помилкою</string>
+    <string name="notif_batch_canceled">%1$d скасовано</string>
+    <string name="notif_batch_finished">%1$d операцій завершено</string>
+    <string name="notif_complete_title">Завантаження завершено</string>
+    <string name="notif_finished_title">Завершено</string>
+
+    <string name="duration_min_sec">%1$d хв %2$d с</string>
+    <string name="duration_sec">%1$d с</string>
+</resources>

@@ -36,6 +36,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
@@ -366,7 +367,7 @@ fun SelectDialog(
             }
         },
         confirmButton = {
-            TextButton(onClick = onDismiss) { Text("Kapat") }
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.common_close)) }
         },
     )
 }

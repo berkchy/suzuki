@@ -6,7 +6,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import hime.suzuki.R
 import hime.suzuki.SuzukiApp
+import hime.suzuki.core.AppLocale
 import hime.suzuki.core.Fmt
 import hime.suzuki.data.AppSettings
 import hime.suzuki.data.DownloadItem
@@ -58,18 +60,19 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun fetchUrl(url: String) {
         val clean = url.trim()
+        val strings = AppLocale.wrap(getApplication())
         if (clean.isBlank()) {
-            fetch = FetchState(error = "Bağlantı boş olamaz")
+            fetch = FetchState(error = strings.getString(R.string.error_empty_link))
             return
         }
         if (!clean.startsWith("http://") && !clean.startsWith("https://")) {
-            fetch = FetchState(error = "Geçerli bir bağlantı gir (http/https)")
+            fetch = FetchState(error = strings.getString(R.string.error_invalid_link))
             return
         }
         if (fetch.loading) return
         viewModelScope.launch {
             fetch = FetchState(loading = true)
-            val result = runCatching { YtdlpEngine.extract(clean) }
+            val result = runCatching { YtdlpEngine.extract(getApplication(), clean) }
             fetch = result.fold(
                 onSuccess = { FetchState(preview = it) },
                 onFailure = { FetchState(error = Fmt.errorMessage(it)) },

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Ana Sayfa</string>
+    <string name="nav_downloads">İndirmeler</string>
+    <string name="nav_settings">Ayarlar</string>
+
+    <string name="common_cancel">Vazgeç</string>
+    <string name="common_close">Kapat</string>
+    <string name="common_save">Kaydet</string>
+    <string name="common_delete">Sil</string>
+    <string name="common_update">Güncelle</string>
+    <string name="common_default">Varsayılan</string>
+    <string name="common_all">Tümü</string>
+    <string name="common_retry">Tekrar dene</string>
+    <string name="common_clear">Temizle</string>
+    <string name="common_change">Değiştir</string>
+    <string name="common_open">Aç</string>
+    <string name="common_share">Paylaş</string>
+    <string name="common_unknown">Bilinmiyor</string>
+
+    <string name="home_subtitle">Playlist\'ini indir, çevrimdışı dinle</string>
+    <string name="home_storage_banner">Müzikleri seçtiğin klasöre kaydetmek için depolama izni gerekiyor.</string>
+    <string name="home_grant">İzin ver</string>
+    <string name="home_paste_title">Bağlantıyı yapıştır</string>
+    <string name="home_link_hint">YouTube / YouTube Music video veya çalma listesi bağlantısı</string>
+    <string name="home_paste">Yapıştır</string>
+    <string name="home_list">Listele</string>
+    <string name="home_preparing">Hazırlanıyor…</string>
+    <string name="home_recent">Son indirilenler</string>
+    <string name="home_no_downloads">Henüz indirme yok</string>
+    <string name="home_add_first">İlk şarkını yukarıdaki bağlantı alanından ekle.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • güncelleniyor…</string>
+    <string name="home_ytdlp_loading">hazırlanıyor</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Playlist</string>
+    <string name="home_chip_cover">Kapak resmi</string>
+    <string name="home_chip_tags">Etiketler</string>
+    <string name="home_chip_folder">Kendi klasörün</string>
+
+    <string name="downloads_title">İndirmeler</string>
+    <string name="downloads_sub_running">%1$d indiriliyor • %2$d sırada</string>
+    <string name="downloads_sub_done">%1$d şarkı tamamlandı</string>
+    <string name="downloads_sub_default">Kuyruk ve indirme geçmişi</string>
+    <string name="downloads_pause">Duraklat</string>
+    <string name="downloads_resume">Devam et</string>
+    <string name="downloads_tab_active">Aktif (%1$d)</string>
+    <string name="downloads_tab_history">Geçmiş (%1$d)</string>
+    <string name="downloads_queue_empty">Kuyruk boş</string>
+    <string name="downloads_history_empty">Geçmiş boş</string>
+    <string name="downloads_queue_hint">Ana sayfadan bir playlist veya şarkı ekle.</string>
+    <string name="downloads_history_hint">Tamamlanan indirmeler burada görünecek.</string>
+    <string name="downloads_retry_failed">Başarısızları tekrar dene</string>
+    <string name="downloads_cancel_cd">İptal et</string>
+    <string name="downloads_retry_cd">Tekrar dene</string>
+    <string name="downloads_delete_cd">Sil</string>
+    <string name="downloads_status_queued">Sırada</string>
+    <string name="downloads_status_downloading">İndiriliyor</string>
+    <string name="downloads_status_queued_fmt">Sırada • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Başarısız • %1$s</string>
+    <string name="downloads_status_canceled">İptal edildi</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Dosya açılamadı</string>
+    <string name="toast_share_music">Müziği paylaş</string>
+    <string name="toast_share_failed">Paylaşım açılamadı</string>
+
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_subtitle">Depolama, format ve motor tercihleri</string>
+    <string name="settings_storage">Depolama</string>
+    <string name="settings_download_folder">İndirme klasörü</string>
+    <string name="settings_choose_folder">Klasör seç</string>
+    <string name="settings_storage_warning">Tüm dosyalara erişim izni yok. İndirmeler uygulamanın kendi klasörüne kaydedilir.</string>
+    <string name="settings_download">İndirme</string>
+    <string name="settings_default_format">Varsayılan format</string>
+    <string name="settings_bitrate">Bit hızı</string>
+    <string name="settings_bitrate_not_applicable">Seçili format kayıpsız veya orijinal; bit hızı uygulanmaz.</string>
+    <string name="settings_embed_cover">Kapak resmi göm</string>
+    <string name="settings_embed_cover_sub">İndirilen dosyaya şarkı kapağı eklenir</string>
+    <string name="settings_embed_tags">Etiketleri göm</string>
+    <string name="settings_embed_tags_sub">Başlık ve sanatçı bilgileri yazılır</string>
+    <string name="settings_performance">Performans</string>
+    <string name="settings_concurrency">Eşzamanlı indirme</string>
+    <string name="settings_concurrency_sub">Aynı anda işlenecek parça sayısı</string>
+    <string name="settings_auto_update">yt-dlp\'yi otomatik güncelle</string>
+    <string name="settings_auto_update_sub">Günde bir kez kontrol edilir</string>
+    <string name="settings_ytdlp_version">yt-dlp sürümü</string>
+    <string name="settings_advanced">Gelişmiş</string>
+    <string name="settings_filename_template">Dosya adı şablonu</string>
+    <string name="settings_simplify">Dosya adlarını sadeleştir</string>
+    <string name="settings_simplify_sub">Türkçe karakterleri ASCII\'ye çevirir</string>
+    <string name="settings_proxy">Proxy (isteğe bağlı)</string>
+    <string name="settings_clear_history">İndirme geçmişini temizle</string>
+    <string name="settings_about">Hakkında</string>
+    <string name="settings_version">Sürüm</string>
+    <string name="settings_github">GitHub deposu</string>
+    <string name="settings_about_text">Bu uygulama kişisel arşivleme amacıyla geliştirildi. İndirdiğin içeriklerin kullanım haklarına ve platform koşullarına saygı göster.</string>
+    <string name="settings_format_dialog">Varsayılan format</string>
+    <string name="settings_clear_dialog_title">Geçmişi temizle</string>
+    <string name="settings_clear_dialog_body">Tamamlanan, başarısız ve iptal edilen kayıtlar listeden silinir. İndirilen dosyalar cihazdan silinmez.</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_language_sub">Uygulama görüntüleme dili</string>
+    <string name="language_system">Sistem varsayılanı</string>
+
+    <string name="format_original">Orijinal</string>
+    <string name="format_original_desc">Orijinal — yeniden kodlama yok</string>
+    <string name="format_mp3_desc">MP3 — genel uyumluluk</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — verimli</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — kayıpsız</string>
+    <string name="format_wav_desc">WAV — sıkıştırmasız</string>
+
+    <string name="sheet_playlist">ÇALMA LİSTESİ</string>
+    <string name="sheet_single_track">TEK PARÇA</string>
+    <string name="sheet_single_song">Tek şarkı</string>
+    <string name="sheet_tracks">%1$d parça • %2$s</string>
+    <string name="sheet_range">Parça aralığı</string>
+    <string name="sheet_range_hint">Boş = tümü, örn: 1-10 veya 2,5,8</string>
+    <string name="sheet_audio_format">Ses formatı</string>
+    <string name="sheet_original_note">Orijinal ses akışı indirilir, yeniden kodlanmaz.</string>
+    <string name="sheet_lossless_note">Bu format kayıpsız olduğu için bit hızı uygulanmaz.</string>
+    <string name="sheet_cover_title">Kapak resmi ekle</string>
+    <string name="sheet_cover_sub">Şarkı kapağını dosyaya göm</string>
+    <string name="sheet_tags_title">Etiketleri ekle</string>
+    <string name="sheet_tags_sub">Başlık, sanatçı ve albüm bilgisi</string>
+    <string name="sheet_add_queue">Kuyruğa ekle (%1$d)</string>
+
+    <string name="folder_title">İndirme klasörü seç</string>
+    <string name="folder_parent">Üst klasör</string>
+    <string name="folder_choose_this">Bu klasörü seç</string>
+
+    <string name="boot_failed">Başlatılamadı: %1$s</string>
+    <string name="loading_title">Bağlantı okunuyor</string>
+    <string name="loading_body">Çalma listesi bilgileri getiriliyor…</string>
+
+    <string name="error_empty_link">Bağlantı boş olamaz</string>
+    <string name="error_invalid_link">Geçerli bir bağlantı gir (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp hazır değil</string>
+    <string name="error_folder_not_writable">İndirme klasörüne yazılamıyor</string>
+    <string name="error_link_unreadable">Bağlantı okunamadı</string>
+    <string name="error_video_info">Video bilgisi alınamadı</string>
+    <string name="error_no_tracks">Çalma listesinde indirilebilir parça bulunamadı</string>
+    <string name="playlist_default">Çalma listesi</string>
+    <string name="single_default">Tek parça</string>
+    <string name="unknown_track">Bilinmeyen parça</string>
+
+    <string name="notif_channel_downloads">İndirmeler</string>
+    <string name="notif_channel_downloads_desc">Devam eden müzik indirmeleri</string>
+    <string name="notif_channel_events">Bildirimler</string>
+    <string name="notif_channel_events_desc">Tamamlanan indirmeler ve bilgilendirmeler</string>
+    <string name="notif_paused">Duraklatıldı • %1$d sırada</string>
+    <string name="notif_running_queue">%1$d indiriliyor • %2$d sırada</string>
+    <string name="notif_running">%1$d müzik indiriliyor</string>
+    <string name="notif_queued">%1$d müzik sırada</string>
+    <string name="notif_pause">Duraklat</string>
+    <string name="notif_resume">Devam</string>
+    <string name="notif_cancel">İptal</string>
+    <string name="notif_batch_done">%1$d tamamlandı</string>
+    <string name="notif_batch_failed">%1$d başarısız</string>
+    <string name="notif_batch_canceled">%1$d iptal</string>
+    <string name="notif_batch_finished">%1$d işlem bitti</string>
+    <string name="notif_complete_title">İndirme tamamlandı</string>
+    <string name="notif_finished_title">İşlem tamamlandı</string>
+
+    <string name="duration_min_sec">%1$d dk %2$d sn</string>
+    <string name="duration_sec">%1$d sn</string>
+</resources>

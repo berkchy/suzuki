@@ -1,5 +1,6 @@
 package hime.suzuki.ui.screens
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -39,11 +40,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import hime.suzuki.BuildConfig
 import hime.suzuki.R
+import hime.suzuki.core.AppLocale
 import hime.suzuki.core.Fmt
 import hime.suzuki.core.Storage
 import hime.suzuki.ui.MainViewModel
@@ -60,16 +63,6 @@ import hime.suzuki.ui.components.StepButton
 import hime.suzuki.ui.components.SuzukiCard
 import hime.suzuki.ui.components.SwitchRow
 
-private val FORMAT_OPTIONS = listOf(
-    "mp3" to "MP3 — genel uyumluluk",
-    "m4a" to "M4A — AAC",
-    "opus" to "OPUS — verimli",
-    "ogg" to "OGG — Vorbis",
-    "flac" to "FLAC — kayıpsız",
-    "wav" to "WAV — sıkıştırmasız",
-    "original" to "Orijinal — yeniden kodlama yok",
-)
-
 private val BITRATE_OPTIONS = listOf(128, 192, 256, 320)
 private val BITRATE_FORMATS = setOf("mp3", "m4a", "opus", "ogg")
 
@@ -85,6 +78,26 @@ fun SettingsScreen(
     var showFolder by rememberSaveable { mutableStateOf(false) }
     var showFormat by rememberSaveable { mutableStateOf(false) }
     var showClear by rememberSaveable { mutableStateOf(false) }
+    var showLanguage by rememberSaveable { mutableStateOf(false) }
+
+    val formatOptions = listOf(
+        "mp3" to stringResource(R.string.format_mp3_desc),
+        "m4a" to stringResource(R.string.format_m4a_desc),
+        "opus" to stringResource(R.string.format_opus_desc),
+        "ogg" to stringResource(R.string.format_ogg_desc),
+        "flac" to stringResource(R.string.format_flac_desc),
+        "wav" to stringResource(R.string.format_wav_desc),
+        "original" to stringResource(R.string.format_original_desc),
+    )
+    val currentTag = AppLocale.tag(context)
+    val systemLabel = stringResource(R.string.language_system)
+    val languageOptions = listOf("" to systemLabel) +
+        AppLocale.languages.map { it.tag to it.nativeName }
+    val languageLabel = if (currentTag.isBlank()) {
+        systemLabel
+    } else {
+        AppLocale.displayName(context, currentTag)
+    }
 
     Column(
         modifier = Modifier
@@ -93,12 +106,35 @@ fun SettingsScreen(
             .padding(horizontal = 20.dp)
             .padding(top = 10.dp, bottom = 24.dp),
     ) {
-        ScreenHeader("Ayarlar", "Depolama, format ve motor tercihleri")
+        ScreenHeader(
+            stringResource(R.string.settings_title),
+            stringResource(R.string.settings_subtitle),
+        )
 
-        SectionTitle("Depolama")
+        SuzukiCard {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        stringResource(R.string.settings_language),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        languageLabel,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                TextButton(onClick = { showLanguage = true }) {
+                    Text(stringResource(R.string.common_change))
+                }
+            }
+        }
+
+        Spacer(Modifier.height(20.dp))
+        SectionTitle(stringResource(R.string.settings_storage))
         Spacer(Modifier.height(8.dp))
         SuzukiCard {
-            LabeledValue("İndirme klasörü", settings.downloadDir)
+            LabeledValue(stringResource(R.string.settings_download_folder), settings.downloadDir)
             Spacer(Modifier.height(12.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Button(
@@ -111,42 +147,50 @@ fun SettingsScreen(
                         modifier = Modifier.size(18.dp),
                     )
                     Spacer(Modifier.width(6.dp))
-                    Text("Klasör seç")
+                    Text(stringResource(R.string.settings_choose_folder))
                 }
                 OutlinedButton(
                     onClick = { vm.setDownloadDir(Storage.DEFAULT_DIR) },
                     shape = RoundedCornerShape(14.dp),
                 ) {
-                    Text("Varsayılan")
+                    Text(stringResource(R.string.common_default))
                 }
             }
             if (!storageOk) {
                 Spacer(Modifier.height(12.dp))
                 InfoBanner(
-                    text = "Tüm dosyalara erişim izni yok. İndirmeler uygulamanın kendi klasörüne kaydedilir.",
-                    actionLabel = "İzin ver",
+                    text = stringResource(R.string.settings_storage_warning),
+                    actionLabel = stringResource(R.string.home_grant),
                     onAction = onGrantStorage,
                 )
             }
         }
 
         Spacer(Modifier.height(20.dp))
-        SectionTitle("İndirme")
+        SectionTitle(stringResource(R.string.settings_download))
         Spacer(Modifier.height(8.dp))
         SuzukiCard {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("Varsayılan format", style = MaterialTheme.typography.bodyLarge)
                     Text(
-                        Fmt.formatName(settings.audioFormat),
+                        stringResource(R.string.settings_default_format),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        Fmt.formatName(context, settings.audioFormat),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                TextButton(onClick = { showFormat = true }) { Text("Değiştir") }
+                TextButton(onClick = { showFormat = true }) {
+                    Text(stringResource(R.string.common_change))
+                }
             }
             DividerLine()
-            Text("Bit hızı", style = MaterialTheme.typography.bodyLarge)
+            Text(
+                stringResource(R.string.settings_bitrate),
+                style = MaterialTheme.typography.bodyLarge,
+            )
             Spacer(Modifier.height(8.dp))
             Row(
                 modifier = Modifier.horizontalScroll(rememberScrollState()),
@@ -163,35 +207,38 @@ fun SettingsScreen(
             if (settings.audioFormat !in BITRATE_FORMATS) {
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    "Seçili format kayıpsız veya orijinal; bit hızı uygulanmaz.",
+                    stringResource(R.string.settings_bitrate_not_applicable),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
             DividerLine()
             SwitchRow(
-                title = "Kapak resmi göm",
-                subtitle = "İndirilen dosyaya şarkı kapağı eklenir",
+                title = stringResource(R.string.settings_embed_cover),
+                subtitle = stringResource(R.string.settings_embed_cover_sub),
                 checked = settings.embedThumbnail,
                 onCheckedChange = { vm.setEmbedThumbnail(it) },
             )
             SwitchRow(
-                title = "Etiketleri göm",
-                subtitle = "Başlık ve sanatçı bilgileri yazılır",
+                title = stringResource(R.string.settings_embed_tags),
+                subtitle = stringResource(R.string.settings_embed_tags_sub),
                 checked = settings.embedMetadata,
                 onCheckedChange = { vm.setEmbedMetadata(it) },
             )
         }
 
         Spacer(Modifier.height(20.dp))
-        SectionTitle("Performans")
+        SectionTitle(stringResource(R.string.settings_performance))
         Spacer(Modifier.height(8.dp))
         SuzukiCard {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("Eşzamanlı indirme", style = MaterialTheme.typography.bodyLarge)
                     Text(
-                        "Aynı anda işlenecek parça sayısı",
+                        stringResource(R.string.settings_concurrency),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        stringResource(R.string.settings_concurrency_sub),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -211,17 +258,20 @@ fun SettingsScreen(
             }
             DividerLine()
             SwitchRow(
-                title = "yt-dlp'yi otomatik güncelle",
-                subtitle = "Günde bir kez kontrol edilir",
+                title = stringResource(R.string.settings_auto_update),
+                subtitle = stringResource(R.string.settings_auto_update_sub),
                 checked = settings.autoUpdateYtdlp,
                 onCheckedChange = { vm.setAutoUpdate(it) },
             )
             DividerLine()
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("yt-dlp sürümü", style = MaterialTheme.typography.bodyLarge)
                     Text(
-                        ytdlp.version ?: "Bilinmiyor",
+                        stringResource(R.string.settings_ytdlp_version),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        ytdlp.version ?: stringResource(R.string.common_unknown),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -253,7 +303,7 @@ fun SettingsScreen(
                             modifier = Modifier.size(16.dp),
                         )
                         Spacer(Modifier.width(6.dp))
-                        Text("Güncelle")
+                        Text(stringResource(R.string.common_update))
                     }
                 }
             }
@@ -268,25 +318,25 @@ fun SettingsScreen(
         }
 
         Spacer(Modifier.height(20.dp))
-        SectionTitle("Gelişmiş")
+        SectionTitle(stringResource(R.string.settings_advanced))
         Spacer(Modifier.height(8.dp))
         SuzukiCard {
             EditableSetting(
-                label = "Dosya adı şablonu",
+                label = stringResource(R.string.settings_filename_template),
                 value = settings.filenameTemplate,
                 placeholder = "%(title)s.%(ext)s",
                 onSave = vm::setFilenameTemplate,
             )
             Spacer(Modifier.height(8.dp))
             SwitchRow(
-                title = "Dosya adlarını sadeleştir",
-                subtitle = "Türkçe karakterleri ASCII'ye çevirir",
+                title = stringResource(R.string.settings_simplify),
+                subtitle = stringResource(R.string.settings_simplify_sub),
                 checked = settings.restrictFilenames,
                 onCheckedChange = { vm.setRestrictFilenames(it) },
             )
             DividerLine()
             EditableSetting(
-                label = "Proxy (isteğe bağlı)",
+                label = stringResource(R.string.settings_proxy),
                 value = settings.proxy,
                 placeholder = "http://127.0.0.1:8080",
                 onSave = vm::setProxy,
@@ -301,32 +351,40 @@ fun SettingsScreen(
                     contentColor = MaterialTheme.colorScheme.onErrorContainer,
                 ),
             ) {
-                Text("İndirme geçmişini temizle")
+                Text(stringResource(R.string.settings_clear_history))
             }
         }
 
         Spacer(Modifier.height(20.dp))
-        SectionTitle("Hakkında")
+        SectionTitle(stringResource(R.string.settings_about))
         Spacer(Modifier.height(8.dp))
         SuzukiCard {
-            LabeledValue("Sürüm", BuildConfig.VERSION_NAME)
+            LabeledValue(
+                stringResource(R.string.settings_version),
+                BuildConfig.VERSION_NAME,
+            )
             DividerLine()
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("GitHub deposu", style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        stringResource(R.string.settings_github),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
                     Text(
                         "berkchy/suzuki",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                TextButton(onClick = { openUrl(context, "https://github.com/berkchy/suzuki") }) {
-                    Text("Aç")
+                TextButton(
+                    onClick = { openUrl(context, "https://github.com/berkchy/suzuki") },
+                ) {
+                    Text(stringResource(R.string.common_open))
                 }
             }
             DividerLine()
             Text(
-                "Bu uygulama kişisel arşivleme amacıyla geliştirildi. İndirdiğin içeriklerin kullanım haklarına ve platform koşullarına saygı göster.",
+                stringResource(R.string.settings_about_text),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -346,20 +404,34 @@ fun SettingsScreen(
 
     if (showFormat) {
         SelectDialog(
-            title = "Varsayılan format",
-            options = FORMAT_OPTIONS,
+            title = stringResource(R.string.settings_format_dialog),
+            options = formatOptions,
             selected = settings.audioFormat,
             onSelect = vm::setAudioFormat,
             onDismiss = { showFormat = false },
         )
     }
 
+    if (showLanguage) {
+        SelectDialog(
+            title = stringResource(R.string.settings_language),
+            options = languageOptions,
+            selected = currentTag,
+            onSelect = { tag ->
+                AppLocale.set(context, tag)
+                showLanguage = false
+                (context as? Activity)?.recreate()
+            },
+            onDismiss = { showLanguage = false },
+        )
+    }
+
     if (showClear) {
         AlertDialog(
             onDismissRequest = { showClear = false },
-            title = { Text("Geçmişi temizle") },
+            title = { Text(stringResource(R.string.settings_clear_dialog_title)) },
             text = {
-                Text("Tamamlanan, başarısız ve iptal edilen kayıtlar listeden silinir. İndirilen dosyalar cihazdan silinmez.")
+                Text(stringResource(R.string.settings_clear_dialog_body))
             },
             confirmButton = {
                 TextButton(
@@ -367,10 +439,12 @@ fun SettingsScreen(
                         vm.clearFinished()
                         showClear = false
                     }
-                ) { Text("Temizle") }
+                ) { Text(stringResource(R.string.common_clear)) }
             },
             dismissButton = {
-                TextButton(onClick = { showClear = false }) { Text("Vazgeç") }
+                TextButton(onClick = { showClear = false }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
             },
         )
     }
@@ -402,7 +476,7 @@ private fun EditableSetting(
             if (text.trim() != value) {
                 IconAction(
                     iconRes = R.drawable.ic_check,
-                    description = "Kaydet",
+                    description = stringResource(R.string.common_save),
                     tint = MaterialTheme.colorScheme.primary,
                 ) { onSave(text.trim()) }
             }

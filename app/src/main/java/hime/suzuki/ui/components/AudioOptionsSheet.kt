@@ -31,22 +31,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import hime.suzuki.R
 import hime.suzuki.data.AppSettings
 import hime.suzuki.download.AudioOptions
 import hime.suzuki.download.PlaylistInfo
-
-private val FORMATS = listOf(
-    "original" to "Orijinal",
-    "mp3" to "MP3",
-    "m4a" to "M4A",
-    "opus" to "OPUS",
-    "ogg" to "OGG",
-    "flac" to "FLAC",
-    "wav" to "WAV",
-)
 
 private val BITRATES = listOf(128, 192, 256, 320)
 private val BITRATE_FORMATS = setOf("mp3", "m4a", "opus", "ogg")
@@ -66,6 +57,16 @@ fun AudioOptionsSheet(
     var embedMetadata by remember { mutableStateOf(defaults.embedMetadata) }
     var range by remember { mutableStateOf("") }
 
+    val formats = listOf(
+        "original" to stringResource(R.string.format_original),
+        "mp3" to "MP3",
+        "m4a" to "M4A",
+        "opus" to "OPUS",
+        "ogg" to "OGG",
+        "flac" to "FLAC",
+        "wav" to "WAV",
+    )
+
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
@@ -82,7 +83,11 @@ fun AudioOptionsSheet(
                 .padding(bottom = 24.dp),
         ) {
             Text(
-                if (preview.isPlaylist) "ÇALMA LİSTESİ" else "TEK PARÇA",
+                if (preview.isPlaylist) {
+                    stringResource(R.string.sheet_playlist)
+                } else {
+                    stringResource(R.string.sheet_single_track)
+                },
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.primary,
             )
@@ -96,9 +101,14 @@ fun AudioOptionsSheet(
             Spacer(Modifier.height(4.dp))
             Text(
                 if (preview.isPlaylist) {
-                    "${preview.entries.size} parça • ${preview.entries.firstOrNull()?.uploader ?: "YouTube Music"}"
+                    stringResource(
+                        R.string.sheet_tracks,
+                        preview.entries.size,
+                        preview.entries.firstOrNull()?.uploader ?: "YouTube Music",
+                    )
                 } else {
-                    preview.entries.firstOrNull()?.uploader ?: "Tek şarkı"
+                    preview.entries.firstOrNull()?.uploader
+                        ?: stringResource(R.string.sheet_single_song)
                 },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -110,26 +120,26 @@ fun AudioOptionsSheet(
                     value = range,
                     onValueChange = { range = it },
                     modifier = Modifier.fillMaxWidth(),
-                    label = { Text("Parça aralığı") },
-                    placeholder = { Text("Boş = tümü, örn: 1-10 veya 2,5,8") },
+                    label = { Text(stringResource(R.string.sheet_range)) },
+                    placeholder = { Text(stringResource(R.string.sheet_range_hint)) },
                     singleLine = true,
                 )
             }
 
             Spacer(Modifier.height(18.dp))
-            SectionTitle("Ses formatı")
+            SectionTitle(stringResource(R.string.sheet_audio_format))
             Spacer(Modifier.height(8.dp))
             Row(
                 modifier = Modifier.horizontalScroll(rememberScrollState()),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                FORMATS.forEach { (value, label) ->
+                formats.forEach { (value, label) ->
                     OptionPill(text = label, selected = format == value) { format = value }
                 }
             }
 
             Spacer(Modifier.height(16.dp))
-            SectionTitle("Bit hızı")
+            SectionTitle(stringResource(R.string.settings_bitrate))
             Spacer(Modifier.height(8.dp))
             Row(
                 modifier = Modifier.horizontalScroll(rememberScrollState()),
@@ -147,9 +157,9 @@ fun AudioOptionsSheet(
                 Spacer(Modifier.height(6.dp))
                 Text(
                     if (format == "original") {
-                        "Orijinal ses akışı indirilir, yeniden kodlanmaz."
+                        stringResource(R.string.sheet_original_note)
                     } else {
-                        "Bu format kayıpsız olduğu için bit hızı uygulanmaz."
+                        stringResource(R.string.sheet_lossless_note)
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -158,14 +168,14 @@ fun AudioOptionsSheet(
 
             Spacer(Modifier.height(12.dp))
             SwitchRow(
-                title = "Kapak resmi ekle",
-                subtitle = "Şarkı kapağını dosyaya göm",
+                title = stringResource(R.string.sheet_cover_title),
+                subtitle = stringResource(R.string.sheet_cover_sub),
                 checked = embedThumbnail,
                 onCheckedChange = { embedThumbnail = it },
             )
             SwitchRow(
-                title = "Etiketleri ekle",
-                subtitle = "Başlık, sanatçı ve albüm bilgisi",
+                title = stringResource(R.string.sheet_tags_title),
+                subtitle = stringResource(R.string.sheet_tags_sub),
                 checked = embedMetadata,
                 onCheckedChange = { embedMetadata = it },
             )
@@ -194,7 +204,7 @@ fun AudioOptionsSheet(
                     modifier = Modifier.size(18.dp),
                 )
                 Spacer(Modifier.width(8.dp))
-                Text("Kuyruğa ekle (${preview.entries.size})")
+                Text(stringResource(R.string.sheet_add_queue, preview.entries.size))
             }
         }
     }

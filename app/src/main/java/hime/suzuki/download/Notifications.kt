@@ -11,6 +11,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import hime.suzuki.MainActivity
 import hime.suzuki.R
+import hime.suzuki.core.AppLocale
 
 object Notifications {
     const val CHANNEL_PROGRESS = "downloads"
@@ -20,21 +21,22 @@ object Notifications {
 
     fun createChannels(context: Context) {
         if (Build.VERSION.SDK_INT < 26) return
+        val ctx = AppLocale.wrap(context)
         val manager = context.getSystemService(NotificationManager::class.java) ?: return
         val progress = NotificationChannel(
             CHANNEL_PROGRESS,
-            "İndirmeler",
+            ctx.getString(R.string.notif_channel_downloads),
             NotificationManager.IMPORTANCE_LOW
         ).apply {
-            description = "Devam eden müzik indirmeleri"
+            description = ctx.getString(R.string.notif_channel_downloads_desc)
             setShowBadge(false)
         }
         val events = NotificationChannel(
             CHANNEL_EVENTS,
-            "Bildirimler",
+            ctx.getString(R.string.notif_channel_events),
             NotificationManager.IMPORTANCE_DEFAULT
         ).apply {
-            description = "Tamamlanan indirmeler ve bilgilendirmeler"
+            description = ctx.getString(R.string.notif_channel_events_desc)
         }
         manager.createNotificationChannels(listOf(progress, events))
     }
@@ -46,11 +48,12 @@ object Notifications {
         queued: Int,
         paused: Boolean,
     ): Notification {
+        val ctx = AppLocale.wrap(context)
         val text = when {
-            paused -> "Duraklatıldı • $queued sırada"
-            running > 0 && queued > 0 -> "$running indiriliyor • $queued sırada"
-            running > 0 -> "$running müzik indiriliyor"
-            else -> "$queued müzik sırada"
+            paused -> ctx.getString(R.string.notif_paused, queued)
+            running > 0 && queued > 0 -> ctx.getString(R.string.notif_running_queue, running, queued)
+            running > 0 -> ctx.getString(R.string.notif_running, running)
+            else -> ctx.getString(R.string.notif_queued, queued)
         }
         val toggleIntent = PendingIntent.getService(
             context,
@@ -74,8 +77,12 @@ object Notifications {
             .setContentIntent(openIntent(context))
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
             .setPriority(NotificationCompat.PRIORITY_LOW)
-            .addAction(0, if (paused) "Devam" else "Duraklat", toggleIntent)
-            .addAction(0, "İptal", cancelIntent)
+            .addAction(
+                0,
+                if (paused) ctx.getString(R.string.notif_resume) else ctx.getString(R.string.notif_pause),
+                toggleIntent,
+            )
+            .addAction(0, ctx.getString(R.string.notif_cancel), cancelIntent)
             .build()
     }
 
@@ -93,17 +100,21 @@ object Notifications {
     }
 
     fun batchDone(context: Context, summary: BatchSummary) {
+        val ctx = AppLocale.wrap(context)
         val done = (summary.total - summary.failed - summary.canceled).coerceAtLeast(0)
         val parts = buildList {
-            if (done > 0) add("$done tamamlandı")
-            if (summary.failed > 0) add("${summary.failed} başarısız")
-            if (summary.canceled > 0) add("${summary.canceled} iptal")
+            if (done > 0) add(ctx.getString(R.string.notif_batch_done, done))
+            if (summary.failed > 0) add(ctx.getString(R.string.notif_batch_failed, summary.failed))
+            if (summary.canceled > 0) {
+                add(ctx.getString(R.string.notif_batch_canceled, summary.canceled))
+            }
         }
-        val text = parts.joinToString(", ").ifEmpty { "${summary.total} işlem bitti" }
+        val text = parts.joinToString(", ")
+            .ifEmpty { ctx.getString(R.string.notif_batch_finished, summary.total) }
         val title = if (summary.failed == 0 && summary.canceled == 0) {
-            "İndirme tamamlandı"
+            ctx.getString(R.string.notif_complete_title)
         } else {
-            "İşlem tamamlandı"
+            ctx.getString(R.string.notif_finished_title)
         }
         val notification = NotificationCompat.Builder(context, CHANNEL_EVENTS)
             .setSmallIcon(R.drawable.ic_stat_music)

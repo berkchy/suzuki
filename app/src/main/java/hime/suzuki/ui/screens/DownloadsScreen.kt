@@ -34,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
@@ -69,16 +70,22 @@ fun DownloadsScreen(vm: MainViewModel) {
         val doneCount = finished.count { it.status == DownloadStatus.DONE }
 
         ScreenHeader(
-            title = "İndirmeler",
+            title = stringResource(R.string.downloads_title),
             subtitle = when {
-                active.isNotEmpty() -> "$running indiriliyor • $queued sırada"
-                doneCount > 0 -> "$doneCount şarkı tamamlandı"
-                else -> "Kuyruk ve indirme geçmişi"
+                active.isNotEmpty() -> stringResource(
+                    R.string.downloads_sub_running, running, queued
+                )
+                doneCount > 0 -> stringResource(R.string.downloads_sub_done, doneCount)
+                else -> stringResource(R.string.downloads_sub_default)
             },
             actions = {
                 IconAction(
                     iconRes = if (paused) R.drawable.ic_play else R.drawable.ic_pause,
-                    description = if (paused) "Devam et" else "Duraklat",
+                    description = if (paused) {
+                        stringResource(R.string.downloads_resume)
+                    } else {
+                        stringResource(R.string.downloads_pause)
+                    },
                     tint = MaterialTheme.colorScheme.primary,
                     enabled = active.isNotEmpty(),
                     onClick = vm::togglePause,
@@ -87,8 +94,14 @@ fun DownloadsScreen(vm: MainViewModel) {
         )
 
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OptionPill("Aktif (${active.size})", selected = tab == 0) { tab = 0 }
-            OptionPill("Geçmiş (${finished.size})", selected = tab == 1) { tab = 1 }
+            OptionPill(
+                stringResource(R.string.downloads_tab_active, active.size),
+                selected = tab == 0,
+            ) { tab = 0 }
+            OptionPill(
+                stringResource(R.string.downloads_tab_history, finished.size),
+                selected = tab == 1,
+            ) { tab = 1 }
         }
 
         Spacer(Modifier.height(14.dp))
@@ -102,11 +115,15 @@ fun DownloadsScreen(vm: MainViewModel) {
                 item {
                     EmptyState(
                         iconRes = if (tab == 0) R.drawable.ic_download else R.drawable.ic_music,
-                        title = if (tab == 0) "Kuyruk boş" else "Geçmiş boş",
-                        message = if (tab == 0) {
-                            "Ana sayfadan bir playlist veya şarkı ekle."
+                        title = if (tab == 0) {
+                            stringResource(R.string.downloads_queue_empty)
                         } else {
-                            "Tamamlanan indirmeler burada görünecek."
+                            stringResource(R.string.downloads_history_empty)
+                        },
+                        message = if (tab == 0) {
+                            stringResource(R.string.downloads_queue_hint)
+                        } else {
+                            stringResource(R.string.downloads_history_hint)
                         },
                     )
                 }
@@ -137,9 +154,11 @@ fun DownloadsScreen(vm: MainViewModel) {
                             modifier = Modifier.weight(1f),
                             shape = RoundedCornerShape(14.dp),
                         ) {
-                            Text("Başarısızları tekrar dene")
+                            Text(stringResource(R.string.downloads_retry_failed))
                         }
-                        TextButton(onClick = vm::clearFinished) { Text("Temizle") }
+                        TextButton(onClick = vm::clearFinished) {
+                            Text(stringResource(R.string.common_clear))
+                        }
                     }
                 }
             }
@@ -175,7 +194,7 @@ private fun DownloadCard(
                     )
                     Spacer(Modifier.height(2.dp))
                     Text(
-                        subtitleFor(item),
+                        subtitleFor(context, item),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,
@@ -185,19 +204,19 @@ private fun DownloadCard(
                 when (item.status) {
                     DownloadStatus.RUNNING, DownloadStatus.QUEUED -> IconAction(
                         iconRes = R.drawable.ic_close,
-                        description = "İptal et",
+                        description = stringResource(R.string.downloads_cancel_cd),
                         tint = MaterialTheme.colorScheme.error,
                     ) { onCancel(item.id) }
 
                     DownloadStatus.FAILED, DownloadStatus.CANCELED -> IconAction(
                         iconRes = R.drawable.ic_refresh,
-                        description = "Tekrar dene",
+                        description = stringResource(R.string.downloads_retry_cd),
                         tint = MaterialTheme.colorScheme.primary,
                     ) { onRetry(item.id) }
 
                     DownloadStatus.DONE -> IconAction(
                         iconRes = R.drawable.ic_delete,
-                        description = "Sil",
+                        description = stringResource(R.string.downloads_delete_cd),
                     ) { onDelete(item.id) }
                 }
             }
@@ -217,12 +236,16 @@ private fun DownloadCard(
                     Spacer(Modifier.height(6.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            if (item.status == DownloadStatus.QUEUED) "Sırada" else "İndiriliyor",
+                            if (item.status == DownloadStatus.QUEUED) {
+                                stringResource(R.string.downloads_status_queued)
+                            } else {
+                                stringResource(R.string.downloads_status_downloading)
+                            },
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                         Spacer(Modifier.weight(1f))
-                        val eta = Fmt.eta(item.etaSeconds)
+                        val eta = Fmt.eta(context, item.etaSeconds)
                         Text(
                             buildString {
                                 append(Fmt.percent(item.progress))
@@ -248,13 +271,25 @@ private fun DownloadCard(
                         )
                         Spacer(Modifier.width(5.dp))
                         Text(
-                            "${Fmt.humanSize(item.sizeBytes)} • ${Fmt.date(item.finishedAt ?: 0L)}",
+                            stringResource(
+                                R.string.downloads_meta,
+                                Fmt.humanSize(item.sizeBytes),
+                                Fmt.date(item.finishedAt ?: 0L),
+                            ),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                         Spacer(Modifier.weight(1f))
-                        IconAction(R.drawable.ic_play, "Aç", onClick = onOpen)
-                        IconAction(R.drawable.ic_share, "Paylaş", onClick = onShare)
+                        IconAction(
+                            R.drawable.ic_play,
+                            stringResource(R.string.common_open),
+                            onClick = onOpen,
+                        )
+                        IconAction(
+                            R.drawable.ic_share,
+                            stringResource(R.string.common_share),
+                            onClick = onShare,
+                        )
                     }
                 }
 
@@ -278,14 +313,19 @@ private fun DownloadCard(
     }
 }
 
-private fun subtitleFor(item: DownloadItem): String {
+private fun subtitleFor(context: Context, item: DownloadItem): String {
+    val format = Fmt.formatName(context, item.format)
     return when (item.status) {
-        DownloadStatus.QUEUED -> "Sırada • ${Fmt.formatName(item.format)}"
-        DownloadStatus.RUNNING -> "${Fmt.formatName(item.format)} • ${Fmt.percent(item.progress)}"
-        DownloadStatus.DONE -> "${Fmt.formatName(item.format)} • ${Fmt.humanSize(item.sizeBytes)}"
-        DownloadStatus.FAILED -> "Başarısız • ${Fmt.formatName(item.format)}"
-        DownloadStatus.CANCELED -> "İptal edildi"
-        else -> Fmt.formatName(item.format)
+        DownloadStatus.QUEUED -> context.getString(R.string.downloads_status_queued_fmt, format)
+        DownloadStatus.RUNNING -> context.getString(
+            R.string.downloads_status_running_fmt, format, Fmt.percent(item.progress)
+        )
+        DownloadStatus.DONE -> context.getString(
+            R.string.downloads_status_done_fmt, format, Fmt.humanSize(item.sizeBytes)
+        )
+        DownloadStatus.FAILED -> context.getString(R.string.downloads_status_failed_fmt, format)
+        DownloadStatus.CANCELED -> context.getString(R.string.downloads_status_canceled)
+        else -> format
     }
 }
 
@@ -302,7 +342,7 @@ private fun openAudio(context: Context, item: DownloadItem) {
             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         context.startActivity(intent)
     }.onFailure {
-        Toast.makeText(context, "Dosya açılamadı", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.toast_file_open_failed), Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -318,8 +358,10 @@ private fun shareAudio(context: Context, item: DownloadItem) {
             .setType(Fmt.mimeFor(path))
             .putExtra(Intent.EXTRA_STREAM, uri)
             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        context.startActivity(Intent.createChooser(intent, "Müziği paylaş"))
+        context.startActivity(
+            Intent.createChooser(intent, context.getString(R.string.toast_share_music))
+        )
     }.onFailure {
-        Toast.makeText(context, "Paylaşım açılamadı", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.toast_share_failed), Toast.LENGTH_SHORT).show()
     }
 }

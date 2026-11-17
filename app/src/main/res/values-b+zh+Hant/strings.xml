@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">首頁</string>
+    <string name="nav_downloads">下載</string>
+    <string name="nav_settings">設定</string>
+
+    <string name="common_cancel">取消</string>
+    <string name="common_close">關閉</string>
+    <string name="common_save">儲存</string>
+    <string name="common_delete">刪除</string>
+    <string name="common_update">更新</string>
+    <string name="common_default">預設</string>
+    <string name="common_all">全部</string>
+    <string name="common_retry">重試</string>
+    <string name="common_clear">清除</string>
+    <string name="common_change">變更</string>
+    <string name="common_open">開啟</string>
+    <string name="common_share">分享</string>
+    <string name="common_unknown">未知</string>
+
+    <string name="home_subtitle">下載你的播放清單，離線聆聽</string>
+    <string name="home_storage_banner">要將音樂儲存到所選資料夾，需要儲存權限。</string>
+    <string name="home_grant">允許</string>
+    <string name="home_paste_title">貼上連結</string>
+    <string name="home_link_hint">YouTube / YouTube Music 影片或播放清單連結</string>
+    <string name="home_paste">貼上</string>
+    <string name="home_list">列出</string>
+    <string name="home_preparing">正在準備…</string>
+    <string name="home_recent">最近下載</string>
+    <string name="home_no_downloads">尚無下載</string>
+    <string name="home_add_first">透過上方連結欄位新增你的第一首歌。</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • 正在更新…</string>
+    <string name="home_ytdlp_loading">正在準備</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">播放清單</string>
+    <string name="home_chip_cover">封面</string>
+    <string name="home_chip_tags">標籤</string>
+    <string name="home_chip_folder">你的資料夾</string>
+
+    <string name="downloads_title">下載</string>
+    <string name="downloads_sub_running">%1$d 個正在下載 • %2$d 個排隊中</string>
+    <string name="downloads_sub_done">%1$d 首已完成</string>
+    <string name="downloads_sub_default">佇列與下載記錄</string>
+    <string name="downloads_pause">暫停</string>
+    <string name="downloads_resume">繼續</string>
+    <string name="downloads_tab_active">進行中 (%1$d)</string>
+    <string name="downloads_tab_history">記錄 (%1$d)</string>
+    <string name="downloads_queue_empty">佇列為空</string>
+    <string name="downloads_history_empty">記錄為空</string>
+    <string name="downloads_queue_hint">從首頁新增播放清單或歌曲。</string>
+    <string name="downloads_history_hint">已完成的下載會顯示在這裡。</string>
+    <string name="downloads_retry_failed">重試失敗項目</string>
+    <string name="downloads_cancel_cd">取消</string>
+    <string name="downloads_retry_cd">重試</string>
+    <string name="downloads_delete_cd">刪除</string>
+    <string name="downloads_status_queued">排隊中</string>
+    <string name="downloads_status_downloading">下載中</string>
+    <string name="downloads_status_queued_fmt">排隊中 • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">失敗 • %1$s</string>
+    <string name="downloads_status_canceled">已取消</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">無法開啟檔案</string>
+    <string name="toast_share_music">分享音樂</string>
+    <string name="toast_share_failed">無法開啟分享</string>
+
+    <string name="settings_title">設定</string>
+    <string name="settings_subtitle">儲存、格式與引擎</string>
+    <string name="settings_storage">儲存空間</string>
+    <string name="settings_download_folder">下載資料夾</string>
+    <string name="settings_choose_folder">選擇資料夾</string>
+    <string name="settings_storage_warning">未授予所有檔案存取權限。下載會儲存在應用程式自己的資料夾。</string>
+    <string name="settings_download">下載</string>
+    <string name="settings_default_format">預設格式</string>
+    <string name="settings_bitrate">位元率</string>
+    <string name="settings_bitrate_not_applicable">所選格式為無損或原始格式，位元率不適用。</string>
+    <string name="settings_embed_cover">嵌入封面</string>
+    <string name="settings_embed_cover_sub">將歌曲封面加入下載的檔案</string>
+    <string name="settings_embed_tags">嵌入標籤</string>
+    <string name="settings_embed_tags_sub">寫入標題與演出者中繼資料</string>
+    <string name="settings_performance">效能</string>
+    <string name="settings_concurrency">同時下載數</string>
+    <string name="settings_concurrency_sub">同時處理的曲目數量</string>
+    <string name="settings_auto_update">自動更新 yt-dlp</string>
+    <string name="settings_auto_update_sub">每天檢查一次</string>
+    <string name="settings_ytdlp_version">yt-dlp 版本</string>
+    <string name="settings_advanced">進階</string>
+    <string name="settings_filename_template">檔案名稱範本</string>
+    <string name="settings_simplify">簡化檔案名稱</string>
+    <string name="settings_simplify_sub">將非 ASCII 字元轉換為 ASCII</string>
+    <string name="settings_proxy">Proxy（選填）</string>
+    <string name="settings_clear_history">清除下載記錄</string>
+    <string name="settings_about">關於</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_github">GitHub 儲存庫</string>
+    <string name="settings_about_text">此應用程式用於個人封存。請尊重所下載內容的權利與平台條款。</string>
+    <string name="settings_format_dialog">預設格式</string>
+    <string name="settings_clear_dialog_title">清除記錄</string>
+    <string name="settings_clear_dialog_body">已完成、失敗與已取消的記錄會從清單中移除。已下載的檔案不會從裝置刪除。</string>
+    <string name="settings_language">語言</string>
+    <string name="settings_language_sub">應用程式顯示語言</string>
+    <string name="language_system">系統語言</string>
+
+    <string name="format_original">原始</string>
+    <string name="format_original_desc">原始 — 不重新編碼</string>
+    <string name="format_mp3_desc">MP3 — 通用相容性</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — 高效</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — 無損</string>
+    <string name="format_wav_desc">WAV — 未壓縮</string>
+
+    <string name="sheet_playlist">播放清單</string>
+    <string name="sheet_single_track">單曲</string>
+    <string name="sheet_single_song">單曲</string>
+    <string name="sheet_tracks">%1$d 首 • %2$s</string>
+    <string name="sheet_range">曲目範圍</string>
+    <string name="sheet_range_hint">留空 = 全部，例如 1-10 或 2,5,8</string>
+    <string name="sheet_audio_format">音訊格式</string>
+    <string name="sheet_original_note">原始音訊串流會直接下載，不重新編碼。</string>
+    <string name="sheet_lossless_note">此格式為無損，因此位元率不適用。</string>
+    <string name="sheet_cover_title">加入封面</string>
+    <string name="sheet_cover_sub">將歌曲封面嵌入檔案</string>
+    <string name="sheet_tags_title">加入標籤</string>
+    <string name="sheet_tags_sub">標題、演出者與專輯</string>
+    <string name="sheet_add_queue">加入佇列 (%1$d)</string>
+
+    <string name="folder_title">選擇下載資料夾</string>
+    <string name="folder_parent">上層資料夾</string>
+    <string name="folder_choose_this">選擇此資料夾</string>
+
+    <string name="boot_failed">初始化失敗：%1$s</string>
+    <string name="loading_title">正在讀取連結</string>
+    <string name="loading_body">正在取得播放清單資訊…</string>
+
+    <string name="error_empty_link">連結不能為空</string>
+    <string name="error_invalid_link">請輸入有效連結（http/https）</string>
+    <string name="error_engine_not_ready">yt-dlp 尚未就緒</string>
+    <string name="error_folder_not_writable">無法寫入下載資料夾</string>
+    <string name="error_link_unreadable">無法讀取連結</string>
+    <string name="error_video_info">無法取得影片資訊</string>
+    <string name="error_no_tracks">播放清單中找不到可下載的曲目</string>
+    <string name="playlist_default">播放清單</string>
+    <string name="single_default">單曲</string>
+    <string name="unknown_track">未知曲目</string>
+
+    <string name="notif_channel_downloads">下載</string>
+    <string name="notif_channel_downloads_desc">進行中的音樂下載</string>
+    <string name="notif_channel_events">通知</string>
+    <string name="notif_channel_events_desc">已完成的下載與提醒</string>
+    <string name="notif_paused">已暫停 • %1$d 個排隊中</string>
+    <string name="notif_running_queue">%1$d 個正在下載 • %2$d 個排隊中</string>
+    <string name="notif_running">%1$d 首正在下載</string>
+    <string name="notif_queued">%1$d 首排隊中</string>
+    <string name="notif_pause">暫停</string>
+    <string name="notif_resume">繼續</string>
+    <string name="notif_cancel">取消</string>
+    <string name="notif_batch_done">%1$d 個已完成</string>
+    <string name="notif_batch_failed">%1$d 個失敗</string>
+    <string name="notif_batch_canceled">%1$d 個已取消</string>
+    <string name="notif_batch_finished">%1$d 個操作已完成</string>
+    <string name="notif_complete_title">下載完成</string>
+    <string name="notif_finished_title">已完成</string>
+
+    <string name="duration_min_sec">%1$d 分 %2$d 秒</string>
+    <string name="duration_sec">%1$d 秒</string>
+</resources>

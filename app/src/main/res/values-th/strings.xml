@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">หน้าแรก</string>
+    <string name="nav_downloads">ดาวน์โหลด</string>
+    <string name="nav_settings">การตั้งค่า</string>
+
+    <string name="common_cancel">ยกเลิก</string>
+    <string name="common_close">ปิด</string>
+    <string name="common_save">บันทึก</string>
+    <string name="common_delete">ลบ</string>
+    <string name="common_update">อัปเดต</string>
+    <string name="common_default">ค่าเริ่มต้น</string>
+    <string name="common_all">ทั้งหมด</string>
+    <string name="common_retry">ลองใหม่</string>
+    <string name="common_clear">ล้าง</string>
+    <string name="common_change">เปลี่ยน</string>
+    <string name="common_open">เปิด</string>
+    <string name="common_share">แชร์</string>
+    <string name="common_unknown">ไม่ทราบ</string>
+
+    <string name="home_subtitle">ดาวน์โหลดเพลย์ลิสต์ของคุณ ฟังแบบออฟไลน์</string>
+    <string name="home_storage_banner">ต้องได้รับสิทธิ์การจัดเก็บเพื่อบันทึกเพลงในโฟลเดอร์ที่เลือก</string>
+    <string name="home_grant">อนุญาต</string>
+    <string name="home_paste_title">วางลิงก์</string>
+    <string name="home_link_hint">ลิงก์วิดีโอหรือเพลย์ลิสต์ YouTube / YouTube Music</string>
+    <string name="home_paste">วาง</string>
+    <string name="home_list">แสดงรายการ</string>
+    <string name="home_preparing">กำลังเตรียม…</string>
+    <string name="home_recent">ดาวน์โหลดล่าสุด</string>
+    <string name="home_no_downloads">ยังไม่มีการดาวน์โหลด</string>
+    <string name="home_add_first">เพิ่มเพลงแรกของคุณจากช่องลิงก์ด้านบน</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • กำลังอัปเดต…</string>
+    <string name="home_ytdlp_loading">กำลังเตรียม</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">เพลย์ลิสต์</string>
+    <string name="home_chip_cover">ปก</string>
+    <string name="home_chip_tags">แท็ก</string>
+    <string name="home_chip_folder">โฟลเดอร์ของคุณ</string>
+
+    <string name="downloads_title">ดาวน์โหลด</string>
+    <string name="downloads_sub_running">%1$d กำลังดาวน์โหลด • %2$d อยู่ในคิว</string>
+    <string name="downloads_sub_done">เสร็จสิ้น %1$d เพลง</string>
+    <string name="downloads_sub_default">คิวและประวัติการดาวน์โหลด</string>
+    <string name="downloads_pause">หยุดชั่วคราว</string>
+    <string name="downloads_resume">ดำเนินการต่อ</string>
+    <string name="downloads_tab_active">ใช้งานอยู่ (%1$d)</string>
+    <string name="downloads_tab_history">ประวัติ (%1$d)</string>
+    <string name="downloads_queue_empty">คิวว่าง</string>
+    <string name="downloads_history_empty">ประวัติว่าง</string>
+    <string name="downloads_queue_hint">เพิ่มเพลย์ลิสต์หรือเพลงจากหน้าแรก</string>
+    <string name="downloads_history_hint">ดาวน์โหลดที่เสร็จแล้วจะแสดงที่นี่</string>
+    <string name="downloads_retry_failed">ลองใหม่รายการที่ล้มเหลว</string>
+    <string name="downloads_cancel_cd">ยกเลิก</string>
+    <string name="downloads_retry_cd">ลองใหม่</string>
+    <string name="downloads_delete_cd">ลบ</string>
+    <string name="downloads_status_queued">อยู่ในคิว</string>
+    <string name="downloads_status_downloading">กำลังดาวน์โหลด</string>
+    <string name="downloads_status_queued_fmt">อยู่ในคิว • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">ล้มเหลว • %1$s</string>
+    <string name="downloads_status_canceled">ยกเลิกแล้ว</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">ไม่สามารถเปิดไฟล์ได้</string>
+    <string name="toast_share_music">แชร์เพลง</string>
+    <string name="toast_share_failed">ไม่สามารถเปิดการแชร์ได้</string>
+
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_subtitle">พื้นที่จัดเก็บ รูปแบบ และเอนจิน</string>
+    <string name="settings_storage">พื้นที่จัดเก็บ</string>
+    <string name="settings_download_folder">โฟลเดอร์ดาวน์โหลด</string>
+    <string name="settings_choose_folder">เลือกโฟลเดอร์</string>
+    <string name="settings_storage_warning">ยังไม่ได้ให้สิทธิ์เข้าถึงไฟล์ทั้งหมด ดาวน์โหลดจะถูกบันทึกในโฟลเดอร์ของแอป</string>
+    <string name="settings_download">ดาวน์โหลด</string>
+    <string name="settings_default_format">รูปแบบเริ่มต้น</string>
+    <string name="settings_bitrate">บิตเรต</string>
+    <string name="settings_bitrate_not_applicable">รูปแบบที่เลือกเป็นแบบไม่สูญเสียข้อมูลหรือต้นฉบับ จึงไม่ใช้บิตเรต</string>
+    <string name="settings_embed_cover">ฝังภาพปก</string>
+    <string name="settings_embed_cover_sub">เพิ่มภาพปกเพลงลงในไฟล์ที่ดาวน์โหลด</string>
+    <string name="settings_embed_tags">ฝังแท็ก</string>
+    <string name="settings_embed_tags_sub">เขียนข้อมูลชื่อเพลงและศิลปิน</string>
+    <string name="settings_performance">ประสิทธิภาพ</string>
+    <string name="settings_concurrency">ดาวน์โหลดพร้อมกัน</string>
+    <string name="settings_concurrency_sub">จำนวนเพลงที่ประมวลผลพร้อมกัน</string>
+    <string name="settings_auto_update">อัปเดต yt-dlp อัตโนมัติ</string>
+    <string name="settings_auto_update_sub">ตรวจสอบวันละครั้ง</string>
+    <string name="settings_ytdlp_version">เวอร์ชัน yt-dlp</string>
+    <string name="settings_advanced">ขั้นสูง</string>
+    <string name="settings_filename_template">เทมเพลตชื่อไฟล์</string>
+    <string name="settings_simplify">ทำให้ชื่อไฟล์ง่ายขึ้น</string>
+    <string name="settings_simplify_sub">แปลงอักขระที่ไม่ใช่ ASCII เป็น ASCII</string>
+    <string name="settings_proxy">พร็อกซี (ไม่บังคับ)</string>
+    <string name="settings_clear_history">ล้างประวัติการดาวน์โหลด</string>
+    <string name="settings_about">เกี่ยวกับ</string>
+    <string name="settings_version">เวอร์ชัน</string>
+    <string name="settings_github">ที่เก็บ GitHub</string>
+    <string name="settings_about_text">แอปนี้สร้างขึ้นเพื่อการเก็บถาวรส่วนบุคคล โปรดเคารพสิทธิ์และข้อกำหนดของแพลตฟอร์มสำหรับเนื้อหาที่คุณดาวน์โหลด</string>
+    <string name="settings_format_dialog">รูปแบบเริ่มต้น</string>
+    <string name="settings_clear_dialog_title">ล้างประวัติ</string>
+    <string name="settings_clear_dialog_body">รายการที่เสร็จสิ้น ล้มเหลว และยกเลิกจะถูกลบออกจากรายการ ไฟล์ที่ดาวน์โหลดจะไม่ถูกลบออกจากอุปกรณ์</string>
+    <string name="settings_language">ภาษา</string>
+    <string name="settings_language_sub">ภาษาที่แสดงในแอป</string>
+    <string name="language_system">ภาษาของระบบ</string>
+
+    <string name="format_original">ต้นฉบับ</string>
+    <string name="format_original_desc">ต้นฉบับ — ไม่เข้ารหัสใหม่</string>
+    <string name="format_mp3_desc">MP3 — เข้ากันได้ทั่วไป</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — มีประสิทธิภาพ</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — ไม่สูญเสียข้อมูล</string>
+    <string name="format_wav_desc">WAV — ไม่บีบอัด</string>
+
+    <string name="sheet_playlist">เพลย์ลิสต์</string>
+    <string name="sheet_single_track">เพลงเดี่ยว</string>
+    <string name="sheet_single_song">เพลงเดี่ยว</string>
+    <string name="sheet_tracks">%1$d เพลง • %2$s</string>
+    <string name="sheet_range">ช่วงเพลง</string>
+    <string name="sheet_range_hint">ว่าง = ทั้งหมด เช่น 1-10 หรือ 2,5,8</string>
+    <string name="sheet_audio_format">รูปแบบเสียง</string>
+    <string name="sheet_original_note">สตรีมเสียงต้นฉบับจะถูกดาวน์โหลดโดยไม่เข้ารหัสใหม่</string>
+    <string name="sheet_lossless_note">รูปแบบนี้ไม่สูญเสียข้อมูล จึงไม่ใช้บิตเรต</string>
+    <string name="sheet_cover_title">เพิ่มภาพปก</string>
+    <string name="sheet_cover_sub">ฝังภาพปกเพลงลงในไฟล์</string>
+    <string name="sheet_tags_title">เพิ่มแท็ก</string>
+    <string name="sheet_tags_sub">ชื่อเพลง ศิลปิน และอัลบั้ม</string>
+    <string name="sheet_add_queue">เพิ่มในคิว (%1$d)</string>
+
+    <string name="folder_title">เลือกโฟลเดอร์ดาวน์โหลด</string>
+    <string name="folder_parent">โฟลเดอร์หลัก</string>
+    <string name="folder_choose_this">เลือกโฟลเดอร์นี้</string>
+
+    <string name="boot_failed">เริ่มต้นไม่สำเร็จ: %1$s</string>
+    <string name="loading_title">กำลังอ่านลิงก์</string>
+    <string name="loading_body">กำลังดึงข้อมูลเพลย์ลิสต์…</string>
+
+    <string name="error_empty_link">ลิงก์ต้องไม่ว่าง</string>
+    <string name="error_invalid_link">ป้อนลิงก์ที่ถูกต้อง (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp ยังไม่พร้อม</string>
+    <string name="error_folder_not_writable">ไม่สามารถเขียนในโฟลเดอร์ดาวน์โหลดได้</string>
+    <string name="error_link_unreadable">ไม่สามารถอ่านลิงก์ได้</string>
+    <string name="error_video_info">ไม่สามารถรับข้อมูลวิดีโอได้</string>
+    <string name="error_no_tracks">ไม่พบเพลงที่ดาวน์โหลดได้ในเพลย์ลิสต์</string>
+    <string name="playlist_default">เพลย์ลิสต์</string>
+    <string name="single_default">เพลงเดี่ยว</string>
+    <string name="unknown_track">เพลงที่ไม่ทราบชื่อ</string>
+
+    <string name="notif_channel_downloads">ดาวน์โหลด</string>
+    <string name="notif_channel_downloads_desc">การดาวน์โหลดเพลงที่กำลังดำเนินการ</string>
+    <string name="notif_channel_events">การแจ้งเตือน</string>
+    <string name="notif_channel_events_desc">ดาวน์โหลดที่เสร็จแล้วและการแจ้งเตือน</string>
+    <string name="notif_paused">หยุดชั่วคราว • %1$d อยู่ในคิว</string>
+    <string name="notif_running_queue">%1$d กำลังดาวน์โหลด • %2$d อยู่ในคิว</string>
+    <string name="notif_running">%1$d เพลงกำลังดาวน์โหลด</string>
+    <string name="notif_queued">%1$d เพลงอยู่ในคิว</string>
+    <string name="notif_pause">หยุดชั่วคราว</string>
+    <string name="notif_resume">ดำเนินการต่อ</string>
+    <string name="notif_cancel">ยกเลิก</string>
+    <string name="notif_batch_done">เสร็จสิ้น %1$d</string>
+    <string name="notif_batch_failed">ล้มเหลว %1$d</string>
+    <string name="notif_batch_canceled">ยกเลิก %1$d</string>
+    <string name="notif_batch_finished">การดำเนินการ %1$d รายการสิ้นสุด</string>
+    <string name="notif_complete_title">ดาวน์โหลดเสร็จสิ้น</string>
+    <string name="notif_finished_title">เสร็จสิ้น</string>
+
+    <string name="duration_min_sec">%1$d นาที %2$d วินาที</string>
+    <string name="duration_sec">%1$d วินาที</string>
+</resources>

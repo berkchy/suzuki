@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_downloads">Tải xuống</string>
+    <string name="nav_settings">Cài đặt</string>
+
+    <string name="common_cancel">Hủy</string>
+    <string name="common_close">Đóng</string>
+    <string name="common_save">Lưu</string>
+    <string name="common_delete">Xóa</string>
+    <string name="common_update">Cập nhật</string>
+    <string name="common_default">Mặc định</string>
+    <string name="common_all">Tất cả</string>
+    <string name="common_retry">Thử lại</string>
+    <string name="common_clear">Xóa sạch</string>
+    <string name="common_change">Thay đổi</string>
+    <string name="common_open">Mở</string>
+    <string name="common_share">Chia sẻ</string>
+    <string name="common_unknown">Không rõ</string>
+
+    <string name="home_subtitle">Tải danh sách phát của bạn, nghe ngoại tuyến</string>
+    <string name="home_storage_banner">Cần quyền truy cập bộ nhớ để lưu nhạc vào thư mục đã chọn.</string>
+    <string name="home_grant">Cho phép</string>
+    <string name="home_paste_title">Dán liên kết</string>
+    <string name="home_link_hint">Liên kết video hoặc danh sách phát YouTube / YouTube Music</string>
+    <string name="home_paste">Dán</string>
+    <string name="home_list">Liệt kê</string>
+    <string name="home_preparing">Đang chuẩn bị…</string>
+    <string name="home_recent">Tải gần đây</string>
+    <string name="home_no_downloads">Chưa có tải xuống</string>
+    <string name="home_add_first">Thêm bài hát đầu tiên bằng ô liên kết ở trên.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • đang cập nhật…</string>
+    <string name="home_ytdlp_loading">đang chuẩn bị</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Danh sách phát</string>
+    <string name="home_chip_cover">Ảnh bìa</string>
+    <string name="home_chip_tags">Thẻ</string>
+    <string name="home_chip_folder">Thư mục của bạn</string>
+
+    <string name="downloads_title">Tải xuống</string>
+    <string name="downloads_sub_running">%1$d đang tải • %2$d đang chờ</string>
+    <string name="downloads_sub_done">%1$d bài đã xong</string>
+    <string name="downloads_sub_default">Hàng đợi và lịch sử tải xuống</string>
+    <string name="downloads_pause">Tạm dừng</string>
+    <string name="downloads_resume">Tiếp tục</string>
+    <string name="downloads_tab_active">Đang hoạt động (%1$d)</string>
+    <string name="downloads_tab_history">Lịch sử (%1$d)</string>
+    <string name="downloads_queue_empty">Hàng đợi trống</string>
+    <string name="downloads_history_empty">Lịch sử trống</string>
+    <string name="downloads_queue_hint">Thêm danh sách phát hoặc bài hát từ trang chủ.</string>
+    <string name="downloads_history_hint">Các tải xuống đã hoàn tất sẽ xuất hiện ở đây.</string>
+    <string name="downloads_retry_failed">Thử lại các mục lỗi</string>
+    <string name="downloads_cancel_cd">Hủy</string>
+    <string name="downloads_retry_cd">Thử lại</string>
+    <string name="downloads_delete_cd">Xóa</string>
+    <string name="downloads_status_queued">Đang chờ</string>
+    <string name="downloads_status_downloading">Đang tải</string>
+    <string name="downloads_status_queued_fmt">Đang chờ • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Thất bại • %1$s</string>
+    <string name="downloads_status_canceled">Đã hủy</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Không thể mở tệp</string>
+    <string name="toast_share_music">Chia sẻ nhạc</string>
+    <string name="toast_share_failed">Không thể mở chia sẻ</string>
+
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_subtitle">Bộ nhớ, định dạng và công cụ</string>
+    <string name="settings_storage">Bộ nhớ</string>
+    <string name="settings_download_folder">Thư mục tải xuống</string>
+    <string name="settings_choose_folder">Chọn thư mục</string>
+    <string name="settings_storage_warning">Chưa được cấp quyền truy cập mọi tệp. Tải xuống được lưu vào thư mục riêng của ứng dụng.</string>
+    <string name="settings_download">Tải xuống</string>
+    <string name="settings_default_format">Định dạng mặc định</string>
+    <string name="settings_bitrate">Tốc độ bit</string>
+    <string name="settings_bitrate_not_applicable">Định dạng đã chọn là không mất dữ liệu hoặc gốc; tốc độ bit không áp dụng.</string>
+    <string name="settings_embed_cover">Nhúng ảnh bìa</string>
+    <string name="settings_embed_cover_sub">Thêm ảnh bìa bài hát vào tệp đã tải</string>
+    <string name="settings_embed_tags">Nhúng thẻ</string>
+    <string name="settings_embed_tags_sub">Ghi siêu dữ liệu tiêu đề và nghệ sĩ</string>
+    <string name="settings_performance">Hiệu suất</string>
+    <string name="settings_concurrency">Tải xuống đồng thời</string>
+    <string name="settings_concurrency_sub">Số bản nhạc xử lý cùng lúc</string>
+    <string name="settings_auto_update">Tự động cập nhật yt-dlp</string>
+    <string name="settings_auto_update_sub">Kiểm tra mỗi ngày một lần</string>
+    <string name="settings_ytdlp_version">Phiên bản yt-dlp</string>
+    <string name="settings_advanced">Nâng cao</string>
+    <string name="settings_filename_template">Mẫu tên tệp</string>
+    <string name="settings_simplify">Đơn giản hóa tên tệp</string>
+    <string name="settings_simplify_sub">Chuyển ký tự không phải ASCII sang ASCII</string>
+    <string name="settings_proxy">Proxy (tùy chọn)</string>
+    <string name="settings_clear_history">Xóa lịch sử tải xuống</string>
+    <string name="settings_about">Giới thiệu</string>
+    <string name="settings_version">Phiên bản</string>
+    <string name="settings_github">Kho GitHub</string>
+    <string name="settings_about_text">Ứng dụng được tạo cho mục đích lưu trữ cá nhân. Hãy tôn trọng quyền và điều khoản của nền tảng đối với nội dung bạn tải xuống.</string>
+    <string name="settings_format_dialog">Định dạng mặc định</string>
+    <string name="settings_clear_dialog_title">Xóa lịch sử</string>
+    <string name="settings_clear_dialog_body">Các bản ghi đã hoàn tất, thất bại và đã hủy sẽ bị xóa khỏi danh sách. Tệp đã tải xuống không bị xóa khỏi thiết bị.</string>
+    <string name="settings_language">Ngôn ngữ</string>
+    <string name="settings_language_sub">Ngôn ngữ hiển thị của ứng dụng</string>
+    <string name="language_system">Ngôn ngữ hệ thống</string>
+
+    <string name="format_original">Gốc</string>
+    <string name="format_original_desc">Gốc — không mã hóa lại</string>
+    <string name="format_mp3_desc">MP3 — tương thích phổ biến</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — hiệu quả</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — không mất dữ liệu</string>
+    <string name="format_wav_desc">WAV — không nén</string>
+
+    <string name="sheet_playlist">DANH SÁCH PHÁT</string>
+    <string name="sheet_single_track">MỘT BẢN NHẠC</string>
+    <string name="sheet_single_song">Một bản nhạc</string>
+    <string name="sheet_tracks">%1$d bản nhạc • %2$s</string>
+    <string name="sheet_range">Phạm vi bản nhạc</string>
+    <string name="sheet_range_hint">Trống = tất cả, ví dụ 1-10 hoặc 2,5,8</string>
+    <string name="sheet_audio_format">Định dạng âm thanh</string>
+    <string name="sheet_original_note">Luồng âm thanh gốc được tải xuống mà không mã hóa lại.</string>
+    <string name="sheet_lossless_note">Định dạng này không mất dữ liệu nên tốc độ bit không áp dụng.</string>
+    <string name="sheet_cover_title">Thêm ảnh bìa</string>
+    <string name="sheet_cover_sub">Nhúng ảnh bìa bài hát vào tệp</string>
+    <string name="sheet_tags_title">Thêm thẻ</string>
+    <string name="sheet_tags_sub">Tiêu đề, nghệ sĩ và album</string>
+    <string name="sheet_add_queue">Thêm vào hàng đợi (%1$d)</string>
+
+    <string name="folder_title">Chọn thư mục tải xuống</string>
+    <string name="folder_parent">Thư mục cha</string>
+    <string name="folder_choose_this">Chọn thư mục này</string>
+
+    <string name="boot_failed">Khởi tạo thất bại: %1$s</string>
+    <string name="loading_title">Đang đọc liên kết</string>
+    <string name="loading_body">Đang lấy thông tin danh sách phát…</string>
+
+    <string name="error_empty_link">Liên kết không được để trống</string>
+    <string name="error_invalid_link">Nhập liên kết hợp lệ (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp chưa sẵn sàng</string>
+    <string name="error_folder_not_writable">Không thể ghi vào thư mục tải xuống</string>
+    <string name="error_link_unreadable">Không thể đọc liên kết</string>
+    <string name="error_video_info">Không thể lấy thông tin video</string>
+    <string name="error_no_tracks">Không tìm thấy bản nhạc nào có thể tải trong danh sách phát</string>
+    <string name="playlist_default">Danh sách phát</string>
+    <string name="single_default">Một bản nhạc</string>
+    <string name="unknown_track">Bản nhạc không rõ</string>
+
+    <string name="notif_channel_downloads">Tải xuống</string>
+    <string name="notif_channel_downloads_desc">Tải nhạc đang diễn ra</string>
+    <string name="notif_channel_events">Thông báo</string>
+    <string name="notif_channel_events_desc">Tải xuống hoàn tất và cảnh báo</string>
+    <string name="notif_paused">Đã tạm dừng • %1$d đang chờ</string>
+    <string name="notif_running_queue">%1$d đang tải • %2$d đang chờ</string>
+    <string name="notif_running">%1$d bài đang tải</string>
+    <string name="notif_queued">%1$d bài đang chờ</string>
+    <string name="notif_pause">Tạm dừng</string>
+    <string name="notif_resume">Tiếp tục</string>
+    <string name="notif_cancel">Hủy</string>
+    <string name="notif_batch_done">%1$d đã xong</string>
+    <string name="notif_batch_failed">%1$d thất bại</string>
+    <string name="notif_batch_canceled">%1$d đã hủy</string>
+    <string name="notif_batch_finished">%1$d thao tác đã kết thúc</string>
+    <string name="notif_complete_title">Tải xuống hoàn tất</string>
+    <string name="notif_finished_title">Đã xong</string>
+
+    <string name="duration_min_sec">%1$d phút %2$d giây</string>
+    <string name="duration_sec">%1$d giây</string>
+</resources>

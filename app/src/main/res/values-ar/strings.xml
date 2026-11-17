@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_downloads">التنزيلات</string>
+    <string name="nav_settings">الإعدادات</string>
+
+    <string name="common_cancel">إلغاء</string>
+    <string name="common_close">إغلاق</string>
+    <string name="common_save">حفظ</string>
+    <string name="common_delete">حذف</string>
+    <string name="common_update">تحديث</string>
+    <string name="common_default">افتراضي</string>
+    <string name="common_all">الكل</string>
+    <string name="common_retry">إعادة المحاولة</string>
+    <string name="common_clear">مسح</string>
+    <string name="common_change">تغيير</string>
+    <string name="common_open">فتح</string>
+    <string name="common_share">مشاركة</string>
+    <string name="common_unknown">غير معروف</string>
+
+    <string name="home_subtitle">نزّل قائمة التشغيل واستمع دون اتصال</string>
+    <string name="home_storage_banner">يلزم إذن التخزين لحفظ الموسيقى في المجلد الذي تختاره.</string>
+    <string name="home_grant">السماح</string>
+    <string name="home_paste_title">الصق رابطًا</string>
+    <string name="home_link_hint">رابط فيديو أو قائمة تشغيل YouTube / YouTube Music</string>
+    <string name="home_paste">لصق</string>
+    <string name="home_list">عرض</string>
+    <string name="home_preparing">جارٍ التحضير…</string>
+    <string name="home_recent">تم تنزيله مؤخرًا</string>
+    <string name="home_no_downloads">لا توجد تنزيلات بعد</string>
+    <string name="home_add_first">أضف أول أغنية من حقل الرابط أعلاه.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • جارٍ التحديث…</string>
+    <string name="home_ytdlp_loading">جارٍ التحضير</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">قائمة تشغيل</string>
+    <string name="home_chip_cover">الغلاف</string>
+    <string name="home_chip_tags">الوسوم</string>
+    <string name="home_chip_folder">مجلدك</string>
+
+    <string name="downloads_title">التنزيلات</string>
+    <string name="downloads_sub_running">%1$d قيد التنزيل • %2$d في الانتظار</string>
+    <string name="downloads_sub_done">%1$d أغانٍ مكتملة</string>
+    <string name="downloads_sub_default">قائمة الانتظار وسجل التنزيلات</string>
+    <string name="downloads_pause">إيقاف مؤقت</string>
+    <string name="downloads_resume">متابعة</string>
+    <string name="downloads_tab_active">النشطة (%1$d)</string>
+    <string name="downloads_tab_history">السجل (%1$d)</string>
+    <string name="downloads_queue_empty">قائمة الانتظار فارغة</string>
+    <string name="downloads_history_empty">السجل فارغ</string>
+    <string name="downloads_queue_hint">أضف قائمة تشغيل أو أغنية من الشاشة الرئيسية.</string>
+    <string name="downloads_history_hint">ستظهر التنزيلات المكتملة هنا.</string>
+    <string name="downloads_retry_failed">إعادة محاولة الفاشلة</string>
+    <string name="downloads_cancel_cd">إلغاء</string>
+    <string name="downloads_retry_cd">إعادة المحاولة</string>
+    <string name="downloads_delete_cd">حذف</string>
+    <string name="downloads_status_queued">في الانتظار</string>
+    <string name="downloads_status_downloading">قيد التنزيل</string>
+    <string name="downloads_status_queued_fmt">في الانتظار • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">فشل • %1$s</string>
+    <string name="downloads_status_canceled">ملغى</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">تعذر فتح الملف</string>
+    <string name="toast_share_music">مشاركة الموسيقى</string>
+    <string name="toast_share_failed">تعذر فتح المشاركة</string>
+
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_subtitle">التخزين والتنسيق والمحرك</string>
+    <string name="settings_storage">التخزين</string>
+    <string name="settings_download_folder">مجلد التنزيل</string>
+    <string name="settings_choose_folder">اختيار مجلد</string>
+    <string name="settings_storage_warning">لم يُمنح الوصول إلى جميع الملفات. تُحفظ التنزيلات في مجلد التطبيق.</string>
+    <string name="settings_download">التنزيل</string>
+    <string name="settings_default_format">التنسيق الافتراضي</string>
+    <string name="settings_bitrate">معدل البت</string>
+    <string name="settings_bitrate_not_applicable">التنسيق المحدد بلا فقدان أو أصلي؛ معدل البت لا ينطبق.</string>
+    <string name="settings_embed_cover">تضمين الغلاف</string>
+    <string name="settings_embed_cover_sub">يضيف غلاف الأغنية إلى الملف المنزّل</string>
+    <string name="settings_embed_tags">تضمين الوسوم</string>
+    <string name="settings_embed_tags_sub">يكتب بيانات العنوان والفنان</string>
+    <string name="settings_performance">الأداء</string>
+    <string name="settings_concurrency">التنزيلات المتزامنة</string>
+    <string name="settings_concurrency_sub">عدد المقاطع التي تُعالج في الوقت نفسه</string>
+    <string name="settings_auto_update">تحديث yt-dlp تلقائيًا</string>
+    <string name="settings_auto_update_sub">يُفحص مرة يوميًا</string>
+    <string name="settings_ytdlp_version">إصدار yt-dlp</string>
+    <string name="settings_advanced">متقدم</string>
+    <string name="settings_filename_template">قالب اسم الملف</string>
+    <string name="settings_simplify">تبسيط أسماء الملفات</string>
+    <string name="settings_simplify_sub">يحوّل الأحرف غير اللاتينية إلى ASCII</string>
+    <string name="settings_proxy">وكيل (اختياري)</string>
+    <string name="settings_clear_history">مسح سجل التنزيلات</string>
+    <string name="settings_about">حول</string>
+    <string name="settings_version">الإصدار</string>
+    <string name="settings_github">مستودع GitHub</string>
+    <string name="settings_about_text">صُمم هذا التطبيق للأرشفة الشخصية. احترم حقوق وشروط المنصات للمحتوى الذي تنزّله.</string>
+    <string name="settings_format_dialog">التنسيق الافتراضي</string>
+    <string name="settings_clear_dialog_title">مسح السجل</string>
+    <string name="settings_clear_dialog_body">تُزال السجلات المكتملة والفاشلة والملغاة من القائمة. لا تُحذف الملفات المنزّلة من الجهاز.</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_sub">لغة عرض التطبيق</string>
+    <string name="language_system">لغة النظام</string>
+
+    <string name="format_original">أصلي</string>
+    <string name="format_original_desc">أصلي — دون إعادة ترميز</string>
+    <string name="format_mp3_desc">MP3 — توافق واسع</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — فعّال</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — بلا فقدان</string>
+    <string name="format_wav_desc">WAV — غير مضغوط</string>
+
+    <string name="sheet_playlist">قائمة تشغيل</string>
+    <string name="sheet_single_track">مقطع واحد</string>
+    <string name="sheet_single_song">أغنية واحدة</string>
+    <string name="sheet_tracks">%1$d مقاطع • %2$s</string>
+    <string name="sheet_range">نطاق المقاطع</string>
+    <string name="sheet_range_hint">فارغ = الكل، مثال 1-10 أو 2,5,8</string>
+    <string name="sheet_audio_format">تنسيق الصوت</string>
+    <string name="sheet_original_note">يُنزّل تدفق الصوت الأصلي دون إعادة ترميز.</string>
+    <string name="sheet_lossless_note">هذا التنسيق بلا فقدان، لذا لا ينطبق معدل البت.</string>
+    <string name="sheet_cover_title">إضافة غلاف</string>
+    <string name="sheet_cover_sub">تضمين غلاف الأغنية في الملف</string>
+    <string name="sheet_tags_title">إضافة وسوم</string>
+    <string name="sheet_tags_sub">العنوان والفنان والألبوم</string>
+    <string name="sheet_add_queue">إضافة إلى الانتظار (%1$d)</string>
+
+    <string name="folder_title">اختيار مجلد التنزيل</string>
+    <string name="folder_parent">المجلد الأعلى</string>
+    <string name="folder_choose_this">اختيار هذا المجلد</string>
+
+    <string name="boot_failed">فشل التهيئة: %1$s</string>
+    <string name="loading_title">قراءة الرابط</string>
+    <string name="loading_body">جارٍ جلب معلومات قائمة التشغيل…</string>
+
+    <string name="error_empty_link">لا يمكن أن يكون الرابط فارغًا</string>
+    <string name="error_invalid_link">أدخل رابطًا صالحًا (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp غير جاهز</string>
+    <string name="error_folder_not_writable">تعذر الكتابة في مجلد التنزيل</string>
+    <string name="error_link_unreadable">تعذر قراءة الرابط</string>
+    <string name="error_video_info">تعذر الحصول على معلومات الفيديو</string>
+    <string name="error_no_tracks">لم يُعثر على مقاطع قابلة للتنزيل في قائمة التشغيل</string>
+    <string name="playlist_default">قائمة تشغيل</string>
+    <string name="single_default">مقطع واحد</string>
+    <string name="unknown_track">مقطع غير معروف</string>
+
+    <string name="notif_channel_downloads">التنزيلات</string>
+    <string name="notif_channel_downloads_desc">تنزيلات الموسيقى الجارية</string>
+    <string name="notif_channel_events">الإشعارات</string>
+    <string name="notif_channel_events_desc">التنزيلات المكتملة والتنبيهات</string>
+    <string name="notif_paused">متوقف مؤقتًا • %1$d في الانتظار</string>
+    <string name="notif_running_queue">%1$d قيد التنزيل • %2$d في الانتظار</string>
+    <string name="notif_running">%1$d أغانٍ قيد التنزيل</string>
+    <string name="notif_queued">%1$d أغانٍ في الانتظار</string>
+    <string name="notif_pause">إيقاف مؤقت</string>
+    <string name="notif_resume">متابعة</string>
+    <string name="notif_cancel">إلغاء</string>
+    <string name="notif_batch_done">%1$d مكتملة</string>
+    <string name="notif_batch_failed">%1$d فاشلة</string>
+    <string name="notif_batch_canceled">%1$d ملغاة</string>
+    <string name="notif_batch_finished">%1$d عمليات انتهت</string>
+    <string name="notif_complete_title">اكتمل التنزيل</string>
+    <string name="notif_finished_title">انتهى</string>
+
+    <string name="duration_min_sec">%1$d د %2$d ث</string>
+    <string name="duration_sec">%1$d ث</string>
+</resources>

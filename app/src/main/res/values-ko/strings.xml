@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">홈</string>
+    <string name="nav_downloads">다운로드</string>
+    <string name="nav_settings">설정</string>
+
+    <string name="common_cancel">취소</string>
+    <string name="common_close">닫기</string>
+    <string name="common_save">저장</string>
+    <string name="common_delete">삭제</string>
+    <string name="common_update">업데이트</string>
+    <string name="common_default">기본값</string>
+    <string name="common_all">전체</string>
+    <string name="common_retry">다시 시도</string>
+    <string name="common_clear">지우기</string>
+    <string name="common_change">변경</string>
+    <string name="common_open">열기</string>
+    <string name="common_share">공유</string>
+    <string name="common_unknown">알 수 없음</string>
+
+    <string name="home_subtitle">재생목록을 다운로드하고 오프라인으로 듣기</string>
+    <string name="home_storage_banner">선택한 폴더에 음악을 저장하려면 저장소 권한이 필요합니다.</string>
+    <string name="home_grant">허용</string>
+    <string name="home_paste_title">링크 붙여넣기</string>
+    <string name="home_link_hint">YouTube / YouTube Music 동영상 또는 재생목록 링크</string>
+    <string name="home_paste">붙여넣기</string>
+    <string name="home_list">목록 보기</string>
+    <string name="home_preparing">준비 중…</string>
+    <string name="home_recent">최근 다운로드</string>
+    <string name="home_no_downloads">아직 다운로드가 없습니다</string>
+    <string name="home_add_first">위 링크 입력란에서 첫 곡을 추가하세요.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • 업데이트 중…</string>
+    <string name="home_ytdlp_loading">준비 중</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">재생목록</string>
+    <string name="home_chip_cover">커버</string>
+    <string name="home_chip_tags">태그</string>
+    <string name="home_chip_folder">내 폴더</string>
+
+    <string name="downloads_title">다운로드</string>
+    <string name="downloads_sub_running">%1$d개 다운로드 중 • %2$d개 대기 중</string>
+    <string name="downloads_sub_done">%1$d곡 완료</string>
+    <string name="downloads_sub_default">대기열 및 다운로드 기록</string>
+    <string name="downloads_pause">일시정지</string>
+    <string name="downloads_resume">재개</string>
+    <string name="downloads_tab_active">활성 (%1$d)</string>
+    <string name="downloads_tab_history">기록 (%1$d)</string>
+    <string name="downloads_queue_empty">대기열이 비어 있습니다</string>
+    <string name="downloads_history_empty">기록이 비어 있습니다</string>
+    <string name="downloads_queue_hint">홈 화면에서 재생목록이나 곡을 추가하세요.</string>
+    <string name="downloads_history_hint">완료된 다운로드가 여기에 표시됩니다.</string>
+    <string name="downloads_retry_failed">실패 항목 다시 시도</string>
+    <string name="downloads_cancel_cd">취소</string>
+    <string name="downloads_retry_cd">다시 시도</string>
+    <string name="downloads_delete_cd">삭제</string>
+    <string name="downloads_status_queued">대기 중</string>
+    <string name="downloads_status_downloading">다운로드 중</string>
+    <string name="downloads_status_queued_fmt">대기 중 • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">실패 • %1$s</string>
+    <string name="downloads_status_canceled">취소됨</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">파일을 열 수 없습니다</string>
+    <string name="toast_share_music">음악 공유</string>
+    <string name="toast_share_failed">공유를 열 수 없습니다</string>
+
+    <string name="settings_title">설정</string>
+    <string name="settings_subtitle">저장소, 형식 및 엔진</string>
+    <string name="settings_storage">저장소</string>
+    <string name="settings_download_folder">다운로드 폴더</string>
+    <string name="settings_choose_folder">폴더 선택</string>
+    <string name="settings_storage_warning">모든 파일 접근 권한이 없습니다. 다운로드는 앱 폴더에 저장됩니다.</string>
+    <string name="settings_download">다운로드</string>
+    <string name="settings_default_format">기본 형식</string>
+    <string name="settings_bitrate">비트레이트</string>
+    <string name="settings_bitrate_not_applicable">선택한 형식은 무손실 또는 원본이므로 비트레이트가 적용되지 않습니다.</string>
+    <string name="settings_embed_cover">커버 삽입</string>
+    <string name="settings_embed_cover_sub">다운로드한 파일에 곡 커버를 추가합니다</string>
+    <string name="settings_embed_tags">태그 삽입</string>
+    <string name="settings_embed_tags_sub">제목과 아티스트 메타데이터를 기록합니다</string>
+    <string name="settings_performance">성능</string>
+    <string name="settings_concurrency">동시 다운로드</string>
+    <string name="settings_concurrency_sub">동시에 처리할 트랙 수</string>
+    <string name="settings_auto_update">yt-dlp 자동 업데이트</string>
+    <string name="settings_auto_update_sub">하루에 한 번 확인합니다</string>
+    <string name="settings_ytdlp_version">yt-dlp 버전</string>
+    <string name="settings_advanced">고급</string>
+    <string name="settings_filename_template">파일 이름 템플릿</string>
+    <string name="settings_simplify">파일 이름 단순화</string>
+    <string name="settings_simplify_sub">비 ASCII 문자를 ASCII로 변환합니다</string>
+    <string name="settings_proxy">프록시 (선택)</string>
+    <string name="settings_clear_history">다운로드 기록 지우기</string>
+    <string name="settings_about">정보</string>
+    <string name="settings_version">버전</string>
+    <string name="settings_github">GitHub 저장소</string>
+    <string name="settings_about_text">이 앱은 개인 보관용으로 만들어졌습니다. 다운로드하는 콘텐츠의 권리와 플랫폼 약관을 존중하세요.</string>
+    <string name="settings_format_dialog">기본 형식</string>
+    <string name="settings_clear_dialog_title">기록 지우기</string>
+    <string name="settings_clear_dialog_body">완료, 실패, 취소된 기록이 목록에서 제거됩니다. 다운로드한 파일은 기기에서 삭제되지 않습니다.</string>
+    <string name="settings_language">언어</string>
+    <string name="settings_language_sub">앱 표시 언어</string>
+    <string name="language_system">시스템 언어</string>
+
+    <string name="format_original">원본</string>
+    <string name="format_original_desc">원본 — 재인코딩 없음</string>
+    <string name="format_mp3_desc">MP3 — 범용 호환성</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — 효율적</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — 무손실</string>
+    <string name="format_wav_desc">WAV — 비압축</string>
+
+    <string name="sheet_playlist">재생목록</string>
+    <string name="sheet_single_track">단일 트랙</string>
+    <string name="sheet_single_song">단일 트랙</string>
+    <string name="sheet_tracks">%1$d개 트랙 • %2$s</string>
+    <string name="sheet_range">트랙 범위</string>
+    <string name="sheet_range_hint">비움 = 전체, 예: 1-10 또는 2,5,8</string>
+    <string name="sheet_audio_format">오디오 형식</string>
+    <string name="sheet_original_note">원본 오디오 스트림을 재인코딩 없이 다운로드합니다.</string>
+    <string name="sheet_lossless_note">이 형식은 무손실이므로 비트레이트가 적용되지 않습니다.</string>
+    <string name="sheet_cover_title">커버 추가</string>
+    <string name="sheet_cover_sub">곡 커버를 파일에 삽입</string>
+    <string name="sheet_tags_title">태그 추가</string>
+    <string name="sheet_tags_sub">제목, 아티스트, 앨범</string>
+    <string name="sheet_add_queue">대기열에 추가 (%1$d)</string>
+
+    <string name="folder_title">다운로드 폴더 선택</string>
+    <string name="folder_parent">상위 폴더</string>
+    <string name="folder_choose_this">이 폴더 선택</string>
+
+    <string name="boot_failed">초기화 실패: %1$s</string>
+    <string name="loading_title">링크 읽는 중</string>
+    <string name="loading_body">재생목록 정보를 가져오는 중…</string>
+
+    <string name="error_empty_link">링크는 비워 둘 수 없습니다</string>
+    <string name="error_invalid_link">유효한 링크를 입력하세요 (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp가 준비되지 않았습니다</string>
+    <string name="error_folder_not_writable">다운로드 폴더에 쓸 수 없습니다</string>
+    <string name="error_link_unreadable">링크를 읽을 수 없습니다</string>
+    <string name="error_video_info">동영상 정보를 가져올 수 없습니다</string>
+    <string name="error_no_tracks">재생목록에 다운로드 가능한 트랙이 없습니다</string>
+    <string name="playlist_default">재생목록</string>
+    <string name="single_default">단일 트랙</string>
+    <string name="unknown_track">알 수 없는 트랙</string>
+
+    <string name="notif_channel_downloads">다운로드</string>
+    <string name="notif_channel_downloads_desc">진행 중인 음악 다운로드</string>
+    <string name="notif_channel_events">알림</string>
+    <string name="notif_channel_events_desc">완료된 다운로드 및 알림</string>
+    <string name="notif_paused">일시정지 • %1$d개 대기</string>
+    <string name="notif_running_queue">%1$d개 다운로드 중 • %2$d개 대기</string>
+    <string name="notif_running">%1$d곡 다운로드 중</string>
+    <string name="notif_queued">%1$d곡 대기 중</string>
+    <string name="notif_pause">일시정지</string>
+    <string name="notif_resume">재개</string>
+    <string name="notif_cancel">취소</string>
+    <string name="notif_batch_done">%1$d개 완료</string>
+    <string name="notif_batch_failed">%1$d개 실패</string>
+    <string name="notif_batch_canceled">%1$d개 취소</string>
+    <string name="notif_batch_finished">%1$d개 작업 종료</string>
+    <string name="notif_complete_title">다운로드 완료</string>
+    <string name="notif_finished_title">완료</string>
+
+    <string name="duration_min_sec">%1$d분 %2$d초</string>
+    <string name="duration_sec">%1$d초</string>
+</resources>

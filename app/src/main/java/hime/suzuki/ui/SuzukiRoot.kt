@@ -41,6 +41,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
@@ -79,8 +80,8 @@ fun SuzukiRoot(vm: MainViewModel) {
     LaunchedEffect(boot.error) {
         val error = boot.error ?: return@LaunchedEffect
         val result = snackbar.showSnackbar(
-            message = "Hazırlanamadı: $error",
-            actionLabel = "Tekrar dene",
+            message = context.getString(R.string.boot_failed, error),
+            actionLabel = context.getString(R.string.common_retry),
             duration = SnackbarDuration.Long,
         )
         if (result == SnackbarResult.ActionPerformed) vm.retryInit()
@@ -188,7 +189,10 @@ fun SuzukiRoot(vm: MainViewModel) {
     }
 
     if (vm.fetch.loading) {
-        LoadingDialog("Bağlantı okunuyor", "Çalma listesi bilgileri getiriliyor…")
+        LoadingDialog(
+            context.getString(R.string.loading_title),
+            context.getString(R.string.loading_body),
+        )
     }
 
     val preview = vm.fetch.preview
@@ -207,9 +211,9 @@ private fun SuzukiBottomBar(nav: NavHostController) {
     val entry by nav.currentBackStackEntryAsState()
     val current = entry?.destination?.route
     val tabs = listOf(
-        Triple(Routes.HOME, R.drawable.ic_home, "Ana sayfa"),
-        Triple(Routes.DOWNLOADS, R.drawable.ic_download, "İndirmeler"),
-        Triple(Routes.SETTINGS, R.drawable.ic_settings, "Ayarlar"),
+        Triple(Routes.HOME, R.drawable.ic_home, stringResource(R.string.nav_home)),
+        Triple(Routes.DOWNLOADS, R.drawable.ic_download, stringResource(R.string.nav_downloads)),
+        Triple(Routes.SETTINGS, R.drawable.ic_settings, stringResource(R.string.nav_settings)),
     )
 
     NavigationBar(

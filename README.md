@@ -9,7 +9,7 @@ indirme kuyruğu, bildirimler ve ayrıntılı ayarlar içerir.
 - Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous)
   - `suzuki-latest-arm64-v8a.apk` (~63 MB) — 2019 sonrası çoğu telefon
   - `suzuki-latest-armeabi-v7a.apk` (~56 MB) — eski / 32-bit cihazlar
-- Sürümler: [v1.1.2](https://github.com/berkchy/suzuki/releases/tag/v1.1.2)
+- Sürümler: [v1.2.0](https://github.com/berkchy/suzuki/releases/tag/v1.2.0)
 
 Mimariden emin değilsen önce `arm64-v8a` APK'yı dene; kurulmazsa `armeabi-v7a`'yı kur.
 Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.
@@ -34,6 +34,7 @@ güncelle). Ayrı ABI APK'ları sayesinde her cihaz yalnızca kendi mimarisini i
 - İndirme klasörü seçimi, tüm dosyalara erişim izni desteği
 - yt-dlp'yi uygulama içinden güncelleme (günde bir otomatik kontrol)
 - Room ile kuyruk/geçmiş, DataStore ile ayarlar
+- 25 dilde arayüz ve uygulama içi dil seçimi (çevrimdışı)
 - Material 3 koyu mavi tema, Compose navigasyon geçiş animasyonları
 
 ## Mimari

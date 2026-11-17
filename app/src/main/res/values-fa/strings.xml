@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">خانه</string>
+    <string name="nav_downloads">دانلودها</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <string name="common_cancel">لغو</string>
+    <string name="common_close">بستن</string>
+    <string name="common_save">ذخیره</string>
+    <string name="common_delete">حذف</string>
+    <string name="common_update">به‌روزرسانی</string>
+    <string name="common_default">پیش‌فرض</string>
+    <string name="common_all">همه</string>
+    <string name="common_retry">تلاش دوباره</string>
+    <string name="common_clear">پاک کردن</string>
+    <string name="common_change">تغییر</string>
+    <string name="common_open">باز کردن</string>
+    <string name="common_share">اشتراک‌گذاری</string>
+    <string name="common_unknown">نامشخص</string>
+
+    <string name="home_subtitle">پلی‌لیست خود را دانلود کنید و آفلاین گوش دهید</string>
+    <string name="home_storage_banner">برای ذخیره موسیقی در پوشه انتخابی، مجوز ذخیره‌سازی لازم است.</string>
+    <string name="home_grant">اجازه دادن</string>
+    <string name="home_paste_title">پیوند را جای‌گذاری کنید</string>
+    <string name="home_link_hint">پیوند ویدیو یا پلی‌لیست YouTube / YouTube Music</string>
+    <string name="home_paste">جای‌گذاری</string>
+    <string name="home_list">نمایش</string>
+    <string name="home_preparing">در حال آماده‌سازی…</string>
+    <string name="home_recent">اخیراً دانلود شده</string>
+    <string name="home_no_downloads">هنوز دانلودی نیست</string>
+    <string name="home_add_first">اولین آهنگ را از فیلد پیوند بالا اضافه کنید.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • در حال به‌روزرسانی…</string>
+    <string name="home_ytdlp_loading">در حال آماده‌سازی</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">پلی‌لیست</string>
+    <string name="home_chip_cover">جلد</string>
+    <string name="home_chip_tags">برچسب‌ها</string>
+    <string name="home_chip_folder">پوشه شما</string>
+
+    <string name="downloads_title">دانلودها</string>
+    <string name="downloads_sub_running">%1$d در حال دانلود • %2$d در صف</string>
+    <string name="downloads_sub_done">%1$d آهنگ کامل شد</string>
+    <string name="downloads_sub_default">صف و تاریخچه دانلود</string>
+    <string name="downloads_pause">توقف موقت</string>
+    <string name="downloads_resume">ادامه</string>
+    <string name="downloads_tab_active">فعال (%1$d)</string>
+    <string name="downloads_tab_history">تاریخچه (%1$d)</string>
+    <string name="downloads_queue_empty">صف خالی است</string>
+    <string name="downloads_history_empty">تاریخچه خالی است</string>
+    <string name="downloads_queue_hint">از صفحه اصلی یک پلی‌لیست یا آهنگ اضافه کنید.</string>
+    <string name="downloads_history_hint">دانلودهای کامل‌شده اینجا نمایش داده می‌شوند.</string>
+    <string name="downloads_retry_failed">تلاش دوباره ناموفق‌ها</string>
+    <string name="downloads_cancel_cd">لغو</string>
+    <string name="downloads_retry_cd">تلاش دوباره</string>
+    <string name="downloads_delete_cd">حذف</string>
+    <string name="downloads_status_queued">در صف</string>
+    <string name="downloads_status_downloading">در حال دانلود</string>
+    <string name="downloads_status_queued_fmt">در صف • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">ناموفق • %1$s</string>
+    <string name="downloads_status_canceled">لغو شد</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">فایل باز نشد</string>
+    <string name="toast_share_music">اشتراک‌گذاری موسیقی</string>
+    <string name="toast_share_failed">اشتراک‌گذاری باز نشد</string>
+
+    <string name="settings_title">تنظیمات</string>
+    <string name="settings_subtitle">ذخیره‌سازی، قالب و موتور</string>
+    <string name="settings_storage">ذخیره‌سازی</string>
+    <string name="settings_download_folder">پوشه دانلود</string>
+    <string name="settings_choose_folder">انتخاب پوشه</string>
+    <string name="settings_storage_warning">دسترسی به همه فایل‌ها داده نشده است. دانلودها در پوشه خود برنامه ذخیره می‌شوند.</string>
+    <string name="settings_download">دانلود</string>
+    <string name="settings_default_format">قالب پیش‌فرض</string>
+    <string name="settings_bitrate">نرخ بیت</string>
+    <string name="settings_bitrate_not_applicable">قالب انتخابی بدون افت یا اصلی است؛ نرخ بیت اعمال نمی‌شود.</string>
+    <string name="settings_embed_cover">درج جلد</string>
+    <string name="settings_embed_cover_sub">جلد آهنگ را به فایل دانلودشده اضافه می‌کند</string>
+    <string name="settings_embed_tags">درج برچسب‌ها</string>
+    <string name="settings_embed_tags_sub">فراداده عنوان و هنرمند را می‌نویسد</string>
+    <string name="settings_performance">کارایی</string>
+    <string name="settings_concurrency">دانلودهای هم‌زمان</string>
+    <string name="settings_concurrency_sub">تعداد آهنگ‌های پردازش‌شده به‌طور هم‌زمان</string>
+    <string name="settings_auto_update">به‌روزرسانی خودکار yt-dlp</string>
+    <string name="settings_auto_update_sub">روزی یک بار بررسی می‌شود</string>
+    <string name="settings_ytdlp_version">نسخه yt-dlp</string>
+    <string name="settings_advanced">پیشرفته</string>
+    <string name="settings_filename_template">قالب نام فایل</string>
+    <string name="settings_simplify">ساده‌سازی نام فایل‌ها</string>
+    <string name="settings_simplify_sub">نویسه‌های غیر ASCII را به ASCII تبدیل می‌کند</string>
+    <string name="settings_proxy">پروکسی (اختیاری)</string>
+    <string name="settings_clear_history">پاک کردن تاریخچه دانلود</string>
+    <string name="settings_about">درباره</string>
+    <string name="settings_version">نسخه</string>
+    <string name="settings_github">مخزن GitHub</string>
+    <string name="settings_about_text">این برنامه برای بایگانی شخصی ساخته شده است. به حقوق و شرایط پلتفرم‌ها برای محتوای دانلودی احترام بگذارید.</string>
+    <string name="settings_format_dialog">قالب پیش‌فرض</string>
+    <string name="settings_clear_dialog_title">پاک کردن تاریخچه</string>
+    <string name="settings_clear_dialog_body">رکوردهای کامل، ناموفق و لغوشده از فهرست حذف می‌شوند. فایل‌های دانلودشده از دستگاه حذف نمی‌شوند.</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_sub">زبان نمایش برنامه</string>
+    <string name="language_system">زبان سیستم</string>
+
+    <string name="format_original">اصلی</string>
+    <string name="format_original_desc">اصلی — بدون کدگذاری مجدد</string>
+    <string name="format_mp3_desc">MP3 — سازگاری عمومی</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — کارآمد</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — بدون افت</string>
+    <string name="format_wav_desc">WAV — فشرده‌نشده</string>
+
+    <string name="sheet_playlist">پلی‌لیست</string>
+    <string name="sheet_single_track">تک آهنگ</string>
+    <string name="sheet_single_song">تک آهنگ</string>
+    <string name="sheet_tracks">%1$d آهنگ • %2$s</string>
+    <string name="sheet_range">محدوده آهنگ‌ها</string>
+    <string name="sheet_range_hint">خالی = همه، مثلاً 1-10 یا 2,5,8</string>
+    <string name="sheet_audio_format">قالب صدا</string>
+    <string name="sheet_original_note">جریان صوتی اصلی بدون کدگذاری مجدد دانلود می‌شود.</string>
+    <string name="sheet_lossless_note">این قالب بدون افت است، بنابراین نرخ بیت اعمال نمی‌شود.</string>
+    <string name="sheet_cover_title">افزودن جلد</string>
+    <string name="sheet_cover_sub">درج جلد آهنگ در فایل</string>
+    <string name="sheet_tags_title">افزودن برچسب‌ها</string>
+    <string name="sheet_tags_sub">عنوان، هنرمند و آلبوم</string>
+    <string name="sheet_add_queue">افزودن به صف (%1$d)</string>
+
+    <string name="folder_title">انتخاب پوشه دانلود</string>
+    <string name="folder_parent">پوشه بالاتر</string>
+    <string name="folder_choose_this">انتخاب این پوشه</string>
+
+    <string name="boot_failed">خطا در راه‌اندازی: %1$s</string>
+    <string name="loading_title">خواندن پیوند</string>
+    <string name="loading_body">دریافت اطلاعات پلی‌لیست…</string>
+
+    <string name="error_empty_link">پیوند نمی‌تواند خالی باشد</string>
+    <string name="error_invalid_link">یک پیوند معتبر وارد کنید (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp آماده نیست</string>
+    <string name="error_folder_not_writable">نمی‌توان در پوشه دانلود نوشت</string>
+    <string name="error_link_unreadable">پیوند خوانده نشد</string>
+    <string name="error_video_info">اطلاعات ویدیو دریافت نشد</string>
+    <string name="error_no_tracks">هیچ آهنگ قابل دانلودی در پلی‌لیست پیدا نشد</string>
+    <string name="playlist_default">پلی‌لیست</string>
+    <string name="single_default">تک آهنگ</string>
+    <string name="unknown_track">آهنگ نامشخص</string>
+
+    <string name="notif_channel_downloads">دانلودها</string>
+    <string name="notif_channel_downloads_desc">دانلودهای موسیقی در جریان</string>
+    <string name="notif_channel_events">اعلان‌ها</string>
+    <string name="notif_channel_events_desc">دانلودهای کامل‌شده و هشدارها</string>
+    <string name="notif_paused">متوقف • %1$d در صف</string>
+    <string name="notif_running_queue">%1$d در حال دانلود • %2$d در صف</string>
+    <string name="notif_running">%1$d آهنگ در حال دانلود</string>
+    <string name="notif_queued">%1$d آهنگ در صف</string>
+    <string name="notif_pause">توقف</string>
+    <string name="notif_resume">ادامه</string>
+    <string name="notif_cancel">لغو</string>
+    <string name="notif_batch_done">%1$d کامل شد</string>
+    <string name="notif_batch_failed">%1$d ناموفق</string>
+    <string name="notif_batch_canceled">%1$d لغو شد</string>
+    <string name="notif_batch_finished">%1$d عملیات پایان یافت</string>
+    <string name="notif_complete_title">دانلود کامل شد</string>
+    <string name="notif_finished_title">پایان یافت</string>
+
+    <string name="duration_min_sec">%1$d دقیقه %2$d ثانیه</string>
+    <string name="duration_sec">%1$d ثانیه</string>
+</resources>

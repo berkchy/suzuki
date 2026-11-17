@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Início</string>
+    <string name="nav_downloads">Transferências</string>
+    <string name="nav_settings">Definições</string>
+
+    <string name="common_cancel">Cancelar</string>
+    <string name="common_close">Fechar</string>
+    <string name="common_save">Guardar</string>
+    <string name="common_delete">Eliminar</string>
+    <string name="common_update">Atualizar</string>
+    <string name="common_default">Predefinido</string>
+    <string name="common_all">Tudo</string>
+    <string name="common_retry">Tentar novamente</string>
+    <string name="common_clear">Limpar</string>
+    <string name="common_change">Alterar</string>
+    <string name="common_open">Abrir</string>
+    <string name="common_share">Partilhar</string>
+    <string name="common_unknown">Desconhecido</string>
+
+    <string name="home_subtitle">Transfira a sua playlist, ouça offline</string>
+    <string name="home_storage_banner">É necessária permissão de armazenamento para guardar música na pasta escolhida.</string>
+    <string name="home_grant">Permitir</string>
+    <string name="home_paste_title">Colar uma ligação</string>
+    <string name="home_link_hint">Ligação de vídeo ou playlist do YouTube / YouTube Music</string>
+    <string name="home_paste">Colar</string>
+    <string name="home_list">Listar</string>
+    <string name="home_preparing">A preparar…</string>
+    <string name="home_recent">Transferido recentemente</string>
+    <string name="home_no_downloads">Ainda não há transferências</string>
+    <string name="home_add_first">Adicione a primeira música no campo de ligação acima.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • a atualizar…</string>
+    <string name="home_ytdlp_loading">a preparar</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Playlist</string>
+    <string name="home_chip_cover">Capa</string>
+    <string name="home_chip_tags">Etiquetas</string>
+    <string name="home_chip_folder">A sua pasta</string>
+
+    <string name="downloads_title">Transferências</string>
+    <string name="downloads_sub_running">%1$d a transferir • %2$d em fila</string>
+    <string name="downloads_sub_done">%1$d músicas concluídas</string>
+    <string name="downloads_sub_default">Fila e histórico de transferências</string>
+    <string name="downloads_pause">Pausar</string>
+    <string name="downloads_resume">Retomar</string>
+    <string name="downloads_tab_active">Ativas (%1$d)</string>
+    <string name="downloads_tab_history">Histórico (%1$d)</string>
+    <string name="downloads_queue_empty">A fila está vazia</string>
+    <string name="downloads_history_empty">O histórico está vazio</string>
+    <string name="downloads_queue_hint">Adicione uma playlist ou música a partir do início.</string>
+    <string name="downloads_history_hint">As transferências concluídas aparecerão aqui.</string>
+    <string name="downloads_retry_failed">Repetir falhadas</string>
+    <string name="downloads_cancel_cd">Cancelar</string>
+    <string name="downloads_retry_cd">Tentar novamente</string>
+    <string name="downloads_delete_cd">Eliminar</string>
+    <string name="downloads_status_queued">Em fila</string>
+    <string name="downloads_status_downloading">A transferir</string>
+    <string name="downloads_status_queued_fmt">Em fila • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Falhou • %1$s</string>
+    <string name="downloads_status_canceled">Cancelada</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">Não foi possível abrir o ficheiro</string>
+    <string name="toast_share_music">Partilhar música</string>
+    <string name="toast_share_failed">Não foi possível abrir a partilha</string>
+
+    <string name="settings_title">Definições</string>
+    <string name="settings_subtitle">Armazenamento, formato e motor</string>
+    <string name="settings_storage">Armazenamento</string>
+    <string name="settings_download_folder">Pasta de transferências</string>
+    <string name="settings_choose_folder">Escolher pasta</string>
+    <string name="settings_storage_warning">O acesso a todos os ficheiros não foi concedido. As transferências são guardadas na pasta da aplicação.</string>
+    <string name="settings_download">Transferência</string>
+    <string name="settings_default_format">Formato predefinido</string>
+    <string name="settings_bitrate">Débito</string>
+    <string name="settings_bitrate_not_applicable">O formato escolhido é sem perdas ou original; o débito não se aplica.</string>
+    <string name="settings_embed_cover">Incorporar capa</string>
+    <string name="settings_embed_cover_sub">Adiciona a capa ao ficheiro transferido</string>
+    <string name="settings_embed_tags">Incorporar etiquetas</string>
+    <string name="settings_embed_tags_sub">Escreve metadados de título e artista</string>
+    <string name="settings_performance">Desempenho</string>
+    <string name="settings_concurrency">Transferências simultâneas</string>
+    <string name="settings_concurrency_sub">Número de faixas processadas ao mesmo tempo</string>
+    <string name="settings_auto_update">Atualizar yt-dlp automaticamente</string>
+    <string name="settings_auto_update_sub">Verificado uma vez por dia</string>
+    <string name="settings_ytdlp_version">Versão do yt-dlp</string>
+    <string name="settings_advanced">Avançado</string>
+    <string name="settings_filename_template">Modelo de nome de ficheiro</string>
+    <string name="settings_simplify">Simplificar nomes de ficheiros</string>
+    <string name="settings_simplify_sub">Converte caracteres não ASCII em ASCII</string>
+    <string name="settings_proxy">Proxy (opcional)</string>
+    <string name="settings_clear_history">Limpar histórico de transferências</string>
+    <string name="settings_about">Acerca</string>
+    <string name="settings_version">Versão</string>
+    <string name="settings_github">Repositório GitHub</string>
+    <string name="settings_about_text">Esta aplicação foi criada para arquivo pessoal. Respeite os direitos e os termos das plataformas do conteúdo que transfere.</string>
+    <string name="settings_format_dialog">Formato predefinido</string>
+    <string name="settings_clear_dialog_title">Limpar histórico</string>
+    <string name="settings_clear_dialog_body">Os registos concluídos, falhados e cancelados são removidos da lista. Os ficheiros transferidos não são eliminados do dispositivo.</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_sub">Idioma da aplicação</string>
+    <string name="language_system">Idioma do sistema</string>
+
+    <string name="format_original">Original</string>
+    <string name="format_original_desc">Original — sem recodificação</string>
+    <string name="format_mp3_desc">MP3 — compatibilidade universal</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — eficiente</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — sem perdas</string>
+    <string name="format_wav_desc">WAV — não comprimido</string>
+
+    <string name="sheet_playlist">PLAYLIST</string>
+    <string name="sheet_single_track">FAIXA ÚNICA</string>
+    <string name="sheet_single_song">Faixa única</string>
+    <string name="sheet_tracks">%1$d faixas • %2$s</string>
+    <string name="sheet_range">Intervalo de faixas</string>
+    <string name="sheet_range_hint">Vazio = todas, ex. 1-10 ou 2,5,8</string>
+    <string name="sheet_audio_format">Formato de áudio</string>
+    <string name="sheet_original_note">O fluxo de áudio original é transferido sem recodificação.</string>
+    <string name="sheet_lossless_note">Este formato é sem perdas, pelo que o débito não se aplica.</string>
+    <string name="sheet_cover_title">Adicionar capa</string>
+    <string name="sheet_cover_sub">Incorporar a capa no ficheiro</string>
+    <string name="sheet_tags_title">Adicionar etiquetas</string>
+    <string name="sheet_tags_sub">Título, artista e álbum</string>
+    <string name="sheet_add_queue">Adicionar à fila (%1$d)</string>
+
+    <string name="folder_title">Escolher pasta de transferências</string>
+    <string name="folder_parent">Pasta superior</string>
+    <string name="folder_choose_this">Escolher esta pasta</string>
+
+    <string name="boot_failed">Falha na inicialização: %1$s</string>
+    <string name="loading_title">A ler ligação</string>
+    <string name="loading_body">A obter informações da playlist…</string>
+
+    <string name="error_empty_link">A ligação não pode estar vazia</string>
+    <string name="error_invalid_link">Introduza uma ligação válida (http/https)</string>
+    <string name="error_engine_not_ready">O yt-dlp não está pronto</string>
+    <string name="error_folder_not_writable">Não é possível escrever na pasta de transferências</string>
+    <string name="error_link_unreadable">Não foi possível ler a ligação</string>
+    <string name="error_video_info">Não foi possível obter informações do vídeo</string>
+    <string name="error_no_tracks">Não foram encontradas faixas transferíveis na playlist</string>
+    <string name="playlist_default">Playlist</string>
+    <string name="single_default">Faixa única</string>
+    <string name="unknown_track">Faixa desconhecida</string>
+
+    <string name="notif_channel_downloads">Transferências</string>
+    <string name="notif_channel_downloads_desc">Transferências de música em curso</string>
+    <string name="notif_channel_events">Notificações</string>
+    <string name="notif_channel_events_desc">Transferências concluídas e alertas</string>
+    <string name="notif_paused">Em pausa • %1$d em fila</string>
+    <string name="notif_running_queue">%1$d a transferir • %2$d em fila</string>
+    <string name="notif_running">%1$d músicas a transferir</string>
+    <string name="notif_queued">%1$d músicas em fila</string>
+    <string name="notif_pause">Pausar</string>
+    <string name="notif_resume">Retomar</string>
+    <string name="notif_cancel">Cancelar</string>
+    <string name="notif_batch_done">%1$d concluídas</string>
+    <string name="notif_batch_failed">%1$d falhadas</string>
+    <string name="notif_batch_canceled">%1$d canceladas</string>
+    <string name="notif_batch_finished">%1$d operações terminadas</string>
+    <string name="notif_complete_title">Transferência concluída</string>
+    <string name="notif_finished_title">Terminado</string>
+
+    <string name="duration_min_sec">%1$d min %2$d s</string>
+    <string name="duration_sec">%1$d s</string>
+</resources>

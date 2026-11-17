@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Suzuki</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_downloads">Descargas</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <string name="common_cancel">Cancelar</string>
+    <string name="common_close">Cerrar</string>
+    <string name="common_save">Guardar</string>
+    <string name="common_delete">Eliminar</string>
+    <string name="common_update">Actualizar</string>
+    <string name="common_default">Predeterminado</string>
+    <string name="common_all">Todo</string>
+    <string name="common_retry">Reintentar</string>
+    <string name="common_clear">Borrar</string>
+    <string name="common_change">Cambiar</string>
+    <string name="common_open">Abrir</string>
+    <string name="common_share">Compartir</string>
+    <string name="common_unknown">Desconocido</string>
+
+    <string name="home_subtitle">Descarga tu lista de reproducción, escucha sin conexión</string>
+    <string name="home_storage_banner">Se necesita permiso de almacenamiento para guardar la música en la carpeta elegida.</string>
+    <string name="home_grant">Permitir</string>
+    <string name="home_paste_title">Pegar un enlace</string>
+    <string name="home_link_hint">Enlace de vídeo o lista de YouTube / YouTube Music</string>
+    <string name="home_paste">Pegar</string>
+    <string name="home_list">Listar</string>
+    <string name="home_preparing">Preparando…</string>
+    <string name="home_recent">Descargado recientemente</string>
+    <string name="home_no_downloads">Aún no hay descargas</string>
+    <string name="home_add_first">Añade tu primera canción con el campo de enlace de arriba.</string>
+    <string name="home_ytdlp_status">yt-dlp %1$s</string>
+    <string name="home_ytdlp_updating">%1$s • actualizando…</string>
+    <string name="home_ytdlp_loading">preparando</string>
+    <string name="home_item_meta">%1$s • %2$s</string>
+    <string name="home_chip_playlist">Lista</string>
+    <string name="home_chip_cover">Portada</string>
+    <string name="home_chip_tags">Etiquetas</string>
+    <string name="home_chip_folder">Tu carpeta</string>
+
+    <string name="downloads_title">Descargas</string>
+    <string name="downloads_sub_running">%1$d descargando • %2$d en cola</string>
+    <string name="downloads_sub_done">%1$d canciones completadas</string>
+    <string name="downloads_sub_default">Cola e historial de descargas</string>
+    <string name="downloads_pause">Pausar</string>
+    <string name="downloads_resume">Reanudar</string>
+    <string name="downloads_tab_active">Activas (%1$d)</string>
+    <string name="downloads_tab_history">Historial (%1$d)</string>
+    <string name="downloads_queue_empty">La cola está vacía</string>
+    <string name="downloads_history_empty">El historial está vacío</string>
+    <string name="downloads_queue_hint">Añade una lista o una canción desde el inicio.</string>
+    <string name="downloads_history_hint">Las descargas completadas aparecerán aquí.</string>
+    <string name="downloads_retry_failed">Reintentar fallidas</string>
+    <string name="downloads_cancel_cd">Cancelar</string>
+    <string name="downloads_retry_cd">Reintentar</string>
+    <string name="downloads_delete_cd">Eliminar</string>
+    <string name="downloads_status_queued">En cola</string>
+    <string name="downloads_status_downloading">Descargando</string>
+    <string name="downloads_status_queued_fmt">En cola • %1$s</string>
+    <string name="downloads_status_running_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_done_fmt">%1$s • %2$s</string>
+    <string name="downloads_status_failed_fmt">Fallida • %1$s</string>
+    <string name="downloads_status_canceled">Cancelada</string>
+    <string name="downloads_meta">%1$s • %2$s</string>
+    <string name="toast_file_open_failed">No se pudo abrir el archivo</string>
+    <string name="toast_share_music">Compartir música</string>
+    <string name="toast_share_failed">No se pudo abrir Compartir</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_subtitle">Almacenamiento, formato y motor</string>
+    <string name="settings_storage">Almacenamiento</string>
+    <string name="settings_download_folder">Carpeta de descargas</string>
+    <string name="settings_choose_folder">Elegir carpeta</string>
+    <string name="settings_storage_warning">No se ha concedido acceso a todos los archivos. Las descargas se guardan en la carpeta de la app.</string>
+    <string name="settings_download">Descarga</string>
+    <string name="settings_default_format">Formato predeterminado</string>
+    <string name="settings_bitrate">Tasa de bits</string>
+    <string name="settings_bitrate_not_applicable">El formato elegido es sin pérdida u original; la tasa de bits no se aplica.</string>
+    <string name="settings_embed_cover">Incrustar portada</string>
+    <string name="settings_embed_cover_sub">Añade la portada al archivo descargado</string>
+    <string name="settings_embed_tags">Incrustar etiquetas</string>
+    <string name="settings_embed_tags_sub">Escribe metadatos de título y artista</string>
+    <string name="settings_performance">Rendimiento</string>
+    <string name="settings_concurrency">Descargas simultáneas</string>
+    <string name="settings_concurrency_sub">Número de pistas procesadas a la vez</string>
+    <string name="settings_auto_update">Actualizar yt-dlp automáticamente</string>
+    <string name="settings_auto_update_sub">Se comprueba una vez al día</string>
+    <string name="settings_ytdlp_version">Versión de yt-dlp</string>
+    <string name="settings_advanced">Avanzado</string>
+    <string name="settings_filename_template">Plantilla de nombre de archivo</string>
+    <string name="settings_simplify">Simplificar nombres de archivo</string>
+    <string name="settings_simplify_sub">Convierte caracteres no ASCII a ASCII</string>
+    <string name="settings_proxy">Proxy (opcional)</string>
+    <string name="settings_clear_history">Borrar historial de descargas</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_version">Versión</string>
+    <string name="settings_github">Repositorio de GitHub</string>
+    <string name="settings_about_text">Esta app se creó para archivo personal. Respeta los derechos y las condiciones de las plataformas del contenido que descargues.</string>
+    <string name="settings_format_dialog">Formato predeterminado</string>
+    <string name="settings_clear_dialog_title">Borrar historial</string>
+    <string name="settings_clear_dialog_body">Se eliminan de la lista los registros completados, fallidos y cancelados. Los archivos descargados no se borran del dispositivo.</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_sub">Idioma de la aplicación</string>
+    <string name="language_system">Idioma del sistema</string>
+
+    <string name="format_original">Original</string>
+    <string name="format_original_desc">Original — sin recodificar</string>
+    <string name="format_mp3_desc">MP3 — compatibilidad universal</string>
+    <string name="format_m4a_desc">M4A — AAC</string>
+    <string name="format_opus_desc">OPUS — eficiente</string>
+    <string name="format_ogg_desc">OGG — Vorbis</string>
+    <string name="format_flac_desc">FLAC — sin pérdida</string>
+    <string name="format_wav_desc">WAV — sin comprimir</string>
+
+    <string name="sheet_playlist">LISTA</string>
+    <string name="sheet_single_track">PISTA ÚNICA</string>
+    <string name="sheet_single_song">Pista única</string>
+    <string name="sheet_tracks">%1$d pistas • %2$s</string>
+    <string name="sheet_range">Rango de pistas</string>
+    <string name="sheet_range_hint">Vacío = todas, p. ej. 1-10 o 2,5,8</string>
+    <string name="sheet_audio_format">Formato de audio</string>
+    <string name="sheet_original_note">El flujo de audio original se descarga sin recodificar.</string>
+    <string name="sheet_lossless_note">Este formato es sin pérdida, así que la tasa de bits no se aplica.</string>
+    <string name="sheet_cover_title">Añadir portada</string>
+    <string name="sheet_cover_sub">Incrustar la portada en el archivo</string>
+    <string name="sheet_tags_title">Añadir etiquetas</string>
+    <string name="sheet_tags_sub">Título, artista y álbum</string>
+    <string name="sheet_add_queue">Añadir a la cola (%1$d)</string>
+
+    <string name="folder_title">Elegir carpeta de descargas</string>
+    <string name="folder_parent">Carpeta superior</string>
+    <string name="folder_choose_this">Elegir esta carpeta</string>
+
+    <string name="boot_failed">Error de inicio: %1$s</string>
+    <string name="loading_title">Leyendo enlace</string>
+    <string name="loading_body">Obteniendo información de la lista…</string>
+
+    <string name="error_empty_link">El enlace no puede estar vacío</string>
+    <string name="error_invalid_link">Introduce un enlace válido (http/https)</string>
+    <string name="error_engine_not_ready">yt-dlp no está listo</string>
+    <string name="error_folder_not_writable">No se puede escribir en la carpeta de descargas</string>
+    <string name="error_link_unreadable">No se pudo leer el enlace</string>
+    <string name="error_video_info">No se pudo obtener la información del vídeo</string>
+    <string name="error_no_tracks">No se encontraron pistas descargables en la lista</string>
+    <string name="playlist_default">Lista</string>
+    <string name="single_default">Pista única</string>
+    <string name="unknown_track">Pista desconocida</string>
+
+    <string name="notif_channel_downloads">Descargas</string>
+    <string name="notif_channel_downloads_desc">Descargas de música en curso</string>
+    <string name="notif_channel_events">Notificaciones</string>
+    <string name="notif_channel_events_desc">Descargas completadas y avisos</string>
+    <string name="notif_paused">En pausa • %1$d en cola</string>
+    <string name="notif_running_queue">%1$d descargando • %2$d en cola</string>
+    <string name="notif_running">%1$d canciones descargando</string>
+    <string name="notif_queued">%1$d canciones en cola</string>
+    <string name="notif_pause">Pausar</string>
+    <string name="notif_resume">Reanudar</string>
+    <string name="notif_cancel">Cancelar</string>
+    <string name="notif_batch_done">%1$d completadas</string>
+    <string name="notif_batch_failed">%1$d fallidas</string>
+    <string name="notif_batch_canceled">%1$d canceladas</string>
+    <string name="notif_batch_finished">%1$d operaciones finalizadas</string>
+    <string name="notif_complete_title">Descarga completada</string>
+    <string name="notif_finished_title">Finalizado</string>
+
+    <string name="duration_min_sec">%1$d min %2$d s</string>
+    <string name="duration_sec">%1$d s</string>
+</resources>

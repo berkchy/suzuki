@@ -1,6 +1,8 @@
 package hime.suzuki.download
 
 import android.content.Context
+import hime.suzuki.R
+import hime.suzuki.core.AppLocale
 import hime.suzuki.core.Fmt
 import hime.suzuki.core.Storage
 import hime.suzuki.data.AppSettings
@@ -98,7 +100,11 @@ class DownloadEngine(
             try {
                 val config: AppSettings = settingsRepo.snapshot()
                 val dir = Storage.resolveDir(context, config.downloadDir)
-                if (!Storage.ensure(dir)) throw IOException("İndirme klasörüne yazılamıyor")
+                if (!Storage.ensure(dir)) {
+                    throw IOException(
+                        AppLocale.wrap(context).getString(R.string.error_folder_not_writable)
+                    )
+                }
 
                 var lastDbWrite = 0L
                 val result = YtdlpEngine.download(

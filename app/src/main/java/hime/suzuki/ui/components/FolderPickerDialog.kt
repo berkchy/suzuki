@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import hime.suzuki.R
@@ -60,7 +61,7 @@ fun FolderPickerDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("İndirme klasörü seç") },
+        title = { Text(stringResource(R.string.folder_title)) },
         text = {
             Column {
                 Text(
@@ -86,7 +87,10 @@ fun FolderPickerDialog(
                         modifier = Modifier.size(18.dp),
                     )
                     Spacer(Modifier.width(8.dp))
-                    Text("Üst klasör", style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        stringResource(R.string.folder_parent),
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
                 }
                 LazyColumn(modifier = Modifier.heightIn(max = 300.dp)) {
                     items(children, key = { it.absolutePath }) { dir ->
@@ -113,11 +117,11 @@ fun FolderPickerDialog(
         },
         confirmButton = {
             TextButton(onClick = { onPick(current.absolutePath) }) {
-                Text("Bu klasörü seç")
+                Text(stringResource(R.string.folder_choose_this))
             }
         },
         dismissButton = {
-            TextButton(onClick = onDismiss) { Text("Vazgeç") }
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.common_cancel)) }
         },
     )
 }

@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -73,23 +74,23 @@ fun HomeScreen(
     ) {
         ScreenHeader(
             title = "Suzuki",
-            subtitle = "Playlist'ini indir, çevrimdışı dinle",
+            subtitle = stringResource(R.string.home_subtitle),
         )
 
         if (!storageOk) {
             InfoBanner(
-                text = "Müzikleri seçtiğin klasöre kaydetmek için depolama izni gerekiyor.",
-                actionLabel = "İzin ver",
+                text = stringResource(R.string.home_storage_banner),
+                actionLabel = stringResource(R.string.home_grant),
                 onAction = onGrantStorage,
             )
             Spacer(Modifier.height(14.dp))
         }
 
         HeroCard {
-            Text("Bağlantıyı yapıştır", style = MaterialTheme.typography.titleLarge)
+            Text(stringResource(R.string.home_paste_title), style = MaterialTheme.typography.titleLarge)
             Spacer(Modifier.height(4.dp))
             Text(
-                "YouTube / YouTube Music video veya çalma listesi bağlantısı",
+                stringResource(R.string.home_link_hint),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -109,7 +110,10 @@ fun HomeScreen(
                 },
                 trailingIcon = {
                     if (url.isNotEmpty()) {
-                        IconAction(R.drawable.ic_close, "Temizle") { url = "" }
+                        IconAction(
+                            R.drawable.ic_close,
+                            stringResource(R.string.common_clear),
+                        ) { url = "" }
                     }
                 },
                 singleLine = true,
@@ -128,7 +132,7 @@ fun HomeScreen(
                         modifier = Modifier.size(18.dp),
                     )
                     Spacer(Modifier.width(6.dp))
-                    Text("Yapıştır")
+                    Text(stringResource(R.string.home_paste))
                 }
                 Button(
                     onClick = { if (url.isNotBlank()) vm.fetchUrl(url) },
@@ -151,7 +155,13 @@ fun HomeScreen(
                             modifier = Modifier.size(18.dp),
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text(if (ytdlp.ready) "Listele" else "Hazırlanıyor…")
+                        Text(
+                            if (ytdlp.ready) {
+                                stringResource(R.string.home_list)
+                            } else {
+                                stringResource(R.string.home_preparing)
+                            }
+                        )
                     }
                 }
             }
@@ -162,18 +172,20 @@ fun HomeScreen(
             modifier = Modifier.horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            StatChip(R.drawable.ic_music, "Playlist")
-            StatChip(R.drawable.ic_check, "Kapak resmi")
-            StatChip(R.drawable.ic_check, "Etiketler")
-            StatChip(R.drawable.ic_folder, "Kendi klasörün")
+            StatChip(R.drawable.ic_music, stringResource(R.string.home_chip_playlist))
+            StatChip(R.drawable.ic_check, stringResource(R.string.home_chip_cover))
+            StatChip(R.drawable.ic_check, stringResource(R.string.home_chip_tags))
+            StatChip(R.drawable.ic_folder, stringResource(R.string.home_chip_folder))
         }
 
         Spacer(Modifier.height(22.dp))
         SectionTitle(
-            text = "Son indirilenler",
+            text = stringResource(R.string.home_recent),
             trailing = {
                 if (recent.isNotEmpty()) {
-                    TextButton(onClick = onOpenDownloads) { Text("Tümü") }
+                    TextButton(onClick = onOpenDownloads) {
+                        Text(stringResource(R.string.common_all))
+                    }
                 }
             },
         )
@@ -190,9 +202,12 @@ fun HomeScreen(
                     )
                     Spacer(Modifier.width(12.dp))
                     Column {
-                        Text("Henüz indirme yok", style = MaterialTheme.typography.bodyLarge)
                         Text(
-                            "İlk şarkını yukarıdaki bağlantı alanından ekle.",
+                            stringResource(R.string.home_no_downloads),
+                            style = MaterialTheme.typography.bodyLarge,
+                        )
+                        Text(
+                            stringResource(R.string.home_add_first),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -207,8 +222,10 @@ fun HomeScreen(
         }
 
         Spacer(Modifier.height(20.dp))
+        val version = ytdlp.version ?: stringResource(R.string.home_ytdlp_loading)
+        val status = stringResource(R.string.home_ytdlp_status, version)
         Text(
-            "yt-dlp ${ytdlp.version ?: "hazırlanıyor"}${if (ytdlp.updating) " • güncelleniyor…" else ""}",
+            if (ytdlp.updating) stringResource(R.string.home_ytdlp_updating, status) else status,
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -217,6 +234,7 @@ fun HomeScreen(
 
 @Composable
 private fun RecentRow(item: DownloadItem, onClick: () -> Unit) {
+    val context = androidx.compose.ui.platform.LocalContext.current
     Surface(
         shape = RoundedCornerShape(18.dp),
         color = MaterialTheme.colorScheme.surface,
@@ -239,7 +257,11 @@ private fun RecentRow(item: DownloadItem, onClick: () -> Unit) {
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    "${Fmt.formatName(item.format)} • ${Fmt.humanSize(item.sizeBytes)}",
+                    stringResource(
+                        R.string.home_item_meta,
+                        Fmt.formatName(context, item.format),
+                        Fmt.humanSize(item.sizeBytes),
+                    ),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

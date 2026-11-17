@@ -93,14 +93,21 @@ object Notifications {
     }
 
     fun batchDone(context: Context, summary: BatchSummary) {
-        val text = if (summary.failed > 0) {
-            "${summary.total - summary.failed} tamamlandı, ${summary.failed} başarısız"
+        val done = (summary.total - summary.failed - summary.canceled).coerceAtLeast(0)
+        val parts = buildList {
+            if (done > 0) add("$done tamamlandı")
+            if (summary.failed > 0) add("${summary.failed} başarısız")
+            if (summary.canceled > 0) add("${summary.canceled} iptal")
+        }
+        val text = parts.joinToString(", ").ifEmpty { "${summary.total} işlem bitti" }
+        val title = if (summary.failed == 0 && summary.canceled == 0) {
+            "İndirme tamamlandı"
         } else {
-            "${summary.total} şarkı indirildi"
+            "İşlem tamamlandı"
         }
         val notification = NotificationCompat.Builder(context, CHANNEL_EVENTS)
             .setSmallIcon(R.drawable.ic_stat_music)
-            .setContentTitle("İndirme tamamlandı")
+            .setContentTitle(title)
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))
             .setAutoCancel(true)

@@ -47,6 +47,7 @@ class AppContainer(private val app: Application) {
             try {
                 YtdlpEngine.init(app)
                 _boot.value = BootState(started = true, ready = true)
+                runCatching { engine.recoverQueue() }
                 runCatching { YtdlpEngine.autoUpdateIfDue(app, settings) }
             } catch (t: Throwable) {
                 _boot.value = BootState(error = t.message ?: t.javaClass.simpleName)

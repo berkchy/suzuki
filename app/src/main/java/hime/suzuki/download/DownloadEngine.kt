@@ -32,7 +32,7 @@ data class AudioOptions(
     val range: String = "",
 )
 
-data class BatchSummary(val total: Int, val failed: Int)
+data class BatchSummary(val total: Int, val failed: Int, val canceled: Int)
 
 class DownloadEngine(
     private val context: Context,
@@ -45,6 +45,7 @@ class DownloadEngine(
     private val canceledIds = Collections.newSetFromMap(ConcurrentHashMap<Long, Boolean>())
     private val batchTotal = AtomicInteger(0)
     private val batchFailed = AtomicInteger(0)
+    private val batchCanceled = AtomicInteger(0)
 
     val paused = MutableStateFlow(false)
     val activeItems: Flow<List<DownloadItem>> = dao.observeActive()
@@ -127,6 +128,7 @@ class DownloadEngine(
                 canceledIds.remove(item.id)
             } catch (t: Throwable) {
                 if (canceledIds.remove(item.id)) {
+                    batchCanceled.incrementAndGet()
                     dao.setStatus(item.id, DownloadStatus.CANCELED, null, System.currentTimeMillis())
                 } else {
                     batchFailed.incrementAndGet()
@@ -155,6 +157,8 @@ class DownloadEngine(
         canceledIds.add(id)
         if (running) {
             runCatching { YoutubeDL.getInstance().destroyProcessById("suzuki-$id") }
+        } else {
+            batchCanceled.incrementAndGet()
         }
         scope.launch {
             dao.setStatus(id, DownloadStatus.CANCELED, null, System.currentTimeMillis())
@@ -170,7 +174,7 @@ class DownloadEngine(
                 runCatching { YoutubeDL.getInstance().destroyProcessById("suzuki-$id") }
                 dao.setStatus(id, DownloadStatus.CANCELED, null, now)
             }
-            dao.cancelQueued(now)
+            batchCanceled.addAndGet(dao.cancelQueued(now))
         }
     }
 
@@ -203,10 +207,21 @@ class DownloadEngine(
 
     suspend fun clearFinished() = dao.clearFinished()
 
+    suspend fun recoverQueue() {
+        dao.resetRunning()
+        if (dao.queuedCount() > 0) {
+            runCatching {
+                DownloadService.start(context)
+                pump()
+            }
+        }
+    }
+
     fun consumeBatch(): BatchSummary? {
         val total = batchTotal.getAndSet(0)
         val failed = batchFailed.getAndSet(0)
-        return if (total > 0) BatchSummary(total, failed) else null
+        val canceled = batchCanceled.getAndSet(0)
+        return if (total > 0) BatchSummary(total, failed, canceled) else null
     }
 
     private fun applyRange(entries: List<ExtractedEntry>, range: String): List<ExtractedEntry> {

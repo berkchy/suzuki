@@ -45,7 +45,13 @@ interface DownloadDao {
     suspend fun requeueFinished()
 
     @Query("UPDATE downloads SET status='CANCELED', finishedAt=:time WHERE status='QUEUED'")
-    suspend fun cancelQueued(time: Long)
+    suspend fun cancelQueued(time: Long): Int
+
+    @Query("UPDATE downloads SET status='QUEUED', progress=0, etaSeconds=0 WHERE status='RUNNING'")
+    suspend fun resetRunning(): Int
+
+    @Query("SELECT COUNT(*) FROM downloads WHERE status='QUEUED'")
+    suspend fun queuedCount(): Int
 
     @Query("DELETE FROM downloads WHERE id=:id")
     suspend fun delete(id: Long)

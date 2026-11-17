@@ -1,68 +1,70 @@
 # Suzuki
 
-Android için Material 3 müzik indirici. YouTube / YouTube Music bağlantılarını ve
-çalma listelerini yt-dlp + ffmpeg ile indirir; koyu mavi tema, animasyonlu geçişler,
-indirme kuyruğu, bildirimler ve ayrıntılı ayarlar içerir.
+A Material 3 music downloader for Android. It downloads YouTube / YouTube Music
+links and playlists with yt-dlp + ffmpeg, and includes a dark blue theme,
+animated transitions, a download queue, notifications, and detailed settings.
 
-## İndir
+## Download
 
-- Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous)
-  - `suzuki-latest-arm64-v8a.apk` (~63 MB) — 2019 sonrası çoğu telefon
-  - `suzuki-latest-armeabi-v7a.apk` (~56 MB) — eski / 32-bit cihazlar
-- Sürümler: [v1.2.0](https://github.com/berkchy/suzuki/releases/tag/v1.2.0)
+- Latest automatic build: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous)
+  - `suzuki-latest-arm64-v8a.apk` (~63 MB) — most phones from 2019 onward
+  - `suzuki-latest-armeabi-v7a.apk` (~56 MB) — older / 32-bit devices
+- Releases: [v1.2.0](https://github.com/berkchy/suzuki/releases/tag/v1.2.0)
 
-Mimariden emin değilsen önce `arm64-v8a` APK'yı dene; kurulmazsa `armeabi-v7a`'yı kur.
-Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.
+If you are unsure about your architecture, try the `arm64-v8a` APK first; if it
+will not install, use the `armeabi-v7a` build. Android may ask you to allow
+"install unknown apps".
 
-## APK boyutu ve bileşenler
+## APK size and components
 
-APK içinde Python çalışma zamanı ve ffmpeg gömülüdür. Android 10+ sürümlerinde
-uygulama veri klasöründen çalıştırılabilir dosya çalıştırmak (W^X) engellendiği
-için bu ikisi sonradan indirilip çalıştırılamaz. yt-dlp betiği gömülü sürümle
-başlar ve GitHub'dan günde bir kez otomatik güncellenir (Ayarlar → yt-dlp'yi
-güncelle). Ayrı ABI APK'ları sayesinde her cihaz yalnızca kendi mimarisini indirir.
+The APK bundles a Python runtime and ffmpeg. On Android 10 and later, executing
+binaries from the app data directory is blocked (W^X), so these cannot be
+downloaded and run later. The yt-dlp script starts with the bundled version and
+updates itself from GitHub once a day (Settings → update yt-dlp). Separate
+per-ABI APKs mean each device downloads only its own architecture.
 
-## Özellikler
+## Features
 
-- Video ve çalma listesi bağlantı desteği (YouTube / YouTube Music)
-- Format seçimi: Orijinal, MP3, M4A, OPUS, OGG, FLAC, WAV
-- Bit hızı seçimi (128 / 192 / 256 / 320 kbps)
-- Kapak resmi ve etiket (metadata) gömme
-- Playlist parça aralığı (örn. `1-10`, `2,5,8`)
-- Eşzamanlı indirme sayısı (1-4), duraklatma, iptal, tekrar deneme
-- Foreground servis + ilerleme ve tamamlanma bildirimleri
-- İndirme klasörü seçimi, tüm dosyalara erişim izni desteği
-- yt-dlp'yi uygulama içinden güncelleme (günde bir otomatik kontrol)
-- Room ile kuyruk/geçmiş, DataStore ile ayarlar
-- 25 dilde arayüz ve uygulama içi dil seçimi (çevrimdışı)
-- Material 3 koyu mavi tema, Compose navigasyon geçiş animasyonları
+- Video and playlist link support (YouTube / YouTube Music)
+- Format selection: Original, MP3, M4A, OPUS, OGG, FLAC, WAV
+- Bitrate selection (128 / 192 / 256 / 320 kbps)
+- Cover art and metadata embedding
+- Playlist track ranges (e.g. `1-10`, `2,5,8`)
+- Concurrent downloads (1-4), pause, cancel, retry
+- Foreground service + progress and completion notifications
+- Download folder selection, with support for all-files access permission
+- Update yt-dlp from inside the app (automatic daily check)
+- Queue/history with Room, settings with DataStore
+- 25-language interface with in-app language selection (offline)
+- Material 3 dark blue theme, Compose navigation transition animations
 
-## Mimari
+## Architecture
 
 - Kotlin + Jetpack Compose + Material 3
-- yt-dlp ve ffmpeg: `io.github.junkfood02.youtubedl-android` (APK içinde gelir,
-  ilk açılışta uygulama özel dizinine çıkarılır; `Android/data` gerekmez)
-- Kuyruk: Room + coroutine tabanlı motor, foreground `dataSync` servisi
-- İndirilen dosyalar: varsayılan `/storage/emulated/0/Music/Suzuki`
+- yt-dlp and ffmpeg: `io.github.junkfood02.youtubedl-android` (bundled in the
+  APK and extracted to the app's private directory on first launch; no
+  `Android/data` needed)
+- Queue: Room + coroutine-based engine, foreground `dataSync` service
+- Downloaded files: defaults to `/storage/emulated/0/Music/Suzuki`
 
-## Derleme
+## Build
 
 ```bash
 ./gradlew :app:assembleRelease
 ```
 
-Gereksinimler: JDK 17, Android SDK 35.
+Requirements: JDK 17, Android SDK 35.
 
 ## GitHub Actions
 
-- Her `main` push: imzalı APK derlenir, `continuous` release'i güncellenir
-- `v*` etiketi: sürüm release'i ve APK yüklenir
-- Gradle bağımlılık cache'i `gradle/actions/setup-gradle` ile korunur
+- Every push to `main`: a signed APK is built and the `continuous` release is updated
+- `v*` tag: a versioned release is created and the APKs are uploaded
+- The Gradle dependency cache is maintained with `gradle/actions/setup-gradle`
 
-İmzalama için repo secret'ları: `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`,
-`KEY_ALIAS`, `KEY_PASSWORD`. Secret yoksa debug anahtarıyla imzalanır.
+Repository secrets for signing: `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`,
+`KEY_ALIAS`, `KEY_PASSWORD`. Without secrets, the build is signed with a debug key.
 
-## Not
+## Note
 
-Bu uygulama kişisel arşivleme amacıyla geliştirilmiştir. İndirilen içeriklerin
-kullanım haklarına ve platform koşullarına saygı gösterin.
+This app is intended for personal archiving. Please respect the usage rights of
+downloaded content and the terms of the platforms involved.

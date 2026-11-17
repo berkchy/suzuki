@@ -162,12 +162,19 @@ object YtdlpEngine {
         val ytdlp = YoutubeDLRequest(request.url)
         ytdlp.addOption("--no-playlist")
         ytdlp.addOption("--newline")
+        ytdlp.addOption("--progress")
+        ytdlp.addOption("--concurrent-fragments", "4")
+        ytdlp.addOption("--socket-timeout", "20")
         ytdlp.addOption("--no-warnings")
         ytdlp.addOption("--ignore-errors")
         ytdlp.addOption("--retries", "5")
         ytdlp.addOption("--fragment-retries", "5")
         ytdlp.addOption("--no-mtime")
         ytdlp.addOption("-f", "bestaudio/best")
+
+        val cacheDir = File(context.cacheDir, "ytdlp-cache")
+        if (!cacheDir.exists()) cacheDir.mkdirs()
+        ytdlp.addOption("--cache-dir", cacheDir.absolutePath)
 
         if (settings.proxy.isNotBlank()) {
             ytdlp.addOption("--proxy", settings.proxy.trim())

@@ -23,9 +23,6 @@ android {
         targetSdk = 35
         versionCode = (project.findProperty("versionCode") as String?)?.toIntOrNull() ?: 1
         versionName = (project.findProperty("versionName") as String?) ?: "1.1.0"
-        ndk {
-            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
-        }
         vectorDrawables {
             useSupportLibrary = true
         }

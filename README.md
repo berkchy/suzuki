@@ -6,10 +6,21 @@ indirme kuyruğu, bildirimler ve ayrıntılı ayarlar içerir.
 
 ## İndir
 
-- Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous) (`suzuki-latest.apk`)
-- Sürümler: [v1.0.0](https://github.com/berkchy/suzuki/releases/tag/v1.0.0)
+- Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous)
+  - `suzuki-latest-arm64-v8a.apk` (~63 MB) — 2019 sonrası çoğu telefon
+  - `suzuki-latest-armeabi-v7a.apk` (~56 MB) — eski / 32-bit cihazlar
+- Sürümler: [v1.1.0](https://github.com/berkchy/suzuki/releases/tag/v1.1.0)
 
-APK'yı telefona indirip kurun; Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.
+Mimariden emin değilsen önce `arm64-v8a` APK'yı dene; kurulmazsa `armeabi-v7a`'yı kur.
+Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.
+
+## APK boyutu ve bileşenler
+
+APK içinde Python çalışma zamanı ve ffmpeg gömülüdür. Android 10+ sürümlerinde
+uygulama veri klasöründen çalıştırılabilir dosya çalıştırmak (W^X) engellendiği
+için bu ikisi sonradan indirilip çalıştırılamaz. yt-dlp betiği gömülü sürümle
+başlar ve GitHub'dan günde bir kez otomatik güncellenir (Ayarlar → yt-dlp'yi
+güncelle). Ayrı ABI APK'ları sayesinde her cihaz yalnızca kendi mimarisini indirir.
 
 ## Özellikler
 

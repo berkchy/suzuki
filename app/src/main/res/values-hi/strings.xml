@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">स्वागत है</string>
+    <string name="onboarding_body">आइए Suzuki को तैयार करें। अपनी भाषा चुनें, स्टोरेज की अनुमति दें और अपने संगीत के लिए फ़ोल्डर चुनें।</string>
+    <string name="onboarding_granted">अनुमति दी गई</string>
+    <string name="onboarding_not_granted">अनुमति नहीं दी गई</string>
+    <string name="onboarding_start">शुरू करें</string>
+    <string name="onboarding_hint">आप इन्हें बाद में सेटिंग्स में बदल सकते हैं।</string>
+    <string name="onboarding_folder_locked">फ़ोल्डर चुनने के लिए स्टोरेज की अनुमति दें।</string>
+
     <string name="nav_home">होम</string>
     <string name="nav_downloads">डाउनलोड</string>
     <string name="nav_settings">सेटिंग्स</string>

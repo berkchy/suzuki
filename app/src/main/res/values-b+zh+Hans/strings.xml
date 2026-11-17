@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">欢迎</string>
+    <string name="onboarding_body">让我们完成 Suzuki 的设置。选择语言，允许存储访问，并选择音乐保存文件夹。</string>
+    <string name="onboarding_granted">已授予访问权限</string>
+    <string name="onboarding_not_granted">未授予访问权限</string>
+    <string name="onboarding_start">开始</string>
+    <string name="onboarding_hint">之后可以在设置中修改这些选项。</string>
+    <string name="onboarding_folder_locked">请允许存储访问以选择文件夹。</string>
+
     <string name="nav_home">主页</string>
     <string name="nav_downloads">下载</string>
     <string name="nav_settings">设置</string>

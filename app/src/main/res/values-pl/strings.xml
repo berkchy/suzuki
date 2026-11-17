@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Witamy</string>
+    <string name="onboarding_body">Przygotujmy Suzuki. Wybierz język, zezwól na dostęp do pamięci i wybierz folder na muzykę.</string>
+    <string name="onboarding_granted">Dostęp przyznany</string>
+    <string name="onboarding_not_granted">Dostęp nieprzyznany</string>
+    <string name="onboarding_start">Rozpocznij</string>
+    <string name="onboarding_hint">Możesz to później zmienić w Ustawieniach.</string>
+    <string name="onboarding_folder_locked">Zezwól na dostęp do pamięci, aby wybrać folder.</string>
+
     <string name="nav_home">Główna</string>
     <string name="nav_downloads">Pobrane</string>
     <string name="nav_settings">Ustawienia</string>

@@ -36,6 +36,7 @@ per-ABI APKs mean each device downloads only its own architecture.
 - Update yt-dlp from inside the app (automatic daily check)
 - Queue/history with Room, settings with DataStore
 - 25-language interface with in-app language selection (offline)
+- First-launch setup for language, storage access, and download folder
 - Material 3 dark blue theme, Compose navigation transition animations
 
 ## Architecture

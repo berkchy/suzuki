@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">ברוכים הבאים</string>
+    <string name="onboarding_body">בואו נכין את Suzuki. בחרו שפה, אשרו גישה לאחסון ובחרו תיקייה למוזיקה שלכם.</string>
+    <string name="onboarding_granted">הגישה אושרה</string>
+    <string name="onboarding_not_granted">הגישה לא אושרה</string>
+    <string name="onboarding_start">התחל</string>
+    <string name="onboarding_hint">אפשר לשנות את אלה מאוחר יותר בהגדרות.</string>
+    <string name="onboarding_folder_locked">אשרו גישה לאחסון כדי לבחור תיקייה.</string>
+
     <string name="nav_home">בית</string>
     <string name="nav_downloads">הורדות</string>
     <string name="nav_settings">הגדרות</string>

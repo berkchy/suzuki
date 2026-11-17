@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">مرحبًا</string>
+    <string name="onboarding_body">لنجهّز Suzuki. اختر لغتك، واسمح بالوصول إلى التخزين، واختر مجلدًا لموسيقاك.</string>
+    <string name="onboarding_granted">تم منح الوصول</string>
+    <string name="onboarding_not_granted">لم يتم منح الوصول</string>
+    <string name="onboarding_start">ابدأ</string>
+    <string name="onboarding_hint">يمكنك تغيير هذه الإعدادات لاحقًا.</string>
+    <string name="onboarding_folder_locked">اسمح بالوصول إلى التخزين لاختيار مجلد.</string>
+
     <string name="nav_home">الرئيسية</string>
     <string name="nav_downloads">التنزيلات</string>
     <string name="nav_settings">الإعدادات</string>

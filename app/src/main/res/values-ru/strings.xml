@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Добро пожаловать</string>
+    <string name="onboarding_body">Давайте настроим Suzuki. Выберите язык, разрешите доступ к хранилищу и укажите папку для музыки.</string>
+    <string name="onboarding_granted">Доступ разрешён</string>
+    <string name="onboarding_not_granted">Доступ не разрешён</string>
+    <string name="onboarding_start">Начать</string>
+    <string name="onboarding_hint">Это можно изменить позже в настройках.</string>
+    <string name="onboarding_folder_locked">Разрешите доступ к хранилищу, чтобы выбрать папку.</string>
+
     <string name="nav_home">Главная</string>
     <string name="nav_downloads">Загрузки</string>
     <string name="nav_settings">Настройки</string>

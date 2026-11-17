@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Selamat datang</string>
+    <string name="onboarding_body">Mari siapkan Suzuki. Pilih bahasa, izinkan akses penyimpanan, dan pilih folder untuk musikmu.</string>
+    <string name="onboarding_granted">Akses diberikan</string>
+    <string name="onboarding_not_granted">Akses belum diberikan</string>
+    <string name="onboarding_start">Mulai</string>
+    <string name="onboarding_hint">Kamu dapat mengubahnya nanti di Pengaturan.</string>
+    <string name="onboarding_folder_locked">Izinkan akses penyimpanan untuk memilih folder.</string>
+
     <string name="nav_home">Beranda</string>
     <string name="nav_downloads">Unduhan</string>
     <string name="nav_settings">Pengaturan</string>

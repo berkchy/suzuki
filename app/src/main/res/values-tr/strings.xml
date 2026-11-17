@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Hoş geldin</string>
+    <string name="onboarding_body">Suzuki\'yi hazırlayalım. Dilini seç, depolama iznini ver ve müziklerinin kaydedileceği klasörü belirle.</string>
+    <string name="onboarding_granted">İzin verildi</string>
+    <string name="onboarding_not_granted">İzin verilmedi</string>
+    <string name="onboarding_start">Başla</string>
+    <string name="onboarding_hint">Bunları daha sonra Ayarlar\'dan değiştirebilirsin.</string>
+    <string name="onboarding_folder_locked">Klasör seçmek için depolama iznini ver.</string>
+
     <string name="nav_home">Ana Sayfa</string>
     <string name="nav_downloads">İndirmeler</string>
     <string name="nav_settings">Ayarlar</string>

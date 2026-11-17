@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Welkom</string>
+    <string name="onboarding_body">Laten we Suzuki klaarzetten. Kies je taal, sta toegang tot opslag toe en kies een map voor je muziek.</string>
+    <string name="onboarding_granted">Toegang verleend</string>
+    <string name="onboarding_not_granted">Geen toegang verleend</string>
+    <string name="onboarding_start">Beginnen</string>
+    <string name="onboarding_hint">Je kunt dit later wijzigen in Instellingen.</string>
+    <string name="onboarding_folder_locked">Sta toegang tot opslag toe om een map te kiezen.</string>
+
     <string name="nav_home">Start</string>
     <string name="nav_downloads">Downloads</string>
     <string name="nav_settings">Instellingen</string>

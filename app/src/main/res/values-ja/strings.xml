@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">ようこそ</string>
+    <string name="onboarding_body">Suzuki を使う準備をしましょう。言語を選び、ストレージへのアクセスを許可し、音楽の保存先フォルダーを選択してください。</string>
+    <string name="onboarding_granted">アクセス許可済み</string>
+    <string name="onboarding_not_granted">アクセス未許可</string>
+    <string name="onboarding_start">はじめる</string>
+    <string name="onboarding_hint">これらの設定は後から変更できます。</string>
+    <string name="onboarding_folder_locked">フォルダーを選ぶにはストレージへのアクセスを許可してください。</string>
+
     <string name="nav_home">ホーム</string>
     <string name="nav_downloads">ダウンロード</string>
     <string name="nav_settings">設定</string>

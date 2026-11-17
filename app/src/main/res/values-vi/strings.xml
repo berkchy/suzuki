@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Chào mừng</string>
+    <string name="onboarding_body">Hãy chuẩn bị Suzuki. Chọn ngôn ngữ, cho phép truy cập bộ nhớ và chọn thư mục lưu nhạc.</string>
+    <string name="onboarding_granted">Đã cấp quyền truy cập</string>
+    <string name="onboarding_not_granted">Chưa cấp quyền truy cập</string>
+    <string name="onboarding_start">Bắt đầu</string>
+    <string name="onboarding_hint">Bạn có thể thay đổi các mục này sau trong Cài đặt.</string>
+    <string name="onboarding_folder_locked">Cho phép truy cập bộ nhớ để chọn thư mục.</string>
+
     <string name="nav_home">Trang chủ</string>
     <string name="nav_downloads">Tải xuống</string>
     <string name="nav_settings">Cài đặt</string>

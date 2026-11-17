@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Suzuki</string>
 
+    <string name="onboarding_title">Xoş gəldiniz</string>
+    <string name="onboarding_body">Suzuki-ni hazırlayaq. Dilini seç, yaddaşa giriş icazəsi ver və musiqin üçün qovluq seç.</string>
+    <string name="onboarding_granted">Giriş icazəsi verildi</string>
+    <string name="onboarding_not_granted">Giriş icazəsi verilmədi</string>
+    <string name="onboarding_start">Başla</string>
+    <string name="onboarding_hint">Bunları sonra Tənzimləmələrdən dəyişə bilərsən.</string>
+    <string name="onboarding_folder_locked">Qovluq seçmək üçün yaddaşa giriş icazəsi ver.</string>
+
     <string name="nav_home">Ana səhifə</string>
     <string name="nav_downloads">Yükləmələr</string>
     <string name="nav_settings">Parametrlər</string>

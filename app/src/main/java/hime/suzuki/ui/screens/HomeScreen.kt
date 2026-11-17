@@ -132,7 +132,7 @@ fun HomeScreen(
                 }
                 Button(
                     onClick = { if (url.isNotBlank()) vm.fetchUrl(url) },
-                    enabled = url.isNotBlank() && !fetching,
+                    enabled = url.isNotBlank() && !fetching && ytdlp.ready,
                     modifier = Modifier
                         .weight(1f)
                         .height(50.dp),
@@ -151,7 +151,7 @@ fun HomeScreen(
                             modifier = Modifier.size(18.dp),
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text("Listele")
+                        Text(if (ytdlp.ready) "Listele" else "Hazırlanıyor…")
                     }
                 }
             }

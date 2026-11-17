@@ -9,7 +9,7 @@ indirme kuyruğu, bildirimler ve ayrıntılı ayarlar içerir.
 - Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous)
   - `suzuki-latest-arm64-v8a.apk` (~63 MB) — 2019 sonrası çoğu telefon
   - `suzuki-latest-armeabi-v7a.apk` (~56 MB) — eski / 32-bit cihazlar
-- Sürümler: [v1.1.0](https://github.com/berkchy/suzuki/releases/tag/v1.1.0)
+- Sürümler: [v1.1.1](https://github.com/berkchy/suzuki/releases/tag/v1.1.1)
 
 Mimariden emin değilsen önce `arm64-v8a` APK'yı dene; kurulmazsa `armeabi-v7a`'yı kur.
 Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.

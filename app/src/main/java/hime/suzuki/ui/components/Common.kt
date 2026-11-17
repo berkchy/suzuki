@@ -33,9 +33,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -108,11 +105,7 @@ fun HeroCard(modifier: Modifier = Modifier, content: @Composable ColumnScope.() 
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(28.dp))
-            .background(
-                Brush.linearGradient(
-                    listOf(Color(0xFF173760), Color(0xFF0B1728), Color(0xFF0A1320))
-                )
-            )
+            .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.35f))
             .border(
                 1.dp,
                 MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),

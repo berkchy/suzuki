@@ -175,6 +175,7 @@ private fun DownloadCard(
     onOpen: () -> Unit,
     onShare: () -> Unit,
 ) {
+    val context = LocalContext.current
     Surface(
         shape = RoundedCornerShape(22.dp),
         color = MaterialTheme.colorScheme.surface,

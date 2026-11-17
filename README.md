@@ -4,6 +4,13 @@ Android için Material 3 müzik indirici. YouTube / YouTube Music bağlantılar�
 çalma listelerini yt-dlp + ffmpeg ile indirir; koyu mavi tema, animasyonlu geçişler,
 indirme kuyruğu, bildirimler ve ayrıntılı ayarlar içerir.
 
+## İndir
+
+- Son otomatik derleme: [continuous release](https://github.com/berkchy/suzuki/releases/tag/continuous) (`suzuki-latest.apk`)
+- Sürümler: [v1.0.0](https://github.com/berkchy/suzuki/releases/tag/v1.0.0)
+
+APK'yı telefona indirip kurun; Android "bilinmeyen kaynaklara izin ver" onayı isteyebilir.
+
 ## Özellikler
 
 - Video ve çalma listesi bağlantı desteği (YouTube / YouTube Music)

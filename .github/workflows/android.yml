@@ -95,7 +95,7 @@ jobs:
           gh release view continuous > /dev/null 2>&1 || \
             gh release create continuous --title "Continuous build" \
               --notes "main dalından otomatik derleme" --prerelease --target main
-          gh release upload continuous dist/*.apk --clobber
+          gh release upload continuous dist/suzuki-latest.apk --clobber
           gh release edit continuous \
             --notes "Son otomatik derleme: ${GITHUB_SHA::7} • build #${GITHUB_RUN_NUMBER}"
 

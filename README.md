@@ -37,6 +37,7 @@ per-ABI APKs mean each device downloads only its own architecture.
 - Queue/history with Room, settings with DataStore
 - 25-language interface with in-app language selection (offline)
 - First-launch setup for language, storage access, and download folder
+- Swipe between Home, Downloads, and Settings with smooth animated transitions
 - Material 3 dark blue theme, Compose navigation transition animations
 
 ## Architecture

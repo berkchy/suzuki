@@ -10,8 +10,10 @@ import hime.suzuki.download.YtdlpEngine
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -48,7 +50,14 @@ class AppContainer(private val app: Application) {
                 YtdlpEngine.init(app)
                 _boot.value = BootState(started = true, ready = true)
                 runCatching { engine.recoverQueue() }
-                runCatching { YtdlpEngine.autoUpdateIfDue(app, settings) }
+                scope.launch {
+                    delay(3_000)
+                    val busy = runCatching { engine.activeItems.first().isNotEmpty() }
+                        .getOrDefault(false)
+                    if (!busy) {
+                        runCatching { YtdlpEngine.autoUpdateIfDue(app, settings) }
+                    }
+                }
             } catch (t: Throwable) {
                 _boot.value = BootState(error = t.message ?: t.javaClass.simpleName)
             }

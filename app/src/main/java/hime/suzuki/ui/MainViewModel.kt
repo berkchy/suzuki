@@ -58,6 +58,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     var fetch by mutableStateOf(FetchState())
         private set
 
+    var queueSignal by mutableStateOf(0)
+        private set
+
     fun fetchUrl(url: String) {
         val clean = url.trim()
         val strings = AppLocale.wrap(getApplication())
@@ -94,6 +97,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 engine.enqueue(preview, options, preview.title)
                 fetch = FetchState()
+                queueSignal++
             } catch (t: Throwable) {
                 fetch = fetch.copy(error = Fmt.errorMessage(t))
             }

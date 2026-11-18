@@ -6,19 +6,19 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -34,9 +34,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -48,12 +51,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import hime.suzuki.R
 import hime.suzuki.core.Storage
 import hime.suzuki.ui.components.AudioOptionsSheet
@@ -61,21 +58,44 @@ import hime.suzuki.ui.components.LoadingDialog
 import hime.suzuki.ui.screens.DownloadsScreen
 import hime.suzuki.ui.screens.HomeScreen
 import hime.suzuki.ui.screens.SettingsScreen
-
-private object Routes {
-    const val HOME = "home"
-    const val DOWNLOADS = "downloads"
-    const val SETTINGS = "settings"
-}
+import kotlinx.coroutines.launch
 
 @Composable
 fun SuzukiRoot(vm: MainViewModel) {
     val context = LocalContext.current
     val boot by vm.boot.collectAsStateWithLifecycle()
     val snackbar = remember { SnackbarHostState() }
-    val nav = rememberNavController()
+    val scope = rememberCoroutineScope()
+    val pagerState = rememberPagerState(pageCount = { 3 })
+    var selectedTab by remember { mutableIntStateOf(pagerState.currentPage) }
     val settings by vm.settings.collectAsStateWithLifecycle()
     var storageOk by remember { mutableStateOf(Storage.hasWriteAccess(context)) }
+
+    LaunchedEffect(pagerState) {
+        snapshotFlow { pagerState.settledPage }.collect { selectedTab = it }
+    }
+
+    val goToPage: (Int) -> Unit = { page ->
+        selectedTab = page
+        scope.launch {
+            pagerState.animateScrollToPage(
+                page,
+                animationSpec = tween(420, easing = FastOutSlowInEasing),
+            )
+        }
+    }
+
+    BackHandler(enabled = pagerState.currentPage != 0) { goToPage(0) }
+
+    LaunchedEffect(vm.queueSignal) {
+        if (vm.queueSignal == 0) return@LaunchedEffect
+        val result = snackbar.showSnackbar(
+            message = context.getString(R.string.downloads_status_queued),
+            actionLabel = context.getString(R.string.common_open),
+            duration = SnackbarDuration.Short,
+        )
+        if (result == SnackbarResult.ActionPerformed) goToPage(1)
+    }
 
     LaunchedEffect(boot.error) {
         val error = boot.error ?: return@LaunchedEffect
@@ -144,39 +164,27 @@ fun SuzukiRoot(vm: MainViewModel) {
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         snackbarHost = { SnackbarHost(snackbar) },
-        bottomBar = { SuzukiBottomBar(nav) },
+        bottomBar = { SuzukiBottomBar(selectedTab, goToPage) },
     ) { padding ->
         Box(Modifier.fillMaxSize()) {
-            NavHost(
-                navController = nav,
-                startDestination = Routes.HOME,
+            HorizontalPager(
+                state = pagerState,
+                beyondViewportPageCount = 2,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(padding)
                     .consumeWindowInsets(padding),
-                enterTransition = {
-                    fadeIn(animationSpec = tween(220)) +
-                        slideInHorizontally(animationSpec = tween(260), initialOffsetX = { it / 14 })
-                },
-                exitTransition = { fadeOut(animationSpec = tween(140)) },
-                popEnterTransition = { fadeIn(animationSpec = tween(200)) },
-                popExitTransition = {
-                    fadeOut(animationSpec = tween(160)) +
-                        slideOutHorizontally(animationSpec = tween(220), targetOffsetX = { it / 14 })
-                },
-            ) {
-                composable(Routes.HOME) {
-                    HomeScreen(
+            ) { page ->
+                when (page) {
+                    0 -> HomeScreen(
                         vm = vm,
                         storageOk = storageOk,
                         onGrantStorage = grantStorage,
-                        onOpenDownloads = {
-                            nav.navigate(Routes.DOWNLOADS) { launchSingleTop = true }
-                        },
+                        onOpenDownloads = { goToPage(1) },
                     )
+                    1 -> DownloadsScreen(vm)
+                    else -> SettingsScreen(vm, storageOk, grantStorage)
                 }
-                composable(Routes.DOWNLOADS) { DownloadsScreen(vm) }
-                composable(Routes.SETTINGS) { SettingsScreen(vm, storageOk, grantStorage) }
             }
             if (boot.loading) {
                 LinearProgressIndicator(
@@ -207,29 +215,21 @@ fun SuzukiRoot(vm: MainViewModel) {
 }
 
 @Composable
-private fun SuzukiBottomBar(nav: NavHostController) {
-    val entry by nav.currentBackStackEntryAsState()
-    val current = entry?.destination?.route
+private fun SuzukiBottomBar(currentPage: Int, onSelect: (Int) -> Unit) {
     val tabs = listOf(
-        Triple(Routes.HOME, R.drawable.ic_home, stringResource(R.string.nav_home)),
-        Triple(Routes.DOWNLOADS, R.drawable.ic_download, stringResource(R.string.nav_downloads)),
-        Triple(Routes.SETTINGS, R.drawable.ic_settings, stringResource(R.string.nav_settings)),
+        Triple(0, R.drawable.ic_home, stringResource(R.string.nav_home)),
+        Triple(1, R.drawable.ic_download, stringResource(R.string.nav_downloads)),
+        Triple(2, R.drawable.ic_settings, stringResource(R.string.nav_settings)),
     )
 
     NavigationBar(
         containerColor = MaterialTheme.colorScheme.surface,
         tonalElevation = 0.dp,
     ) {
-        tabs.forEach { (route, icon, label) ->
+        tabs.forEach { (page, icon, label) ->
             NavigationBarItem(
-                selected = current == route,
-                onClick = {
-                    nav.navigate(route) {
-                        popUpTo(nav.graph.findStartDestination().id) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
-                },
+                selected = currentPage == page,
+                onClick = { onSelect(page) },
                 icon = {
                     Icon(
                         painterResource(icon),

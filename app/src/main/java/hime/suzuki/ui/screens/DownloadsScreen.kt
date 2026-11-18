@@ -224,40 +224,57 @@ private fun DownloadCard(
 
             when (item.status) {
                 DownloadStatus.RUNNING, DownloadStatus.QUEUED -> {
+                    val preparing = item.status == DownloadStatus.RUNNING && item.progress <= 0f
                     Spacer(Modifier.height(10.dp))
-                    LinearProgressIndicator(
-                        progress = { if (item.status == DownloadStatus.QUEUED) 0f else item.progress },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(6.dp)
-                            .clip(RoundedCornerShape(3.dp)),
-                        color = MaterialTheme.colorScheme.primary,
-                        trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                    )
+                    if (preparing) {
+                        LinearProgressIndicator(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(6.dp)
+                                .clip(RoundedCornerShape(3.dp)),
+                            color = MaterialTheme.colorScheme.primary,
+                            trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                        )
+                    } else {
+                        LinearProgressIndicator(
+                            progress = {
+                                if (item.status == DownloadStatus.QUEUED) 0f else item.progress
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(6.dp)
+                                .clip(RoundedCornerShape(3.dp)),
+                            color = MaterialTheme.colorScheme.primary,
+                            trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                        )
+                    }
                     Spacer(Modifier.height(6.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            if (item.status == DownloadStatus.QUEUED) {
-                                stringResource(R.string.downloads_status_queued)
-                            } else {
-                                stringResource(R.string.downloads_status_downloading)
+                            when {
+                                item.status == DownloadStatus.QUEUED ->
+                                    stringResource(R.string.downloads_status_queued)
+                                preparing -> stringResource(R.string.home_preparing)
+                                else -> stringResource(R.string.downloads_status_downloading)
                             },
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                         Spacer(Modifier.weight(1f))
-                        val eta = Fmt.eta(context, item.etaSeconds)
-                        Text(
-                            buildString {
-                                append(Fmt.percent(item.progress))
-                                if (eta.isNotEmpty() && item.status == DownloadStatus.RUNNING) {
-                                    append(" • ")
-                                    append(eta)
-                                }
-                            },
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
+                        if (!preparing) {
+                            val eta = Fmt.eta(context, item.etaSeconds)
+                            Text(
+                                buildString {
+                                    append(Fmt.percent(item.progress))
+                                    if (eta.isNotEmpty() && item.status == DownloadStatus.RUNNING) {
+                                        append(" • ")
+                                        append(eta)
+                                    }
+                                },
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
                     }
                 }
 

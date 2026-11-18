@@ -83,7 +83,7 @@ object YtdlpEngine {
     }
 
     suspend fun update(context: Context, nightly: Boolean = true): String? = withContext(Dispatchers.IO) {
-        check(initialized) { AppLocale.wrap(context).getString(R.string.error_engine_not_ready) }
+        init(context)
         _state.update { it.copy(updating = true, lastError = null) }
         try {
             val channel = if (nightly) {
@@ -114,13 +114,14 @@ object YtdlpEngine {
 
     suspend fun extract(context: Context, url: String): PlaylistInfo = withContext(Dispatchers.IO) {
         val ctx = AppLocale.wrap(context)
-        check(initialized) { ctx.getString(R.string.error_engine_not_ready) }
+        init(context)
         val request = YoutubeDLRequest(url)
         request.addOption("--flat-playlist")
         request.addOption("--skip-download")
         request.addOption("--no-warnings")
         request.addOption("--ignore-errors")
         request.addOption("--dump-single-json")
+        request.addOption("--cache-dir", cacheDir(context).absolutePath)
 
         val response = YoutubeDL.getInstance().execute(request, null, false)
         val raw = response.out.trim()
@@ -167,9 +168,7 @@ object YtdlpEngine {
         dir: File,
         onProgress: (Float, Long) -> Unit,
     ): DownloadResult = withContext(Dispatchers.IO) {
-        check(initialized) {
-            AppLocale.wrap(context).getString(R.string.error_engine_not_ready)
-        }
+        init(context)
 
         val ytdlp = YoutubeDLRequest(request.url)
         ytdlp.addOption("--no-playlist")
@@ -184,9 +183,8 @@ object YtdlpEngine {
         ytdlp.addOption("--no-mtime")
         ytdlp.addOption("-f", "bestaudio/best")
 
-        val cacheDir = File(context.cacheDir, "ytdlp-cache")
-        if (!cacheDir.exists()) cacheDir.mkdirs()
-        ytdlp.addOption("--cache-dir", cacheDir.absolutePath)
+        val cache = cacheDir(context)
+        ytdlp.addOption("--cache-dir", cache.absolutePath)
 
         if (settings.proxy.isNotBlank()) {
             ytdlp.addOption("--proxy", settings.proxy.trim())
@@ -233,8 +231,13 @@ object YtdlpEngine {
         DownloadResult(path)
     }
 
-    private fun findFreshFile(dir: File, since: Long): String? {
-        return dir.listFiles()
+    private fun cacheDir(context: Context): File {
+        val dir = File(context.cacheDir, "ytdlp-cache")
+        if (!dir.exists()) dir.mkdirs()
+        return dir
+    }
+
+    private fun findFreshFile(dir: File, since: Long): String? {        return dir.listFiles()
             ?.asSequence()
             ?.filter { it.isFile && it.lastModified() >= since - 15_000L }
             ?.filter { it.extension.lowercase(Locale.US) in AUDIO_EXT }
